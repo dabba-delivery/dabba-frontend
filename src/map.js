@@ -1,11 +1,15 @@
 import React from "react";
 import "./map.css";
 
+// this block will be recieving a position from parent component and
+// put that in props of the map component
 export default class MapBlock extends React.Component {
     render() {
         return (
             <div className="map">
-                <div className="map__map"></div>
+                <div className="map__map">
+                    {/* {place for your map-application} */}
+                </div>
                 <div className="map__form">
                     <p className="map__text-zone">
                         У этого заведения есть зона доставки, для заказа вы
