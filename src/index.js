@@ -9,24 +9,39 @@ import "./menu.css";
 const positions = [
     {
         name: "Пицца Маргарита",
-        ingridients:
+        pictureUrl: "string",
+        weigh: 1000,
+        price: 1000,
+        description:
             "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        weight: "500гр",
-        cost: "500р",
+        comments: "string",
     },
     {
-        name: "Пицца Аррива",
-        ingridients:
-            "Привет! Это картофельный компонент и перманентный соус",
-        weight: "100гр",
-        cost: "1000р",
+        name: "Пицца Маргарита",
+        pictureUrl: "string",
+        weigh: 1000,
+        price: 1000,
+        description:
+            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+        comments: "string",
     },
     {
-        name: "Пицца Деревенская",
-        ingridients:
-            "What's up?",
-        weight: "500гр",
-        cost: "500р",
+        name: "Пицца Маргарита",
+        pictureUrl: "string",
+        weigh: 1000,
+        price: 1000,
+        description:
+            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+        comments: "string",
+    },
+    {
+        name: "Пицца Маргарита",
+        pictureUrl: "string",
+        weigh: 1000,
+        price: 1000,
+        description:
+            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+        comments: "string",
     },
 ];
 
@@ -37,9 +52,9 @@ function UnpackPositions(props) {
             <Position
                 id={position}
                 name={position.name}
-                ingridients={position.ingridients}
-                weight={position.weight}
-                cost={position.cost}
+                ingridients={position.description}
+                weight={position.weigh}
+                cost={position.price}
             />
         );
     });

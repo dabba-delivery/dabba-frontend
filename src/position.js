@@ -18,8 +18,8 @@ export default class Position extends React.Component {
                     {this.props.ingridients}
                 </p>
                 <div className="position__wc">
-                    <p className="postion__weight">{this.props.weight}</p>
-                    <p className="position__cost">{this.props.cost}</p>
+                    <p className="postion__weight">{this.props.weight + "гр."}</p>
+                    <p className="position__cost">{this.props.cost + "р."}</p>
                 </div>
                 <button className="position__button">Выбрать</button>
             </div>
