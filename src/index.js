@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import Menu from "./menu";
+import SortBlock from "./sort";
 import "./index.css";
-import "./sort.css";
+import "./map.css";
 
 const positions = [
     {
@@ -81,34 +82,22 @@ const positions = [
     },
 ];
 
-class SortBlock extends React.Component {
+class MapBlock extends React.Component {
     render() {
         return (
-            <div className="sort">
-                <h5 className="sort__text">Показать</h5>
-                <SortButton name="Новинки" func={() => alert("It works")} />
-                <SortButton name="Популярное" func={() => alert("It works")} />
+            <div className="map">
+                <div className="map__map"></div>
+                <div className="map__form">
+                    <p className="map__text-zone">
+                        У этого заведения есть зона доставки, для заказа вы
+                        должны находиться в ней
+                    </p>
+                    <button className="map__button-allow">Разрешите доступ к вашему местоположению</button>
+                    <p className="map__text-adress">или введите адрес доставки (улица и дом)</p>
+                    <input className="map__input-adress"></input>
+                    <button className="map__button-ready">Готово</button>
+                </div>
             </div>
-        );
-    }
-}
-
-class SortButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick(e) {
-        e.preventDefault();
-        this.props.func();
-    }
-
-    render() {
-        return (
-            <button onClick={this.handleClick} className="sort__button">
-                {this.props.name}
-            </button>
         );
     }
 }
@@ -119,9 +108,9 @@ class MainPart extends React.Component {
             <div
                 style={{
                     backgroundColor: "#f7f7f7",
-                    padding: "10px 0px 0px 0px",
                 }}
             >
+                <MapBlock />
                 <SortBlock />
                 <Menu dishes={positions} />
             </div>
