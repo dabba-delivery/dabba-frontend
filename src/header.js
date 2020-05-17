@@ -7,6 +7,7 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <div className="wall">
+                    <button className="wall__registration">Открыть свою витрину</button>
                     <img src={Logo} className="wall__logo" alt="logo" />
                     <h2 className="wall__name">
                         {this.props.data.name + " " + this.props.data.address}

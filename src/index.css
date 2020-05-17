@@ -19,13 +19,42 @@ a,
 li,
 ul {
     margin: 0px;
-    color: #3F3F3F;
+    color: #3f3f3f;
     font-family: "Roboto", sans-serif;
 }
 
 .page {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
 
     display: grid;
     grid-template-columns: 1fr 350px;
+}
+
+.wall__registration {
+    font-weight: bold;
+    font-size: 16px;
+    
+    
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+
+    color: #ffffff;
+    border: 3px solid #cdedf6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 20px;
+    height: 60px;
+    width: 200px;
+    top: 0px;
+    align-self: flex-start;
+    cursor: pointer;
+
+    transition-property: background-color color;
+    transition-duration: 0.2s;
+}
+
+.wall__registration:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
 }
