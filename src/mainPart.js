@@ -5,8 +5,6 @@ import Menu from "./menu";
 import SortBlock from "./sort";
 import MapBlock from "./map";
 
-
-
 export default class MainPart extends React.Component {
     render() {
         return (

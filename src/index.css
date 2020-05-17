@@ -18,7 +18,8 @@ a {
 }
 
 .page {
+    background-color: #F7F7F7;
+
     display: grid;
     grid-template-columns: 1fr 350px;
-    background-color: #f7f7f7;
 }
