@@ -2,11 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
-import Header from "./header.js"
-import Menu from "./menu";
-import SortBlock from "./sort";
-import MapBlock from "./map";
-import "./index.css";
+import MainPart from "./mainPart";
 
 // пример реального объекта с бекэнда
 
@@ -97,28 +93,16 @@ const restaurant = {
     serviceRadius: 10,
 };
 
-
-
-class MainPart extends React.Component {
+class App extends React.Component {
     render() {
         return (
-            <div
-                style={{
-                    backgroundColor: "#f7f7f7",
-                }}
-            >
-                <Header data={this.props.data} />
-                <MapBlock />
-                <SortBlock />
-                <Menu dishes={this.props.data.dishes} />
+            <div>
+                <MainPart data={this.props.data} />
             </div>
         );
     }
 }
 
-ReactDOM.render(
-    <MainPart data={restaurant} />,
-    document.getElementById("root")
-);
+ReactDOM.render(<App data={restaurant}/>, document.getElementById("root"));
 
 serviceWorker.unregister();
