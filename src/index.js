@@ -103,42 +103,41 @@ class Bin extends React.Component {
         super(props);
 
         const cart = new Map();
-        this.state = {cart: cart};
+        this.state = { cart: cart };
     }
-    
+
     componentDidMount() {
         const cart = this.state.cart;
         window.cart = cart;
 
         cart.addPos = (id) => {
-            if (cart.has(id)){
+            if (cart.has(id)) {
                 ++cart.get(id).val;
-            }else{
-                cart.set(id, {val: 1});
+            } else {
+                cart.set(id, { val: 1 });
             }
             this.setState({
-                cart: cart
+                cart: cart,
             });
         };
 
         cart.removePos = (id) => {
-            if (cart.has(id)){
-                if(--cart.get(id).val <= 0){
+            if (cart.has(id)) {
+                if (--cart.get(id).val <= 0) {
                     cart.delete(id);
                 }
-            }else{
+            } else {
                 console.log("there is no key: ", id);
             }
             this.setState({
-                cart: cart
+                cart: cart,
             });
         };
     }
-  
+
     componentWillUnmount() {
         delete window.cart;
     }
-  
 
     render() {
         return (
@@ -156,13 +155,20 @@ class Bin extends React.Component {
                             fill="#FA7921"
                         />
                     </svg>
-                    <h5 className="bin__text">Корзина ({this.state.cart.size})</h5>
+                    <h5 className="bin__text">
+                        Корзина ({this.state.cart.size})
+                    </h5>
                 </div>
-               <ul>
-               {[...this.state.cart].map(([el,{val}], i)=>(
-                <li key={i}>{el.name} — {val}</li>
-                ))}
-               </ul> 
+                <div className="bin__list">
+                
+                        {[...this.state.cart].map(([el, { val }], i) => (
+                            <div className="bin__element" key={i}>
+                                <h5 className="element__name">{el.name}</h5>
+                                <h5 className="element__amount">{val}</h5>
+                            </div>
+                        ))}
+                
+                </div>
                 <div className="bin__footer">
                     <p className="bin__summary">Итоговая сумма</p>
                     <p className="bin__summary__order">Включая заказ</p>

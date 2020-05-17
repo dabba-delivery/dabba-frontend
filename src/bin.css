@@ -5,14 +5,14 @@
     width: 350px;
     margin-left: 0px 0px 0px auto;
 
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
 
     display: grid;
-    grid-template-rows: 60px 1fr 140px;
+    grid-template-rows: 69px 1fr 140px;
 }
 
 .bin__header {
-    height: 67px;
+    height: 69px;
     width: 100%;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     background-color: white;
@@ -24,7 +24,7 @@
 }
 
 .bin__text {
-    color: #FA7921;
+    color: #fa7921;
     font-size: 25px;
     font-weight: 900;
 }
@@ -72,7 +72,42 @@
 }
 
 .bin__button:hover {
-    border: 3px solid #FA7921;
+    border: 3px solid #fa7921;
     color: white;
-    background-color: #FA7921;
+    background-color: #fa7921;
+}
+
+.bin__list {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    z-index: -1;
+    overflow-y: scroll;
+}
+
+.bin__element {
+    margin: 10px auto 0px auto;
+    width: 314px;
+    height: 120px;
+    left: 1118px;
+    top: 251px;
+
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+
+    display: grid;
+    grid-template-columns: 10% 1fr 0.3fr 5%;
+    grid-template-rows: 20% 30% 10% 30% 20%;
+    
+}
+
+.element__name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    
+
+    color: #000000;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
