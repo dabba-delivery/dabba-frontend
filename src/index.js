@@ -9,100 +9,114 @@ import "./index.css";
 import "./header.css";
 import Logo from "./media/logo.png";
 
-const positions = [
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 200,
-        price: 3400,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 1000,
-        price: 800,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 1000,
-        price: 50,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 1400,
-        price: 1500,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 200,
-        price: 3400,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 1000,
-        price: 800,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 1000,
-        price: 50,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-    {
-        name: "Пицца Маргарита",
-        pictureUrl: "string",
-        weigh: 1400,
-        price: 1500,
-        description:
-            "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-        comments: "string",
-    },
-];
+const restaurant = {
+    address: "Красногвардейская 16",
+    closeTime: "20:00",
+    contactPhone: "8(999) 420 11 11",
+    dishes: [
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 200,
+            price: 3400,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 1000,
+            price: 800,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 1000,
+            price: 50,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 1400,
+            price: 1500,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 200,
+            price: 3400,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 1000,
+            price: 800,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 1000,
+            price: 50,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+        {
+            name: "Пицца Маргарита",
+            pictureUrl: "string",
+            weigh: 1400,
+            price: 1500,
+            description:
+                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
+            comments: "string",
+        },
+    ],
+    email: "dodo@fmail.com",
+    id: 0,
+    kitchenType: "RUSSIAN",
+    logoUrl: "string",
+    name: "Додо пицца",
+    openTime: "8:00",
+    serviceRadius: 10,
+};
 
 class Header extends React.Component {
     render() {
         return (
             <div className="header">
                 <div className="wall">
-                    <img src={Logo} className="wall__logo" />
+                    <img src={Logo} className="wall__logo" alt="logo" />
                     <h2 className="wall__name">
-                        Додо Пицца Красногвардейская 16
+                        {this.props.data.name + " " + this.props.data.address}
                     </h2>
                     <div className="wall__info">
                         <div></div>
-                        <p>8(924) 765 45 45</p>
-                        <p>Пицца, Суши</p>
-                        <p>dodopizza@gmail.com</p>
+                        <p>{this.props.data.contactPhone}</p>
+        <p>{this.props.data.kitchenType}</p>
+        <p>{this.props.data.email}</p>
                     </div>
                 </div>
                 <div className="line">
-                    <p className="line__time">Время доставки: Пн - Вс с 10:00 до 21:00</p>
-                    
+                    <p className="line__time">
+                        Время доставки: Пн - Вс с {this.props.data.openTime} до {this.props.data.closeTime}
+                    </p>
+
                     <svg
                         width="18"
                         height="14"
@@ -131,15 +145,18 @@ class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                <Header />
+                <Header data={this.props.data} />
                 <MapBlock />
                 <SortBlock />
-                <Menu dishes={positions} />
+                <Menu dishes={this.props.data.dishes} />
             </div>
         );
     }
 }
 
-ReactDOM.render(<MainPart />, document.getElementById("root"));
+ReactDOM.render(
+    <MainPart data={restaurant} />,
+    document.getElementById("root")
+);
 
 serviceWorker.unregister();
