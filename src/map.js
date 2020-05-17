@@ -164,6 +164,7 @@ const autolocate = (enableHighAccuracy = true) =>
         );
     });
 
+
 const fetchCoordinatesByAddress = async (address, googleApiKey) => {
     let resp = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${googleApiKey}`
