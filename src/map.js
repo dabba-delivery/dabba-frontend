@@ -87,12 +87,12 @@ export default () => {
                     <HereIndicator />
                 </div>
             </div>
-            <div className="map__form">
+            <form className="map__form" onSubmit={onDone}>
                 <p className="map__text-zone">
                     У этого заведения есть зона доставки, для заказа вы должны
                     находиться в ней
                 </p>
-                <button className="map__button-allow" onClick={onAutolocate}>
+                <button className="map__button-allow" onClick={onAutolocate} type="button">
                     Разрешите доступ к вашему местоположению
                 </button>
                 <p className="map__text-adress">
@@ -107,7 +107,7 @@ export default () => {
                 <button className="map__button-ready" onClick={onDone}>
                     Готово
                 </button>
-            </div>
+            </form>
         </div>
     );
 };
