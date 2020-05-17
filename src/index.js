@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
+import "./index.css";
 
 // пример реального объекта с бекэнда
 
@@ -96,13 +97,16 @@ const restaurant = {
 class App extends React.Component {
     render() {
         return (
-            <div>
+            <div className="page">
                 <MainPart data={this.props.data} />
             </div>
         );
     }
 }
 
-ReactDOM.render(<App data={restaurant}/>, document.getElementById("root"));
+// объект с бэкенда помещается в пропсы компонента App в виде
+// объекта
+
+ReactDOM.render(<App data={restaurant} />, document.getElementById("root"));
 
 serviceWorker.unregister();
