@@ -52,7 +52,7 @@
     grid-row: 4 / 5;
 }
 
-.map__button-allow:hover {
+.map__button-allow:hover, .map__button-ready:focus {
     border: 3px solid #FA7921;
 }
 
@@ -100,7 +100,7 @@
     grid-row: 10 / 11;
 }
 
-.map__button-ready:hover {
+.map__button-ready:hover, .map__button-ready:focus {
     color: white;
     background-color: #FA7921;
 }

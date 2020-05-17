@@ -96,7 +96,50 @@ const restaurant = {
     serviceRadius: 10,
 };
 
+window.restaurant = restaurant;
+
 class Bin extends React.Component {
+    constructor(props) {
+        super(props);
+
+        const cart = new Map();
+        this.state = {cart: cart};
+    }
+    
+    componentDidMount() {
+        const cart = this.state.cart;
+        window.cart = cart;
+
+        cart.addPos = (id) => {
+            if (cart.has(id)){
+                ++cart.get(id).val;
+            }else{
+                cart.set(id, {val: 1});
+            }
+            this.setState({
+                cart: cart
+            });
+        };
+
+        cart.removePos = (id) => {
+            if (cart.has(id)){
+                if(--cart.get(id).val <= 0){
+                    cart.delete(id);
+                }
+            }else{
+                console.log("there is no key: ", id);
+            }
+            this.setState({
+                cart: cart
+            });
+        };
+    }
+  
+    componentWillUnmount() {
+        delete window.cart;
+    }
+  
+
     render() {
         return (
             <div className="bin">
@@ -113,9 +156,13 @@ class Bin extends React.Component {
                             fill="#FA7921"
                         />
                     </svg>
-                    <h5 className="bin__text">Корзина</h5>
+                    <h5 className="bin__text">Корзина ({this.state.cart.size})</h5>
                 </div>
-
+               <ul>
+               {[...this.state.cart].map(([el,{val}], i)=>(
+                <li key={i}>{el.name} — {val}</li>
+                ))}
+               </ul> 
                 <div className="bin__footer">
                     <p className="bin__summary">Итоговая сумма</p>
                     <p className="bin__summary__order">Включая заказ</p>

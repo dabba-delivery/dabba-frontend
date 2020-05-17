@@ -113,7 +113,7 @@
     box-sizing: border-box;
 }
 
-.wall__share:hover {
+.wall__share:hover, .wall__share:focus {
     background: #CDEDF6;
     border: 3px solid #CDEDF6;
 }

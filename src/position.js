@@ -21,7 +21,7 @@ export default class Position extends React.Component {
                     <p className="postion__weight">{this.props.weight + "гр."}</p>
                     <p className="position__cost">{this.props.cost + "р."}</p>
                 </div>
-                <button className="position__button">Выбрать</button>
+                <button onClick={()=>{window.cart && window.cart.addPos(this.props.id)}} className="position__button">Выбрать</button>
             </div>
         );
     }
