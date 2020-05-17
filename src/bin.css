@@ -69,10 +69,28 @@
 
     grid-column: 2 / 3;
     grid-row: 6 / 7;
+
+    cursor: pointer;
 }
 
 .bin__button:hover {
     border: 3px solid #FA7921;
     color: white;
     background-color: #FA7921;
+}
+
+
+.success{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 48px;
+    font-weight: 900;
+    color: green;
 }
