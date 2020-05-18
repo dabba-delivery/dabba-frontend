@@ -23,69 +23,6 @@ const restaurant = {
                 "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
             comments: "string",
         },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 1000,
-            price: 800,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 1000,
-            price: 50,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 1400,
-            price: 1500,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 200,
-            price: 3400,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 1000,
-            price: 800,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 1000,
-            price: 50,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
-        {
-            name: "Пицца Маргарита",
-            pictureUrl: "string",
-            weigh: 1400,
-            price: 1500,
-            description:
-                "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-            comments: "string",
-        },
     ],
     email: "dodo@fmail.com",
     id: 0,
@@ -160,14 +97,12 @@ class Bin extends React.Component {
                     </h5>
                 </div>
                 <div className="bin__list">
-                
-                        {[...this.state.cart].map(([el, { val }], i) => (
-                            <div className="bin__element" key={i}>
-                                <h5 className="element__name">{el.name}</h5>
-                                <h5 className="element__amount">{val}</h5>
-                            </div>
-                        ))}
-                
+                    {[...this.state.cart].map(([el, { val }], i) => (
+                        <div className="bin__element" key={i}>
+                            <h5 className="element__name">{el.name}</h5>
+                            <h5 className="element__amount">{val}</h5>
+                        </div>
+                    ))}
                 </div>
                 <div className="bin__footer">
                     <p className="bin__summary">Итоговая сумма</p>

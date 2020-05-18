@@ -1,0 +1,23 @@
+.position__button {
+    margin-bottom: 13px;
+    border: 3px solid #FA7921;
+    border-radius: 3px;
+
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgb(177, 20, 20);
+
+    transition-property: background-color color;
+    transition-duration: 0.1s;
+    cursor: pointer;
+
+    box-sizing: border-box;
+    grid-column: 2 / 4;
+    grid-row: 7 / 8;
+}
+
+.position__button:hover, .position__button:focus {
+    color: white;
+    background-color: #FA7921;
+}
