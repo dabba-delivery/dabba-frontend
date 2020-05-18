@@ -41,7 +41,7 @@ export default function Register(props) {
     <div className="RegisterForm">
       <form className="form"
         method="post"
-        action="https://85.192.35.203:8080/restaurant"
+        action="https://dabba-ru.herokuapp.com/restaurant"
         encType="application/json"
         onSubmit={Handle}>
         <h2>Регистрация</h2>
