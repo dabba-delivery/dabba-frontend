@@ -2,6 +2,8 @@ import React from "react";
 import "./header.css";
 import Logo from "./media/logo.png";
 
+import { Button } from "./components/library.js";
+
 export default class Header extends React.Component {
     render() {
         return (
@@ -37,7 +39,12 @@ export default class Header extends React.Component {
                         />
                     </svg>
                     <p className="line__message">Вы в зоне доставки</p>
-                    <button className="wall__share">Поделиться</button>
+                    <Button
+                        name={"Поделиться"}
+                        elementStyle={"blue"}
+                        address={"wall__share"}
+                        handleFunction={() => console.log("You press share button")}
+                    />
                 </div>
             </div>
         );

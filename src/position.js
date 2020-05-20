@@ -1,6 +1,6 @@
 import React from "react";
+import { Button } from "./components/library.js";
 import "./position.css";
-import { ButtonOrange } from "./components/library.js"
 
 // В этому компоненту нужно передать через
 // пропсы объект позиции и сразу назначить все
@@ -25,8 +25,10 @@ export default class Position extends React.Component {
                     <p className="position__cost">{this.props.cost + "р."}</p>
                 </div>
 
-                <ButtonOrange
+                <Button
                     name={"Выбрать"}
+                    elementStyle={"orange"}
+                    addClasses={"position__button"}
                     handleFunction={() => {
                         window.cart && window.cart.addPos(this.props.id);
                     }}

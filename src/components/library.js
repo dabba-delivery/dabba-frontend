@@ -1,1 +1,1 @@
-export { ButtonOrange } from "./buttonOrange/ButtonOrange.js"
+export { Button } from "./button/Button.js"
