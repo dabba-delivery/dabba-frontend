@@ -96,6 +96,18 @@ const restaurant = {
     serviceRadius: 10,
 };
 
+function Success(){
+    const success = document.createElement("div");
+    success.className = "success";
+    success.innerText = "Success";
+    success.onclick = function(){document.body.removeChild(this);}
+    document.body.append(success);
+
+    const location = new URL(window.location);
+    setTimeout(()=>{window.location = location.host + "/addDishes";}, 1000);
+}
+
+
 window.restaurant = restaurant;
 
 class Bin extends React.Component {
@@ -172,7 +184,7 @@ class Bin extends React.Component {
                 <div className="bin__footer">
                     <p className="bin__summary">Итоговая сумма</p>
                     <p className="bin__summary__order">Включая заказ</p>
-                    <button className="bin__button">Оформить заказ</button>
+                    <button onClick={Success} className="bin__button">Оформить заказ</button>
                 </div>
             </div>
         );
