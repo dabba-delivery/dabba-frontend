@@ -18,28 +18,3 @@
     display: flex;
     align-items: center;
 }
-
-.sort__button {
-    height: 50px;
-    width: min-content;
-    padding: 0px 20px 0px 20px;
-    margin: 0px 10px 0px 0px;
-    border: 3px solid rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-
-    color: #042A2B;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: white;
-    outline: none;
-    
-    transition-property: background-color border;
-    transition-duration: 0.1s;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-.sort__button:hover {
-    background: #CDEDF6;
-    border: 3px solid #CDEDF6;
-}

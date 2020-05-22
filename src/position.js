@@ -26,13 +26,12 @@ export default class Position extends React.Component {
                 </div>
 
                 <Button
-                    name={"Выбрать"}
                     elementStyle={"orange"}
                     addClasses={"position__button"}
                     handleFunction={() => {
                         window.cart && window.cart.addPos(this.props.id);
                     }}
-                />
+                >Выбрать</Button>
             </div>
         );
     }

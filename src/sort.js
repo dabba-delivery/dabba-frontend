@@ -1,6 +1,8 @@
 import React from "react";
 import "./sort.css";
 
+import { Button } from "./components/library.js";
+
 // внутри каждой кнопки сортировки есть func - сюда нужно
 // вставлять функцию сортировки от компонентов выше
 // позде можно сделать возможноть получения массива названий и функций
@@ -10,29 +12,19 @@ export default class SortBlock extends React.Component {
         return (
             <div className="sort">
                 <h5 className="sort__text">Показать</h5>
-                <SortButton name="Новинки" func={() => alert("It works")} />
-                <SortButton name="Популярное" func={() => alert("It works")} />
+                <Button
+                    
+                    elementStyle={"blue"}
+                    addClasses={"sort__button"}
+                    handleFunction={()=>console.log("sort works")}
+                >Наборы</Button>
+                <Button
+                    
+                    elementStyle={"blue"}
+                    addClasses={"sort__button"}
+                    handleFunction={()=>console.log("sort works")}
+                >Популярное</Button>
             </div>
-        );
-    }
-}
-
-class SortButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick(e) {
-        e.preventDefault();
-        this.props.func();
-    }
-
-    render() {
-        return (
-            <button onClick={this.handleClick} className="sort__button">
-                {this.props.name}
-            </button>
         );
     }
 }

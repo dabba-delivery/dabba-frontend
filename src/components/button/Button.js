@@ -8,7 +8,8 @@ export class Button extends React.Component {
         super(props);
         this.styles = {
             orange: "button__orange",
-            blue: "button__blue"
+            blue: "button__blue",
+            greyToggle: "button__grey"
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -28,7 +29,7 @@ export class Button extends React.Component {
                 }
                 onClick={this.handleClick}
             >
-                {this.props.name}
+                {this.props.children}
             </button>
         );
     }

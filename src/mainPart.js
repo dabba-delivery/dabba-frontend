@@ -13,8 +13,8 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                <Header data={this.props.data} />
-                <MapBlock />
+                {/* <Header data={this.props.data} /> */}
+                {/* <MapBlock /> */}
                 <SortBlock />
                 <Menu dishes={this.props.data.dishes} />
             </div>
