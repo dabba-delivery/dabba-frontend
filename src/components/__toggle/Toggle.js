@@ -1,6 +1,8 @@
 import React from "react";
-import "./toggleOrange.css";
-import "./toggleBlue.css";
+import "./--orange.css";
+import "./--orange-active.css";
+import "./--blue.css";
+import "./--blue-active.css";
 
 export class Toggle extends React.Component {
     constructor(props) {
