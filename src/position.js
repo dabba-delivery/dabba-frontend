@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./components/library.js";
 import "./position.css";
 
 // В этому компоненту нужно передать через
@@ -18,10 +19,19 @@ export default class Position extends React.Component {
                     {this.props.ingridients}
                 </p>
                 <div className="position__wc">
-                    <p className="postion__weight">{this.props.weight + "гр."}</p>
+                    <p className="postion__weight">
+                        {this.props.weight + "гр."}
+                    </p>
                     <p className="position__cost">{this.props.cost + "р."}</p>
                 </div>
-                <button onClick={()=>{window.cart && window.cart.addPos(this.props.id)}} className="position__button">Выбрать</button>
+
+                <Button
+                    elementStyle={"orange"}
+                    addClasses={"position__button"}
+                    handleFunction={() => {
+                        window.cart && window.cart.addPos(this.props.id);
+                    }}
+                >Выбрать</Button>
             </div>
         );
     }

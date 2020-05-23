@@ -2,12 +2,13 @@ import React from "react";
 import "./header.css";
 import Logo from "./media/logo.png";
 
+import { Button } from "./components/library.js";
+
 export default class Header extends React.Component {
     render() {
         return (
             <div className="header">
                 <div className="wall">
-                    <button className="wall__registration">Открыть свою витрину</button>
                     <img src={Logo} className="wall__logo" alt="logo" />
                     <h2 className="wall__name">
                         {this.props.data.name + " " + this.props.data.address}
@@ -38,7 +39,12 @@ export default class Header extends React.Component {
                         />
                     </svg>
                     <p className="line__message">Вы в зоне доставки</p>
-                    <button className="wall__share">Поделиться</button>
+                    <Button
+                        name={"Поделиться"}
+                        elementStyle={"blue"}
+                        address={"wall__share"}
+                        handleFunction={() => console.log("You press share button")}
+                    />
                 </div>
             </div>
         );
