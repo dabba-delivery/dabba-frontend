@@ -1,9 +1,9 @@
 .sort {
     height: 70px;
     margin: 10px 20px 10px 20px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 3px;
-    border-bottom: 3px solid #52C1E0;
+    border-bottom: 3px solid #52c1e0;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
     display: grid;
@@ -18,7 +18,7 @@
 
 .sort__text {
     padding: 0px 10px 0px 20px;
-    color: #042A2B;
+    color: #042a2b;
     font-size: 16px;
 
     display: flex;
@@ -27,14 +27,14 @@
 
 .sort__box {
     width: 1000px;
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding-top: 19px;
+    padding-bottom: 19px;
     overflow-x: scroll;
     overflow-y: hidden;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    grid-row: 1 / -1;
     grid-column: 2 / 3;
+    grid-row: 1 / -1;
 }

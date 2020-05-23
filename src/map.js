@@ -2,12 +2,14 @@ import GoogleMapReact from "google-map-react";
 import React, { useState, useEffect } from "react";
 import "./map.css";
 
+import { Button } from "./components/library.js";
+
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
 const defaultZoom = 14;
 const defaultCenterCoords = {
     lat: 55.6105187,
-    lng: 37.7337732
+    lng: 37.7337732,
 };
 
 // temp
@@ -17,7 +19,7 @@ const place = {
         "https://fontslogo.com/wp-content/uploads/2015/07/Pizza-Hut-Logo-Font-150x150.jpg",
     coords: {
         lat: 55.612776,
-        lng: 37.747163
+        lng: 37.747163,
     },
 };
 
@@ -92,9 +94,15 @@ export default () => {
                     У этого заведения есть зона доставки, для заказа вы должны
                     находиться в ней
                 </p>
-                <button className="map__button-allow" onClick={onAutolocate} type="button">
+
+                <Button
+                    elementStyle={"blue"}
+                    handleFunction={onAutolocate}
+                    addClasses={"map__button-allow"}
+                >
                     Разрешите доступ к вашему местоположению
-                </button>
+                </Button>
+
                 <p className="map__text-adress">
                     или введите адрес доставки (улица и дом)
                 </p>
@@ -104,9 +112,13 @@ export default () => {
                     onChange={(e) => setAddress(e.target.value)}
                     className="map__input-adress"
                 ></input>
-                <button className="map__button-ready" onClick={onDone}>
+                <Button
+                    elementStyle={"orange"}
+                    handleFunction={onDone}
+                    addClasses={"map__button-ready"}
+                >
                     Готово
-                </button>
+                </Button>
             </form>
         </div>
     );
@@ -169,7 +181,6 @@ const autolocate = (enableHighAccuracy = true) =>
             { enableHighAccuracy }
         );
     });
-
 
 const fetchCoordinatesByAddress = async (address, googleApiKey) => {
     let resp = await fetch(

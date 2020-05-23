@@ -3,6 +3,7 @@
     margin: 20px 20px 20px 20px;
     background: #FFFFFF;
     border-radius: 3px;
+    border-bottom: 3px solid #FA7921;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
     display: grid;
@@ -22,12 +23,12 @@
     width: 100%;
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 14% 10% 5% 13% 5% 5% 5% 10% 9% 13% 10%;
+    grid-template-rows: 15% 10% 5% 13% 7% 5% 8% 10% 5% 13% 5%;
 }
 
 .map__text-zone {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: normal;
     text-align: center;
 
@@ -36,29 +37,17 @@
 }
 
 .map__button-allow {
-    border: 3px solid rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
-
-    color: #000000;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: center;
-
-    transition-property: border;
-    transition-duration: 0.1s;
-
-    box-sizing: border-box;
+    height: 60px;
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    width: 100%;
     grid-column: 2 / 3;
     grid-row: 4 / 5;
 }
 
-.map__button-allow:hover, .map__button-ready:focus {
-    border: 3px solid #FA7921;
-}
-
 .map__text-adress {
     color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: normal;
     text-align: center;
 
@@ -83,24 +72,10 @@
 }
 
 .map__button-ready {
-    border: 3px solid #FA7921;
-    border-radius: 3px;
+    margin: 0px auto 0px auto;
 
-    color: #000000;
     font-size: 16px;
-    font-weight: bold;
-    background: #FFFFFF;
-    text-align: center;
-
-    transition-property: background-color border color;
-    transition-duration: 0.1s;
-
     box-sizing: border-box;
     grid-column: 2 / 3;
     grid-row: 10 / 11;
-}
-
-.map__button-ready:hover, .map__button-ready:focus {
-    color: white;
-    background-color: #FA7921;
 }

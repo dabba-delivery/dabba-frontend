@@ -76,7 +76,7 @@ export default class SortBlock extends React.Component {
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
-                    </Toggle>
+                    </Toggle>s
                 </div>
             </div>
         );
