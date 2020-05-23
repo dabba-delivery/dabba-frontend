@@ -13,7 +13,7 @@
     grid-template-columns: min-content 1fr;
     grid-template-rows: 1fr;
     overflow-y: hidden;
-    
+    overflow-x: hidden;
 }
 
 .sort__text {
@@ -26,12 +26,15 @@
 }
 
 .sort__box {
-    width: 100%;
+    width: 1000px;
     padding-top: 17px;
     padding-bottom: 17px;
     overflow-x: scroll;
+    overflow-y: hidden;
 
     display: flex;
     flex-direction: row;
     align-items: center;
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
 }
