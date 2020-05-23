@@ -1,23 +1,25 @@
 .sort {
     height: 70px;
     margin: 10px 20px 10px 20px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 3px;
+    border-bottom: 3px solid #52c1e0;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
     display: grid;
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: 1fr;
     align-items: center;
     justify-content: left;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 1fr;
     overflow-y: hidden;
+    box-sizing: border-box;
 }
 
 .sort__text {
     padding: 0px 10px 0px 20px;
-    color: #042A2B;
+    color: #042a2b;
     font-size: 16px;
-    
+
     display: flex;
     align-items: center;
 }
@@ -28,7 +30,6 @@
     padding-top: 17px;
     padding-bottom: 17px;
     overflow-x: scroll;
-    flex-direction: row;
 
     display: flex;
     flex-direction: row;

@@ -34,6 +34,7 @@ function UnpackPositions(props) {
             <Position
                 key={i}
                 id={position}
+                link={position.pictureUrl}
                 name={position.name}
                 ingridients={position.description}
                 weight={position.weigh}

@@ -13,7 +13,14 @@ export default class Position extends React.Component {
     render() {
         return (
             <div className="position">
-                <div className="position__image"></div>
+                <div
+                    className="position__image"
+                    style={{
+                        backgroundImage: this.props.link
+                            ? `url(${this.props.link})`
+                            : `url("./media/default.png")`,
+                    }}
+                ></div>
                 <h5 className="position__name">{this.props.name}</h5>
                 <p className="position__ingridients">
                     {this.props.ingridients}
@@ -31,7 +38,9 @@ export default class Position extends React.Component {
                     handleFunction={() => {
                         window.cart && window.cart.addPos(this.props.id);
                     }}
-                >Выбрать</Button>
+                >
+                    Выбрать
+                </Button>
             </div>
         );
     }
