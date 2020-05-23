@@ -5,7 +5,7 @@
     width: 350px;
     margin-left: 0px 0px 0px auto;
 
-    background-color: #eeeeee;
+    background-color: #EEEEEE;
 
     display: grid;
     grid-template-rows: 69px 1fr 140px;
@@ -24,7 +24,7 @@
 }
 
 .bin__text {
-    color: #fa7921;
+    color: #FA7921;
     font-size: 25px;
     font-weight: 900;
 }
@@ -67,16 +67,16 @@
     transition-property: border background-color color;
     transition-duration: 0.1s;
 
+    cursor: pointer;
+
     grid-column: 2 / 3;
     grid-row: 6 / 7;
-
-    cursor: pointer;
 }
 
 .bin__button:hover {
-    border: 3px solid #fa7921;
+    border: 3px solid #FA7921;
     color: white;
-    background-color: #fa7921;
+    background-color: #FA7921;
 }
 
 .bin__list {
@@ -87,45 +87,45 @@
 }
 
 .bin__element {
-    margin: 10px auto 0px auto;
-    width: 314px;
-    height: 120px;
     left: 1118px;
     top: 251px;
-
-    background: #ffffff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 120px;
+    width: 314px;
+    margin: 10px auto 0px auto;
     border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
     display: grid;
     grid-template-columns: 10% 1fr 0.3fr 5%;
     grid-template-rows: 20% 30% 10% 30% 20%;
+
+    background: #FFFFFF;
     
 }
 
 .element__name {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
     
 
     color: #000000;
+    font-size: 16px;
+    font-weight: bold;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    line-height: 19px;
 }
 
 
 .success{
     position: fixed;
-    top: 0;
     left: 0;
+    top: 0;
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+    color: green;
     font-size: 48px;
     font-weight: 900;
-    color: green;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

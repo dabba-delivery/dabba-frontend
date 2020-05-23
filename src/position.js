@@ -18,7 +18,7 @@ export default class Position extends React.Component {
                     style={{
                         backgroundImage: this.props.link
                             ? `url(${this.props.link})`
-                            : `url("./media/default.png")`,
+                            : `url(./default.png)`,
                     }}
                 ></div>
                 <h5 className="position__name">{this.props.name}</h5>
