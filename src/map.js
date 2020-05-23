@@ -5,20 +5,26 @@ import "./map.css";
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
 const defaultZoom = 14;
-const defaultCenterCoords = { lat: 59.95, lng: 30.33 };
+const defaultCenterCoords = {
+    lat: 55.6105187,
+    lng: 37.7337732
+};
 
 // temp
 const place = {
     name: "Dodo Pizza",
     logoURL:
         "https://fontslogo.com/wp-content/uploads/2015/07/Pizza-Hut-Logo-Font-150x150.jpg",
-    coords: defaultCenterCoords,
+    coords: {
+        lat: 55.612776,
+        lng: 37.747163
+    },
 };
 
 // this block will be recieving a position from parent component and
 // put that in props of the map component
 export default () => {
-    const [center, setCenter] = useState(place.coords);
+    const [center, setCenter] = useState(defaultCenterCoords);
     const [{ mapInst, Maps }, setMaps] = useState({
         mapInst: null,
         Maps: null,
@@ -81,12 +87,12 @@ export default () => {
                     <HereIndicator />
                 </div>
             </div>
-            <div className="map__form">
+            <form className="map__form" onSubmit={onDone}>
                 <p className="map__text-zone">
                     У этого заведения есть зона доставки, для заказа вы должны
                     находиться в ней
                 </p>
-                <button className="map__button-allow" onClick={onAutolocate}>
+                <button className="map__button-allow" onClick={onAutolocate} type="button">
                     Разрешите доступ к вашему местоположению
                 </button>
                 <p className="map__text-adress">
@@ -101,7 +107,7 @@ export default () => {
                 <button className="map__button-ready" onClick={onDone}>
                     Готово
                 </button>
-            </div>
+            </form>
         </div>
     );
 };
