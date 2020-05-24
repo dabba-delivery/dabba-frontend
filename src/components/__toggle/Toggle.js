@@ -11,15 +11,15 @@ export class Toggle extends React.Component {
             active: false,
         };
         this.styles = {
-            orange: ["toggle__orange", "toggle__orange toggle__orange--active"],
-            blue: ["toggle__blue", "toggle__blue toggle__blue--active"],
+            orange: ["toggle--orange", "toggle--orange toggle--orange-active"],
+            blue: ["toggle--blue", "toggle--blue toggle--blue-active"],
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(event) {
         event.preventDefault();
-        this.setState({active: !this.state.active});
+        this.setState({ active: !this.state.active });
         this.props.handleFunction();
     }
 
@@ -28,8 +28,16 @@ export class Toggle extends React.Component {
             <button
                 className={
                     (this.state.active
-                        ? this.styles[this.props.elementStyle][1]
-                        : this.styles[this.props.elementStyle][0]) +
+                        ? this.styles[
+                              this.props.elementStyle
+                                  ? this.props.elementStyle
+                                  : "orange"
+                          ][1]
+                        : this.styles[
+                              this.props.elementStyle
+                                  ? this.props.elementStyle
+                                  : "orange"
+                          ][0]) +
                     " " +
                     (this.props.addClasses ? this.props.addClasses : "")
                 }

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./map.css";
 
 import { Button } from "./components/library.js";
+import { Input } from "./components/library.js";
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
@@ -107,11 +108,11 @@ export default () => {
                     или введите адрес доставки (улица и дом)
                 </p>
 
-                <input
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    className="map__input-adress"
-                ></input>
+                <Input
+                    handleFunction={setAddress}
+                    addClasses={"map__input-adress"}
+                ></Input>
+
                 <Button
                     elementStyle={"orange"}
                     handleFunction={onDone}

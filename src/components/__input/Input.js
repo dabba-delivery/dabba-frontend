@@ -1,26 +1,24 @@
 import React from "react";
 import "./--orange.css";
-import "./--blue.css";
 
-export class Button extends React.Component {
+export class Input extends React.Component {
     constructor(props) {
         super(props);
         this.styles = {
-            orange: "button--orange",
-            blue: "button--blue",
-            greyToggle: "button--grey",
+            orange: "input--orange",
+            blue: "input--blue",
         };
-        this.handleClick = this.handleClick.bind(this);
+
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleClick(event) {
-        event.preventDefault();
-        this.props.handleFunction();
+    handleChange(e) {
+        this.props.handleFunction(e.target.value);
     }
 
     render() {
         return (
-            <button
+            <input
                 className={
                     this.styles[
                         this.props.elementStyle
@@ -28,12 +26,12 @@ export class Button extends React.Component {
                             : "orange"
                     ] +
                     " " +
-                    this.props.addClasses
+                    (this.props.addClasses ? this.props.addClasses : "")
                 }
-                onClick={this.handleClick}
+                onChange={this.handleChange}
             >
                 {this.props.children}
-            </button>
+            </input>
         );
     }
 }
