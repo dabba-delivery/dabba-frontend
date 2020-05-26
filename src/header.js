@@ -4,6 +4,12 @@ import Logo from "./media/logo.png";
 
 import { Button, Status } from "./components/library.js";
 
+const Time = (props) => (
+    <p className="line__time">
+        Время доставки: Пн - Вс с {props.openTime} до {props.closeTime}
+    </p>
+);
+
 export default class Header extends React.Component {
     render() {
         return (
@@ -21,10 +27,10 @@ export default class Header extends React.Component {
                     </div>
                 </div>
                 <div className="line">
-                    <p className="line__time">
-                        Время доставки: Пн - Вс с {this.props.data.openTime} до{" "}
-                        {this.props.data.closeTime}
-                    </p>
+                    <Time
+                        openTime={this.props.data.openTime}
+                        closeTime={this.props.data.closeTime}
+                    />
 
                     <Status
                         addClasses={"line__status"}

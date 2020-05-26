@@ -3,7 +3,7 @@ import "./status.css";
 
 /**
  * This component represents a Status box for indicating is that true or false
- * 
+ *
  * @constuctor
  * @param {string} addClasses - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * @param {string} trueMessage - will be representing true value of Status box
@@ -12,13 +12,6 @@ import "./status.css";
  */
 
 export class Status extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentStatus: this.props.current,
-        };
-    }
-
     render() {
         return (
             <div
@@ -29,7 +22,7 @@ export class Status extends React.Component {
             >
                 <svg
                     style={{
-                        display: this.state.currentStatus ? "box" : "none",
+                        display: this.props.current ? "box" : "none",
                     }}
                     className={"status__svg"}
                     width="18"
