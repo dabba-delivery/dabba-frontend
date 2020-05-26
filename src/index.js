@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
-import Bin from "./Bin";
+import Bin from "./bin";
 import "./style/index.css";
 
 // пример реального объекта с бекэнда

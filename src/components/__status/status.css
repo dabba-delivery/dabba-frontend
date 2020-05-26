@@ -6,6 +6,7 @@
 }
 
 .status__text {
+    color: #222222;
     white-space: nowrap;
 }
 
