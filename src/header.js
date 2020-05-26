@@ -27,17 +27,17 @@ export default class Header extends React.Component {
                     </p>
 
                     <Status
+                        addClasses={"line__status"}
                         trueMessage={"Вы в зоне доставки"}
                         falseMessage={"Вы вне зоны доставки"}
-                        current={false}
+                        current={true}
                     />
                     <Button
                         elementStyle={"blue"}
-                        address={"wall__share"}
+                        addClasses={"line__button"}
                         handleFunction={() =>
                             console.log("You press share button")
                         }
-                        addClasses={"line__button"}
                     >
                         Поделиться
                     </Button>

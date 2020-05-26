@@ -98,8 +98,8 @@ export default () => {
 
                 <Button
                     elementStyle={"blue"}
-                    handleFunction={onAutolocate}
                     addClasses={"map__button-allow"}
+                    handleFunction={onAutolocate}
                 >
                     Разрешите доступ к вашему местоположению
                 </Button>
@@ -115,8 +115,8 @@ export default () => {
 
                 <Button
                     elementStyle={"orange"}
-                    handleFunction={onDone}
                     addClasses={"map__button-ready"}
+                    handleFunction={onDone}
                 >
                     Готово
                 </Button>

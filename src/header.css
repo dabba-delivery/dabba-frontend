@@ -83,14 +83,8 @@
     align-items: center;
 }
 
-.line__message {
-    margin: 0px 20px 0px 10px;
-
-    color: #042A2B;
-    font-size: 16px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
+.line__status {
+    margin: 20px;
 }
 
 .line__button {

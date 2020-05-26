@@ -1,0 +1,16 @@
+.status {
+	width: min-content;
+    display: flex;
+    align-items: center;
+	justify-content: flex-end;
+	
+}
+
+.status__text {
+	
+	white-space: nowrap;
+}
+
+.status__svg {
+	margin-right: 10px;
+}

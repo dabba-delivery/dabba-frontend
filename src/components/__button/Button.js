@@ -2,6 +2,16 @@ import React from "react";
 import "./--orange.css";
 import "./--blue.css";
 
+/**
+ * This component represents a Button
+ * 
+ * @constuctor
+ * @param {string} elementStyle - sets the color palette for this element. You can choose one of availables
+ * @param {string} addClasses - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {Function} handleFunction - onClick handler for a copmonent
+ * {this.props.children} - name of this button
+ */
+
 export class Button extends React.Component {
     constructor(props) {
         super(props);
