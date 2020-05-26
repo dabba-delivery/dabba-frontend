@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import Logo from "./media/logo.png";
 
-import { Button } from "./components/library.js";
+import { Button, Status } from "./components/library.js";
 
 export default class Header extends React.Component {
     render() {
@@ -26,19 +26,11 @@ export default class Header extends React.Component {
                         {this.props.data.closeTime}
                     </p>
 
-                    <svg
-                        width="18"
-                        height="14"
-                        viewBox="0 0 18 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M6.00002 11.2L1.80002 6.99998L0.400024 8.39998L6.00002 14L18 1.99998L16.6 0.599976L6.00002 11.2Z"
-                            fill="#7CDAA2"
-                        />
-                    </svg>
-                    <p className="line__message">Вы в зоне доставки</p>
+                    <Status
+                        trueMessage={"Вы в зоне доставки"}
+                        falseMessage={"Вы вне зоны доставки"}
+                        current={false}
+                    />
                     <Button
                         elementStyle={"blue"}
                         address={"wall__share"}
