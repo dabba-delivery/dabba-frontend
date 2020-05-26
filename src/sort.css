@@ -38,3 +38,7 @@
     grid-column: 2 / 3;
     grid-row: 1 / -1;
 }
+
+.sort__toggle {
+    margin: 5px;
+}

@@ -93,8 +93,7 @@
     align-items: center;
 }
 
-.wall__share {
-    height: 50px;
-    width: min-content;
+.line__button {
+    margin-right: 20px;
 }
 

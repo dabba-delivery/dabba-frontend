@@ -40,11 +40,15 @@ export default class Header extends React.Component {
                     </svg>
                     <p className="line__message">Вы в зоне доставки</p>
                     <Button
-                        name={"Поделиться"}
                         elementStyle={"blue"}
                         address={"wall__share"}
-                        handleFunction={() => console.log("You press share button")}
-                    />
+                        handleFunction={() =>
+                            console.log("You press share button")
+                        }
+                        addClasses={"line__button"}
+                    >
+                        Поделиться
+                    </Button>
                 </div>
             </div>
         );

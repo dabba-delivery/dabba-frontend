@@ -15,6 +15,7 @@ export default class SortBlock extends React.Component {
                 <div className="sort__box">
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Наборы
@@ -22,12 +23,14 @@ export default class SortBlock extends React.Component {
 
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Наборы
@@ -35,12 +38,14 @@ export default class SortBlock extends React.Component {
 
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Наборы
@@ -48,12 +53,14 @@ export default class SortBlock extends React.Component {
 
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Наборы
@@ -61,18 +68,21 @@ export default class SortBlock extends React.Component {
 
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         elementStyle={"blue"}
+                        addClasses = {"sort__toggle"}
                         handleFunction={() => console.log("sort works")}
                     >
                         Популярное
