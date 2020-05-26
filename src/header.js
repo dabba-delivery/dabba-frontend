@@ -1,8 +1,15 @@
 import React from "react";
-import "./header.css";
-import Logo from "./media/logo.png";
+import "./style/header.css";
+import Logo from "./style/media/logo.png";
 
 import { Button, Status } from "./components/library.js";
+
+/**
+ * Time component represents schedule for organisation
+ *
+ * @param {string} closeTime - close time for resstaurant or organization
+ * @param {string} opneTime - close time for resstaurant or organization
+ */
 
 const Time = (props) => (
     <p className="line__time">

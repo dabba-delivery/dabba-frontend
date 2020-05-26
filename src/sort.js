@@ -1,5 +1,5 @@
 import React from "react";
-import "./sort.css";
+import "./style/sort.css";
 
 import { Toggle } from "./components/library.js";
 

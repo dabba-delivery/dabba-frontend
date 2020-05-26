@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./components/library.js";
-import "./position.css";
+import "./style/position.css";
 
 // В этому компоненту нужно передать через
 // пропсы объект позиции и сразу назначить все

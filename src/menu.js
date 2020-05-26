@@ -1,6 +1,6 @@
 import React from "react";
 import Position from "./position";
-import "./menu.css";
+import "./style/menu.css";
 
 // компонент Menu принимает в себя массив объектов блюд следующего формата
 // и автоматически распаковывает его

@@ -1,5 +1,5 @@
 import React from "react";
-import "./bin.css";
+import "./style/bin.css";
 
 export default class Bin extends React.Component {
     constructor(props) {

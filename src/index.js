@@ -4,7 +4,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
 import Bin from "./Bin";
-import "./index.css";
+import "./style/index.css";
 
 // пример реального объекта с бекэнда
 

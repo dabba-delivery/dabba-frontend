@@ -1,6 +1,6 @@
 import GoogleMapReact from "google-map-react";
 import React, { useState, useEffect } from "react";
-import "./map.css";
+import "./style/map.css";
 
 import { Button } from "./components/library.js";
 import { Input } from "./components/library.js";
