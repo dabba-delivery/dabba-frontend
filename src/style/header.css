@@ -44,6 +44,7 @@
     line-height: 59px;
     text-align: right;
 
+    user-select: none;
     grid-column: 3 / 4;
     grid-row: 1 / 2;
 }
@@ -52,6 +53,7 @@
     height: 100%;
     widows: 100%;
 
+    user-select: none;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -96,6 +98,7 @@
 
 .line__status {
     margin-right: 20px;
+    user-select: none;
 }
 
 .line__button {

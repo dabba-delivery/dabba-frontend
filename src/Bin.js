@@ -7,6 +7,9 @@ export default class Bin extends React.Component {
 
         const cart = new Map();
         this.state = { cart: cart };
+        this.showSum = this.showSum.bind(this)
+        this.componentDidMount = this.componentDidMount.bind(this)
+        this.componentWillUnmount = this.componentWillUnmount.bind(this)
     }
 
     componentDidMount() {
@@ -42,6 +45,14 @@ export default class Bin extends React.Component {
         delete window.cart;
     }
 
+    showSum() {
+        let result = 0;
+        for (let dish of this.state.cart.entries()) {
+            result = result + dish[0].price * dish[1].val;
+        }
+        return result
+    }
+
     render() {
         return (
             <div className="bin">
@@ -59,7 +70,7 @@ export default class Bin extends React.Component {
                         />
                     </svg>
                     <h5 className="bin__text">
-                        Корзина ({this.state.cart.size})
+                        Корзина {this.showSum()}р.
                     </h5>
                 </div>
                 <div className="bin__list">
