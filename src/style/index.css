@@ -19,12 +19,12 @@ a,
 li,
 ul {
     margin: 0px;
-    color: #3f3f3f;
+    color: #3F3F3F;
     font-family: "Roboto", sans-serif;
 }
 
 .page {
-    background-color: #f7f7f7;
+    background-color: #F7F7F7;
 
     display: grid;
     grid-template-columns: minmax(800px, 1200px) 350px;
@@ -35,10 +35,10 @@ ul {
     height: 60px;
     width: 200px;
     margin: 20px;
-    border: 3px solid #cdedf6;
+    border: 3px solid #CDEDF6;
     border-radius: 3px;
 
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
     text-align: center;

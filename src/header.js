@@ -45,7 +45,7 @@ function Rating(props) {
     const start = [];
     for (let counter = 0; counter < props.rating; counter++) {
         start.push(
-            <svg
+            <svg key={counter}
                 className={"wall__rating"}
                 width="17"
                 height="17"

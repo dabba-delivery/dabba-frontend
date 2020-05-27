@@ -73,8 +73,8 @@
 
 .wall__info a {
     color: #FFFFFF;
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .wall__rating {
