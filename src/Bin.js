@@ -1,6 +1,8 @@
 import React from "react";
 import "./style/bin.css";
 
+import {Cart} from "./components/library.js"
+
 export default class Bin extends React.Component {
     constructor(props) {
         super(props);
@@ -75,10 +77,11 @@ export default class Bin extends React.Component {
                 </div>
                 <div className="bin__list">
                     {[...this.state.cart].map(([el, { val }], i) => (
-                        <div className="bin__element" key={i}>
-                            <h5 className="element__name">{el.name}</h5>
-                            <h5 className="element__amount">{val}</h5>
-                        </div>
+                        <Cart 
+                            position={el}
+                            amount={val}
+                            key={i}
+                        />
                     ))}
                 </div>
                 <div className="bin__footer">
