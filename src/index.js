@@ -255,22 +255,22 @@ const restaurant = {
     coords: "55.739933,37.652859"
 };
 
-function Success() {
-    const success = document.createElement("div");
-    success.className = "success";
-    success.innerText = "Success";
-    success.onclick = function () {
-        document.body.removeChild(this);
-    };
-    document.body.append(success);
+// function Success() {
+//     const success = document.createElement("div");
+//     success.className = "success";
+//     success.innerText = "Success";
+//     success.onclick = function () {
+//         document.body.removeChild(this);
+//     };
+//     document.body.append(success);
 
-    const location = new URL(window.location);
-    setTimeout(() => {
-        window.location = location.host + "/addDishes";
-    }, 1000);
-}
+//     const location = new URL(window.location);
+//     setTimeout(() => {
+//         window.location = location.host + "/addDishes";
+//     }, 1000);
+// }
 
-window.restaurant = restaurant;
+// window.restaurant = restaurant;
 
 class App extends React.Component {
     render() {
