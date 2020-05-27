@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/bin.css";
 
-import {Cart} from "./components/library.js"
+import { Cart } from "./components/library.js";
 
 export default class Bin extends React.Component {
     constructor(props) {
@@ -9,9 +9,9 @@ export default class Bin extends React.Component {
 
         const cart = new Map();
         this.state = { cart: cart };
-        this.showSum = this.showSum.bind(this)
-        this.componentDidMount = this.componentDidMount.bind(this)
-        this.componentWillUnmount = this.componentWillUnmount.bind(this)
+        this.showSum = this.showSum.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillUnmount = this.componentWillUnmount.bind(this);
     }
 
     componentDidMount() {
@@ -52,7 +52,7 @@ export default class Bin extends React.Component {
         for (let dish of this.state.cart.entries()) {
             result = result + dish[0].price * dish[1].val;
         }
-        return result
+        return result;
     }
 
     render() {
@@ -71,16 +71,15 @@ export default class Bin extends React.Component {
                             fill="#FA7921"
                         />
                     </svg>
-                    <h5 className="bin__text">
-                        Корзина {this.showSum()}р.
-                    </h5>
+                    <h5 className="bin__text">Корзина {this.showSum()}р.</h5>
                 </div>
                 <div className="bin__list">
                     {[...this.state.cart].map(([el, { val }], i) => (
-                        <Cart 
+                        <Cart
                             position={el}
                             amount={val}
                             key={i}
+                            func={window.cart.removePos}
                         />
                     ))}
                 </div>
