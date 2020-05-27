@@ -251,7 +251,8 @@ const restaurant = {
         "https://github.com/rudensergey/dabba/blob/master/src/style/media/logo.jpeg?raw=true",
     name: "Моя пицца",
     openTime: "8:00",
-    serviceRadius: 10,
+    serviceRadius: 1000,
+    coords: "55.739933,37.652859"
 };
 
 function Success() {
@@ -281,9 +282,6 @@ class App extends React.Component {
         );
     }
 }
-
-// объект с бэкенда помещается в пропсы компонента App в виде
-// объекта
 
 ReactDOM.render(<App data={restaurant} />, document.getElementById("root"));
 

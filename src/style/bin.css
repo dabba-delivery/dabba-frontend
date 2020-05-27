@@ -5,10 +5,10 @@
     width: 350px;
     margin-left: 0px 0px 0px auto;
 
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
 
     display: grid;
-    grid-template-rows: 69px 1fr 140px;
+    grid-template-rows: 69px 1fr min-content;
 }
 
 .bin__header {
@@ -24,13 +24,13 @@
 }
 
 .bin__text {
-    color: #FA7921;
+    color: #fa7921;
     font-size: 25px;
     font-weight: 900;
 }
 
 .bin__footer {
-    height: 160px;
+    height: min-content;
     width: 100%;
 
     background-color: white;
@@ -38,17 +38,7 @@
     display: grid;
     grid-row: 3 / 4;
     grid-template-columns: 10% 1fr 10%;
-    grid-template-rows: 10% 10% 10% 15% 5% 30% 20%;
-}
-
-.bin__summary {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-.bin__summary__order {
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
+    grid-template-rows: 20px min-content 20px;
 }
 
 .bin svg {
@@ -56,27 +46,9 @@
 }
 
 .bin__button {
-    border: 3px solid rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
-
-    color: #000000;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: center;
-
-    transition-property: border background-color color;
-    transition-duration: 0.1s;
-
-    cursor: pointer;
-
+    width: 100%;
     grid-column: 2 / 3;
-    grid-row: 6 / 7;
-}
-
-.bin__button:hover {
-    border: 3px solid #FA7921;
-    color: white;
-    background-color: #FA7921;
+    grid-row: 2 / 3;
 }
 
 .bin__list {
@@ -99,13 +71,10 @@
     grid-template-columns: 10% 1fr 0.3fr 5%;
     grid-template-rows: 20% 30% 10% 30% 20%;
 
-    background: #FFFFFF;
-    
+    background: #ffffff;
 }
 
 .element__name {
-    
-
     color: #000000;
     font-size: 16px;
     font-weight: bold;
@@ -114,8 +83,7 @@
     line-height: 19px;
 }
 
-
-.success{
+.success {
     position: fixed;
     left: 0;
     top: 0;

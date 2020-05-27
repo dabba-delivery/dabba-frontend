@@ -4,6 +4,7 @@ import "./style/map.css";
 
 import { Button } from "./components/library.js";
 import { Input } from "./components/library.js";
+import { place } from "./mainPart.js";
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
@@ -11,17 +12,6 @@ const defaultZoom = 14;
 const defaultCenterCoords = {
     lat: 55.6105187,
     lng: 37.7337732,
-};
-
-// temp
-const place = {
-    name: "Dodo Pizza",
-    logoURL:
-        "https://fontslogo.com/wp-content/uploads/2015/07/Pizza-Hut-Logo-Font-150x150.jpg",
-    coords: {
-        lat: 55.612776,
-        lng: 37.747163,
-    },
 };
 
 // this block will be recieving a position from parent component and
@@ -84,7 +74,7 @@ export default () => {
                             mapInst={mapInst}
                             color="#FA7921"
                             coords={place.coords}
-                            radius={1000}
+                            radius={place.radius}
                         />
                     </GoogleMapReact>
                     <HereIndicator />

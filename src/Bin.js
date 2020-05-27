@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/bin.css";
 
-import { Cart } from "./components/library.js";
+import { Cart, Button } from "./components/library.js";
 
 export default class Bin extends React.Component {
     constructor(props) {
@@ -84,9 +84,13 @@ export default class Bin extends React.Component {
                     ))}
                 </div>
                 <div className="bin__footer">
-                    <p className="bin__summary">Итоговая сумма</p>
-                    <p className="bin__summary__order">Включая заказ</p>
-                    <button className="bin__button">Оформить заказ</button>
+                    <Button
+                        elementStyle={"blue"}
+                        addClasses={"bin__button"}
+                        handleFunction={() => console.log("ok")}
+                    >
+                        Оформить заказ
+                    </Button>
                 </div>
             </div>
         );
