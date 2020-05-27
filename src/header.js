@@ -1,6 +1,5 @@
 import React from "react";
 import "./style/header.css";
-import Logo from "./style/media/logo.png";
 
 import { Button, Status } from "./components/library.js";
 
@@ -71,7 +70,7 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <div className="wall">
-                    <img src={Logo} className="wall__logo" alt="logo" />
+                    <img src={this.props.data.logoUrl} className="wall__logo" alt="logo" />
                     <h2 className="wall__name">
                         {this.props.data.name + " " + this.props.data.address}
                     </h2>

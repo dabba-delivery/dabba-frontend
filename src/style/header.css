@@ -58,8 +58,7 @@
     grid-column: 2 / 4;
 }
 
-.wall__info p,
-.wall__info a {
+.wall__info p {
     margin-right: 20px;
     color: #FFFFFF;
     font-size: 16px;
@@ -71,7 +70,9 @@
 }
 
 .wall__info a {
+    color: #FFFFFF;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .wall__rating {
@@ -90,6 +91,7 @@
     color: #222222;
     font-size: 16px;
     line-height: 19px;
+    user-select: none;
 }
 
 .line__status {
