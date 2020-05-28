@@ -23,7 +23,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 15% 10% 5% 13% 7% 5% 8% 10% 5% 13% 5%;
+    grid-template-rows: 15% 10% 5% 13% 5% min-content 5% 13% 5%;
 }
 
 .map__text-zone {
@@ -45,19 +45,9 @@
     grid-row: 4 / 5;
 }
 
-.map__text-adress {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 15px;
-    font-weight: normal;
-    text-align: center;
-
-    grid-column: 2 / 3;
-    grid-row: 6 / 7;
-}
-
 .map__input-adress {
     grid-column: 2 / 3;
-    grid-row: 8 / 9;
+    grid-row: 6 / 7;
 }
 
 .map__button-ready {
@@ -66,5 +56,5 @@
     font-size: 16px;
     box-sizing: border-box;
     grid-column: 2 / 3;
-    grid-row: 10 / 11;
+    grid-row: 8 / 9;
 }

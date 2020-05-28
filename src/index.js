@@ -4,6 +4,8 @@ import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
 import Bin from "./bin";
+import Finish from "./finish";
+
 import "./style/index.css";
 
 // пример реального объекта с бекэнда
@@ -252,7 +254,7 @@ const restaurant = {
     name: "Моя пицца",
     openTime: "8:00",
     serviceRadius: 1000,
-    coords: "55.739933,37.652859"
+    coords: "55.739933,37.652859",
 };
 
 // function Success() {
@@ -273,11 +275,22 @@ const restaurant = {
 // window.restaurant = restaurant;
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { finishOrder: false };
+        this.makeOrder = this.makeOrder.bind(this)
+    }
+
+    makeOrder() {
+        this.setState({ finishOrder: !this.state.finishOrder });
+    }
+
     render() {
         return (
             <div className="page">
+                {this.state.finishOrder ? <Finish /> : ""}
                 <MainPart data={this.props.data} />
-                <Bin />
+                <Bin finishFunc={this.makeOrder} />
             </div>
         );
     }

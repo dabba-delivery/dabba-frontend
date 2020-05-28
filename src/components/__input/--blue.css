@@ -1,9 +1,14 @@
+.input__box {
+    width: 100%;
+    height: min-content;
+}
+
 .input--blue {
     height: 47px;
     width: 100%;
     padding: 10px;
-    background: #FFFFFF;
-    border: 1px solid #E9E9E9;
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
     border-radius: 3px;
 
     color: #494949;
@@ -16,9 +21,17 @@
 }
 
 .input--blue:hover {
-    border: 3px solid #CACACA;
+    border: 3px solid #cacaca;
 }
 
 .input--blue:focus {
-    border: 3px solid #52C1E0;
+    border: 3px solid #52c1e0;
+}
+
+.input__tip {
+    margin-bottom: 10px;
+    color: #222222;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.5;
 }

@@ -16,21 +16,11 @@ export const place = {
     },
     radius: 0,
 };
-
-class Finish extends React.Component {
-    render() {
-        return <div>Hello</div>;
-    }
-}
-
 export default class MainPart extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { finishOrder: true };
         this.componentDidMount = this.componentDidMount.bind(this);
     }
-
-    makeOrder() {}
 
     componentDidMount() {
         let coords = this.props.data.coords.split(",");
@@ -48,7 +38,6 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                {this.state.finishOrder ? <Finish /> : ""}
                 <Header data={this.props.data} />
                 <MapBlock />
                 <SortBlock />

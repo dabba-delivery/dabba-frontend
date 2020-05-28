@@ -1,3 +1,8 @@
+.input__box {
+    width: 100%;
+    height: min-content;
+}
+
 .input--orange {
     height: 47px;
     width: 100%;
@@ -21,4 +26,12 @@
 
 .input--orange:focus {
     border: 3px solid #FA7921;
+}
+
+.input__tip {
+    margin-bottom: 10px;
+    color: #222222;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.5;
 }

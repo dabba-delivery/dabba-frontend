@@ -94,13 +94,10 @@ export default () => {
                     Разрешите доступ к вашему местоположению
                 </Button>
 
-                <p className="map__text-adress">
-                    или введите адрес доставки (улица и дом)
-                </p>
-
                 <Input
+                    inputName={"Или введите свой адрес"}
+                    classBox={"map__input-adress"}
                     handleFunction={setAddress}
-                    addClasses={"map__input-adress"}
                 ></Input>
 
                 <Button
