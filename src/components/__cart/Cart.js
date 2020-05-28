@@ -4,9 +4,12 @@ import "./--default.css";
 /**
  * Class Cart represents one position card in the cart
  *
+ * logic
  * @param {object} position - dish object which will supply all information and will be deleted with method "func"
  * @param {amount} amout - represents quantity of this position on the cart
  * @param {number} key - just id for correct work of React
+ * 
+ * style
  * @param {function} func - handle click function. This func invokes and takes position as agrument
  */
 

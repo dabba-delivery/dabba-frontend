@@ -14,72 +14,72 @@ export default class SortBlock extends React.Component {
                 <h5 className="sort__text">Показать</h5>
                 <div className="sort__box">
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        elementStyle={"blue"}
-                        addClasses={"sort__toggle"}
-                        handleFunction={() => console.log("sort works")}
+                        style={"blue"}
+                        class={"sort__toggle"}
+                        func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>

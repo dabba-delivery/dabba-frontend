@@ -292,7 +292,10 @@ class App extends React.Component {
         return (
             <div className="page">
                 {this.state.finishOrder ? (
-                    <Finish finalCost={this.state.cost} closeFunction={this.makeOrder}/>
+                    <Finish
+                        finalCost={this.state.cost}
+                        closeFunction={this.makeOrder}
+                    />
                 ) : (
                     ""
                 )}

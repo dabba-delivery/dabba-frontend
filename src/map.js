@@ -87,23 +87,23 @@ export default () => {
                 </p>
 
                 <Button
-                    elementStyle={"blue"}
-                    addClasses={"map__button-allow"}
-                    handleFunction={onAutolocate}
+                    style={"blue"}
+                    class={"map__button-allow"}
+                    func={onAutolocate}
                 >
                     Разрешите доступ к вашему местоположению
                 </Button>
 
                 <Input
-                    inputName={"Или введите свой адрес"}
+                    name={"Или введите свой адрес"}
                     classBox={"map__input-adress"}
-                    handleFunction={setAddress}
+                    func={setAddress}
                 ></Input>
 
                 <Button
-                    elementStyle={"orange"}
-                    addClasses={"map__button-ready"}
-                    handleFunction={onDone}
+                    style={"orange"}
+                    class={"map__button-ready"}
+                    func={onDone}
                 >
                     Готово
                 </Button>

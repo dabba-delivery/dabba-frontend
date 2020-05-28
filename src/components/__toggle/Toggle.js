@@ -6,11 +6,15 @@ import "./--blue-active.css";
 
 /**
  * This component represents a Toggle
+ * 
+ * logic
  * @constuctor
- * @param {string} elementStyle - sets the color palette for this element. You can choose one of availables
- * @param {string} addClasses - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
- * @param {Function} handleFunction - onClick handler for a toggle
+ * @param {Function} func - onClick handler for a toggle
  * {this.props.children} - name of a toggle
+ * 
+ * style
+ * @param {string} class - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {string} style - sets the color palette for this element. You can choose one of availables
  */
 
 export class Toggle extends React.Component {
@@ -29,7 +33,7 @@ export class Toggle extends React.Component {
     handleClick(event) {
         event.preventDefault();
         this.setState({ active: !this.state.active });
-        this.props.handleFunction();
+        this.props.func();
     }
 
     render() {
@@ -38,17 +42,17 @@ export class Toggle extends React.Component {
                 className={
                     (this.state.active
                         ? this.styles[
-                              this.props.elementStyle
-                                  ? this.props.elementStyle
+                              this.props.style
+                                  ? this.props.style
                                   : "orange"
                           ][1]
                         : this.styles[
-                              this.props.elementStyle
-                                  ? this.props.elementStyle
+                              this.props.style
+                                  ? this.props.style
                                   : "orange"
                           ][0]) +
                     " " +
-                    (this.props.addClasses ? this.props.addClasses : "")
+                    (this.props.class ? this.props.class : "")
                 }
                 onClick={this.handleClick}
             >

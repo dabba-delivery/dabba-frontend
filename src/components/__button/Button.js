@@ -5,10 +5,13 @@ import "./--blue.css";
 /**
  * This component represents a Button
  *
+ * logic
  * @constuctor
- * @param {string} elementStyle - sets the color palette for this element. You can choose one of availables
- * @param {string} addClasses - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
- * @param {Function} handleFunction - onClick handler for a copmonent
+ * @param {Function} func - onClick handler for a copmonent 
+ * 
+ * style
+ * @param {string} style - sets the color palette for this element. You can choose one of availables
+ * @param {string} class - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * {this.props.children} - name of this button
  */
 
@@ -25,7 +28,7 @@ export class Button extends React.Component {
 
     handleClick(event) {
         event.preventDefault();
-        this.props.handleFunction();
+        this.props.func();
     }
 
     render() {
@@ -33,12 +36,10 @@ export class Button extends React.Component {
             <button
                 className={
                     this.styles[
-                        this.props.elementStyle
-                            ? this.props.elementStyle
-                            : "orange"
+                        this.props.style ? this.props.style : "orange"
                     ] +
                     " " +
-                    this.props.addClasses
+                    this.props.class
                 }
                 onClick={this.handleClick}
             >

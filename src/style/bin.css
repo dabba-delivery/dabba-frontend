@@ -5,7 +5,7 @@
     width: 350px;
     margin-left: 0px 0px 0px auto;
 
-    background-color: #eeeeee;
+    background-color: #EEEEEE;
 
     display: grid;
     grid-template-rows: 69px 1fr min-content;
@@ -24,7 +24,7 @@
 }
 
 .bin__text {
-    color: #fa7921;
+    color: #FA7921;
     font-size: 25px;
     font-weight: 900;
 }
@@ -71,7 +71,7 @@
     grid-template-columns: 10% 1fr 0.3fr 5%;
     grid-template-rows: 20% 30% 10% 30% 20%;
 
-    background: #ffffff;
+    background: #FFFFFF;
 }
 
 .element__name {

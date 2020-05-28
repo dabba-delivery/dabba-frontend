@@ -4,8 +4,9 @@ import "./status.css";
 /**
  * This component represents a Status box for indicating is that true or false
  *
+ * logic
  * @constuctor
- * @param {string} addClasses - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {string} class - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * @param {string} trueMessage - will be representing true value of Status box
  * @param {string} falseMessage - will be representing false value of Status box
  * @param {boolean} current - initial value for Status component
@@ -17,7 +18,7 @@ export class Status extends React.Component {
             <div
                 className={
                     "status " +
-                    (this.props.addClasses ? this.props.addClasses : "")
+                    (this.props.class ? this.props.class : "")
                 }
             >
                 <svg

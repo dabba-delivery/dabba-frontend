@@ -85,9 +85,9 @@ export default class Bin extends React.Component {
                 </div>
                 <div className="bin__footer">
                     <Button
-                        elementStyle={"blue"}
-                        addClasses={"bin__button"}
-                        handleFunction={
+                        style={"blue"}
+                        class={"bin__button"}
+                        func={
                             this.showSum()
                                 ? () => this.props.finishFunc(this.showSum())
                                 : () => alert("Корзина пуста, купи че нить!")

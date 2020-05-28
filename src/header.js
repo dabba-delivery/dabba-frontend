@@ -30,7 +30,10 @@ const Info = (props) => (
         <Rating rating={props.rating} />
         <p>{props.contactPhone}</p>
         <p>{props.kitchenType}</p>
-        <p><a href={"mailto:" + props.email + "?subject=Доставка" }>{props.email}</a>
+        <p>
+            <a href={"mailto:" + props.email + "?subject=Доставка"}>
+                {props.email}
+            </a>
         </p>
     </div>
 );
@@ -45,7 +48,8 @@ function Rating(props) {
     const start = [];
     for (let counter = 0; counter < props.rating; counter++) {
         start.push(
-            <svg key={counter}
+            <svg
+                key={counter}
                 className={"wall__rating"}
                 width="17"
                 height="17"
@@ -70,7 +74,11 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <div className="wall">
-                    <img src={this.props.data.logoUrl} className="wall__logo" alt="logo" />
+                    <img
+                        src={this.props.data.logoUrl}
+                        className="wall__logo"
+                        alt="logo"
+                    />
                     <h2 className="wall__name">
                         {this.props.data.name + " " + this.props.data.address}
                     </h2>
@@ -88,17 +96,15 @@ export default class Header extends React.Component {
                     />
 
                     <Status
-                        addClasses={"line__status"}
+                        class={"line__status"}
                         trueMessage={"Вы в зоне доставки"}
                         falseMessage={"Вы вне зоны доставки"}
                         current={true}
                     />
                     <Button
-                        elementStyle={"blue"}
-                        addClasses={"line__button"}
-                        handleFunction={() =>
-                            console.log("You press share button")
-                        }
+                        style={"blue"}
+                        class={"line__button"}
+                        func={() => console.log("You press share button")}
                     >
                         Поделиться
                     </Button>
