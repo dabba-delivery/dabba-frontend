@@ -6,13 +6,13 @@ import "./--orange.css";
  *
  * logic
  * @constuctor
- * @param {string} inputName - hint near the input which tell to the user what it shoud write inside thas input
- * @param {Function} handleFunction - onChange handler for this copmonent. It puts value of input in this handler
+ * @param {string} name - hint near the input which tell to the user what it shoud write inside thas input
+ * @param {Function} func - onChange handler for this copmonent. It puts value of input in this handler
  *
  * style
- * @param {string} elementStyle - sets the color palette for this element. You can choose one of availables / default - orange
+ * @param {string} style - sets the color palette for this element. You can choose one of availables / default - orange
  * @param {string} classBox - adds new classes to the element's div (box), usually it's used for positioning
- * @param {string} classInput - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {string} class - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  */
 
 export class Input extends React.Component {
@@ -27,7 +27,7 @@ export class Input extends React.Component {
     }
 
     handleChange(e) {
-        this.props.handleFunction(e.target.value);
+        this.props.func(e.target.value);
     }
 
     render() {
@@ -39,21 +39,21 @@ export class Input extends React.Component {
                         : ""
                 }
             >
-                {this.props.inputName ? (
-                    <p className="input__tip">{this.props.inputName}</p>
+                {this.props.name ? (
+                    <p className="input__tip">{this.props.name}</p>
                 ) : (
                     ""
                 )}
                 <input
                     className={
                         this.styles[
-                            this.props.elementStyle
-                                ? this.props.elementStyle
+                            this.props.style
+                                ? this.props.style
                                 : "orange"
-                        ] + (this.props.classInput ? this.props.classInput : "")
+                        ] + (this.props.class ? this.props.class : "")
                     }
                     onChange={
-                        this.props.handleFunction ? this.handleChange : ""
+                        this.props.func ? this.handleChange : ""
                     }
                 >
                     {this.props.children}

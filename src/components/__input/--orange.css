@@ -1,6 +1,6 @@
 .input__box {
-    width: 100%;
     height: min-content;
+    width: 100%;
 }
 
 .input--orange {
