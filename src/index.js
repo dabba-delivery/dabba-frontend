@@ -277,18 +277,25 @@ const restaurant = {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { finishOrder: false };
-        this.makeOrder = this.makeOrder.bind(this)
+        this.state = { finishOrder: false, cost: 0 };
+        this.makeOrder = this.makeOrder.bind(this);
     }
 
-    makeOrder() {
-        this.setState({ finishOrder: !this.state.finishOrder });
+    makeOrder(finalCost) {
+        this.setState({
+            finishOrder: !this.state.finishOrder,
+            cost: finalCost,
+        });
     }
 
     render() {
         return (
             <div className="page">
-                {this.state.finishOrder ? <Finish /> : ""}
+                {this.state.finishOrder ? (
+                    <Finish finalCost={this.state.cost} closeFunction={this.makeOrder}/>
+                ) : (
+                    ""
+                )}
                 <MainPart data={this.props.data} />
                 <Bin finishFunc={this.makeOrder} />
             </div>

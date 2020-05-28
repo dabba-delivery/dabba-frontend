@@ -4,7 +4,7 @@ import "./--blue.css";
 
 /**
  * This component represents a Button
- * 
+ *
  * @constuctor
  * @param {string} elementStyle - sets the color palette for this element. You can choose one of availables
  * @param {string} addClasses - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed

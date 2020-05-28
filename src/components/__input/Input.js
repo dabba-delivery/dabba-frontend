@@ -3,12 +3,12 @@ import "./--orange.css";
 
 /**
  * This component represents a Button
- * 
+ *
  * logic
  * @constuctor
  * @param {string} inputName - hint near the input which tell to the user what it shoud write inside thas input
  * @param {Function} handleFunction - onChange handler for this copmonent. It puts value of input in this handler
- * 
+ *
  * style
  * @param {string} elementStyle - sets the color palette for this element. You can choose one of availables / default - orange
  * @param {string} classBox - adds new classes to the element's div (box), usually it's used for positioning
@@ -39,7 +39,11 @@ export class Input extends React.Component {
                         : ""
                 }
             >
-                {this.props.inputName ? <p className="input__tip">{this.props.inputName}</p> : ""}
+                {this.props.inputName ? (
+                    <p className="input__tip">{this.props.inputName}</p>
+                ) : (
+                    ""
+                )}
                 <input
                     className={
                         this.styles[
@@ -48,7 +52,9 @@ export class Input extends React.Component {
                                 : "orange"
                         ] + (this.props.classInput ? this.props.classInput : "")
                     }
-                    onChange={this.handleChange}
+                    onChange={
+                        this.props.handleFunction ? this.handleChange : ""
+                    }
                 >
                     {this.props.children}
                 </input>
