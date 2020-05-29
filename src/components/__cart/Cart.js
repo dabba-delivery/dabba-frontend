@@ -8,7 +8,7 @@ import "./--default.css";
  * @param {object} position - dish object which will supply all information and will be deleted with method "func"
  * @param {amount} amout - represents quantity of this position on the cart
  * @param {number} key - just id for correct work of React
- * 
+ *
  * style
  * @param {function} func - handle click function. This func invokes and takes position as agrument
  */
@@ -16,12 +16,11 @@ import "./--default.css";
 export class Cart extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
+    handleClick = () => {
         this.props.func(this.props.position);
-    }
+    };
 
     render() {
         return (

@@ -14,7 +14,7 @@ import "./--blue-active.css";
  * 
  * style
  * @param {string} class - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
- * @param {string} style - sets the color palette for this element. You can choose one of availables
+ * @param {string} styl - sets the color palette for this element. You can choose one of availables
  */
 
 export class Toggle extends React.Component {
@@ -27,10 +27,9 @@ export class Toggle extends React.Component {
             orange: ["toggle--orange", "toggle--orange toggle--orange-active"],
             blue: ["toggle--blue", "toggle--blue toggle--blue-active"],
         };
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
+    handleClick = (event) => {
         event.preventDefault();
         this.setState({ active: !this.state.active });
         this.props.func();
@@ -42,12 +41,12 @@ export class Toggle extends React.Component {
                 className={
                     (this.state.active
                         ? this.styles[
-                              this.props.style
+                              this.props.styl
                                   ? this.props.style
                                   : "orange"
                           ][1]
                         : this.styles[
-                              this.props.style
+                              this.props.styl
                                   ? this.props.style
                                   : "orange"
                           ][0]) +

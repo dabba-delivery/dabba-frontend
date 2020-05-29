@@ -23,10 +23,9 @@ export class Button extends React.Component {
             blue: "button--blue",
             greyToggle: "button--grey",
         };
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
+    handleClick = (event) => {
         event.preventDefault();
         this.props.func();
     }

@@ -278,15 +278,14 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = { finishOrder: false, cost: 0 };
-        this.makeOrder = this.makeOrder.bind(this);
     }
 
-    makeOrder(finalCost) {
+    makeOrder = (finalCost) => {
         this.setState({
             finishOrder: !this.state.finishOrder,
             cost: finalCost,
         });
-    }
+    };
 
     render() {
         return (

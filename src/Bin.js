@@ -9,12 +9,9 @@ export default class Bin extends React.Component {
 
         const cart = new Map();
         this.state = { cart: cart };
-        this.showSum = this.showSum.bind(this);
-        this.componentDidMount = this.componentDidMount.bind(this);
-        this.componentWillUnmount = this.componentWillUnmount.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         const cart = this.state.cart;
         window.cart = cart;
 
@@ -43,11 +40,11 @@ export default class Bin extends React.Component {
         };
     }
 
-    componentWillUnmount() {
+    componentWillUnmount = () => {
         delete window.cart;
     }
 
-    showSum() {
+    showSum = () => {
         let result = 0;
         for (let dish of this.state.cart.entries()) {
             result = result + dish[0].price * dish[1].val;

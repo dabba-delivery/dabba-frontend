@@ -22,11 +22,9 @@ export class Input extends React.Component {
             orange: "input--orange",
             blue: "input--blue",
         };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.props.func(e.target.value);
     }
 

@@ -19,7 +19,6 @@ export const place = {
 export default class MainPart extends React.Component {
     constructor(props) {
         super(props);
-        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount() {
