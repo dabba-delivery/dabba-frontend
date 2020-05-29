@@ -12,6 +12,10 @@
     grid-template-columns: 70% 30%;
     grid-template-rows: 20px min-content 10px 20px 20px;
     z-index: 3;
+
+    animation-name: cart-appearance;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 .cart__name {
@@ -70,10 +74,11 @@
 
     transition-property: height;
     transition-duration: 0.2s;
-    z-index: 2;
+
     overflow: hidden;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .cart:hover .cart__option {
@@ -123,5 +128,25 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes cart-appearance {
+    0% {
+        margin: 30px 20px 0px 20px;
+        opacity: 0;
+        background-color: #FA7921;
+    }
+
+    50% {
+        margin: 10px 10px 0px 10px;
+        opacity: 1;
+        background-color: #FA7921;
+    }
+
+    100% {
+        margin: 10px 10px 0px 10px;
+        opacity: 1;
+        background-color: white;
     }
 }
