@@ -12,6 +12,7 @@ export default class Finish extends React.Component {
                         <h5>Личные данные</h5>
                         <Input name={"Имя и фамилия"} />
                         <Input name={"Электронная почта"} />
+                        <Input name={"Номер телефона"} />
                     </div>
                     <div className="finish__adress">
                         <h5>Адрес</h5>

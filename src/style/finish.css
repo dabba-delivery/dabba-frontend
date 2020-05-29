@@ -15,8 +15,12 @@
     padding: 20px;
     border-radius: 3px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: #EEEEEE;
+    background: #eeeeee;
 
+    animation-timing-function: ease-in;
+    animation-name: form-appearence;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
     z-index: 4;
 }
 
@@ -62,13 +66,35 @@
     top: 0;
     height: 100vh;
     width: 100vw;
-    opacity: 0.7;
+    opacity: 0;
     background-color: black;
     z-index: 3;
+
+    animation-name: finish;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
 }
 
 .finish__cost p {
     color: #222222;
     font-size: 25px;
     font-weight: 900;
+}
+
+@keyframes finish {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes form-appearence {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
