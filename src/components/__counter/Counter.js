@@ -5,8 +5,12 @@ import { Button } from "../library.js";
  * Class Counter represents two buttons and numbers between them which shows amount of items
  *
  * logic
- * * @constuctor
- *
+ * @constuctor
+ * @param {number} initialValue - start value for this counter
+ * @param {number} step - step for inrementor and decrementor
+ * @param {number} limit - limit for counter // sometimes you need a maximum :)
+ * 
+ * 
  * style
  * @param {string} style - sets the color palette for this element. You can choose one of availables
  * @param {string} classBox - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
@@ -28,19 +32,19 @@ export class Counter extends React.Component {
     }
 
     increase = () => {
-		// write a limit for this function
-        this.setState({
-            currentValue: this.state.currentValue + this.state.step,
-        });
+        if (this.state.currentValue < this.props.limit) {
+            this.setState({
+                currentValue: this.state.currentValue + this.state.step,
+            });
+        }
     };
 
     decrease = () => {
-		if (this.state.currentValue > 1) {
-			this.setState({
-				currentValue: this.state.currentValue - this.state.step,
-			});
-		}
-        
+        if (this.state.currentValue > 1) {
+            this.setState({
+                currentValue: this.state.currentValue - this.state.step,
+            });
+        }
     };
 
     render() {
