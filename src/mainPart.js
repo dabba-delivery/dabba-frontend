@@ -38,7 +38,7 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                <Counter style={"orange"}/>
+                <Counter style={"orange"} initialValue={1} step={1}/>
                 <Header data={this.props.data} />
                 <MapBlock />
                 <SortBlock />

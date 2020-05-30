@@ -27,6 +27,22 @@ export class Counter extends React.Component {
         };
     }
 
+    increase = () => {
+		// write a limit for this function
+        this.setState({
+            currentValue: this.state.currentValue + this.state.step,
+        });
+    };
+
+    decrease = () => {
+		if (this.state.currentValue > 1) {
+			this.setState({
+				currentValue: this.state.currentValue - this.state.step,
+			});
+		}
+        
+    };
+
     render() {
         return (
             <div
@@ -38,7 +54,7 @@ export class Counter extends React.Component {
                     (this.props.classBox ? this.props.classBox : "")
                 }
             >
-                <Button style={this.props.style}>
+                <Button style={this.props.style} func={this.decrease}>
                     <svg
                         width="8"
                         height="12"
@@ -52,8 +68,8 @@ export class Counter extends React.Component {
                         />
                     </svg>
                 </Button>
-                <p>1</p>
-                <Button style={this.props.style}>
+                <p>{this.state.currentValue}</p>
+                <Button style={this.props.style} func={this.increase}>
                     <svg
                         width="8"
                         height="12"
