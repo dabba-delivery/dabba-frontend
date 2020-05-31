@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/finish.css";
 
-import { Input, Button } from "./components/library.js";
+import { Input, Button, Counter } from "./components/library.js";
 
 export default class Finish extends React.Component {
     render() {

@@ -1,5 +1,7 @@
 import React from "react";
 import { Button } from "../library.js";
+import "./--small.css";
+import "./--orange.css";
 
 /**
  * Class Counter represents two buttons and numbers between them which shows amount of items
@@ -9,11 +11,13 @@ import { Button } from "../library.js";
  * @param {number} initialValue - start value for this counter
  * @param {number} step - step for inrementor and decrementor
  * @param {number} limit - limit for counter // sometimes you need a maximum :)
- * 
- * 
+ *
  * style
  * @param {string} style - sets the color palette for this element. You can choose one of availables
  * @param {string} classBox - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {string} classText - apply new classes to a text between buttons
+ * @param {string} class - adds this classes to the button elements
+ * @param {string} size - three options available: small, medium and big
  *
  */
 
@@ -28,6 +32,12 @@ export class Counter extends React.Component {
         this.styles = {
             orange: "counter--orange",
             blue: "counter--blue",
+        };
+
+        this.sizes = {
+            small: "counter--small",
+            medium: "counter--medium",
+            big: "counter--big",
         };
     }
 
@@ -58,7 +68,17 @@ export class Counter extends React.Component {
                     (this.props.classBox ? this.props.classBox : "")
                 }
             >
-                <Button style={this.props.style} func={this.decrease}>
+                <Button
+                    class={
+                        (this.props.class ? this.props.class : "") +
+                        " " +
+                        (this.sizes[this.props.size]
+                            ? this.sizes[this.props.size]
+                            : "counter--small")
+                    }
+                    style={this.props.style}
+                    func={this.decrease}
+                >
                     <svg
                         width="8"
                         height="12"
@@ -72,8 +92,25 @@ export class Counter extends React.Component {
                         />
                     </svg>
                 </Button>
-                <p>{this.state.currentValue}</p>
-                <Button style={this.props.style} func={this.increase}>
+                <p
+                    className={
+                        "counter__text " +
+                        (this.props.classText ? this.props.classText : " ")
+                    }
+                >
+                    {this.state.currentValue}
+                </p>
+                <Button
+                    class={
+                        (this.props.class ? this.props.class : "") +
+                        " " +
+                        (this.sizes[this.props.size]
+                            ? this.sizes[this.props.size]
+                            : "counter--small")
+                    }
+                    style={this.props.style}
+                    func={this.increase}
+                >
                     <svg
                         width="8"
                         height="12"

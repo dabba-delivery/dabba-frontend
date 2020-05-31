@@ -1,5 +1,6 @@
 import React from "react";
 import "./--orange.css";
+import "./--blue.css";
 
 /**
  * This component represents a Button

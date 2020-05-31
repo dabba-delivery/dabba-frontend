@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
-import Bin from "./bin";
+import Bin from "./bin.js";
 import Finish from "./finish";
 
 import "./style/index.css";
