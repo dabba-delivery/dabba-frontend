@@ -11,6 +11,7 @@ import "./--orange.css";
  * @param {number} initialValue - start value for this counter
  * @param {number} step - step for inrementor and decrementor
  * @param {number} limit - limit for counter // sometimes you need a maximum :)
+ * @param {Function} func - handle function which invoke and use actual value as argument
  *
  * style
  * @param {string} style - sets the color palette for this element. You can choose one of availables
@@ -54,8 +55,12 @@ export class Counter extends React.Component {
             this.setState({
                 currentValue: this.state.currentValue - this.state.step,
             });
-        }
-    };
+		}
+		
+		if (this.props.func) {
+			this.props.func(this.state.currentValue)
+		}
+	};
 
     render() {
         return (

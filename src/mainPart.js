@@ -4,7 +4,6 @@ import Header from "./header.js";
 import Menu from "./menu";
 import SortBlock from "./sort";
 import MapBlock from "./map";
-import { Counter } from "./components/library.js";
 
 // temp
 export const place = {
