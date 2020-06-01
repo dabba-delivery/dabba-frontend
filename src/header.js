@@ -96,7 +96,7 @@ export default class Header extends React.Component {
                     />
 
                     <Status
-                        class="line__status"
+                        classNames="line__status"
                         trueMessage="Вы в зоне доставки"
                         falseMessage="Вы вне зоны доставки"
                         current={true}

@@ -27,7 +27,7 @@ export class Input extends React.Component {
 
     handleChange = (e) => {
         this.props.onChange(e.target.value);
-    }
+    };
 
     render() {
         return (
@@ -46,14 +46,10 @@ export class Input extends React.Component {
                 <input
                     className={
                         this.styles[
-                            this.props.style
-                                ? this.props.style
-                                : "orange"
+                            this.props.style ? this.props.style : "orange"
                         ] + (this.props.classNames ? this.props.classNames : "")
                     }
-                    onChange={
-                        this.props.onChange ? this.handleChange : ""
-                    }
+                    onChange={this.props.onChange ? this.handleChange : ""}
                 >
                     {this.props.children}
                 </input>

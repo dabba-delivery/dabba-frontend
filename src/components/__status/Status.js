@@ -6,7 +6,7 @@ import "./status.css";
  *
  * logic
  * @constuctor
- * @param {string} class - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {string} classNames - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * @param {string} trueMessage - will be representing true value of Status box
  * @param {string} falseMessage - will be representing false value of Status box
  * @param {boolean} current - initial value for Status component
@@ -18,14 +18,14 @@ export class Status extends React.Component {
             <div
                 className={
                     "status " +
-                    (this.props.class ? this.props.class : "")
+                    (this.props.classNames ? this.props.classNames : "")
                 }
             >
                 <svg
                     style={{
                         display: this.props.current ? "box" : "none",
                     }}
-                    className={"status__svg"}
+                    className="status__svg"
                     width="18"
                     height="14"
                     viewBox="0 0 18 14"
