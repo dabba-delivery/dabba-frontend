@@ -11,32 +11,30 @@ import "./style/position.css";
 
 export default class Position extends React.Component {
     render() {
+        const { name, link, ingridients, cost, id, weight } = this.props;
+
         return (
             <div className="position">
                 <div
                     className="position__image"
                     style={{
-                        backgroundImage: this.props.link
-                            ? `url(${this.props.link})`
+                        backgroundImage: link
+                            ? `url(${link})`
                             : `url(./default.png)`,
                     }}
                 ></div>
-                <h5 className="position__name">{this.props.name}</h5>
-                <p className="position__ingridients">
-                    {this.props.ingridients}
-                </p>
+                <h5 className="position__name">{name}</h5>
+                <p className="position__ingridients">{ingridients}</p>
                 <div className="position__wc">
-                    <p className="position__weight">
-                        {this.props.weight + "гр."}
-                    </p>
-                    <p className="position__cost">{this.props.cost + "р."}</p>
+                    <p className="position__weight">{weight + "гр."}</p>
+                    <p className="position__cost">{cost + "р."}</p>
                 </div>
 
                 <Button
                     style="orange"
                     classNames="position__button"
                     onClick={() => {
-                        window.cart && window.cart.addPos(this.props.id);
+                        window.cart && window.cart.addPos(id);
                     }}
                 >
                     Выбрать

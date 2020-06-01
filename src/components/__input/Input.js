@@ -30,28 +30,26 @@ export class Input extends React.Component {
     };
 
     render() {
+        const {
+            name,
+            style,
+            classNames,
+            classNamesBox,
+            onChange,
+            children,
+        } = this.props;
+
         return (
-            <div
-                className={
-                    "input__box " + this.props.classNamesBox
-                        ? this.props.classNamesBox
-                        : ""
-                }
-            >
-                {this.props.name ? (
-                    <p className="input__tip">{this.props.name}</p>
-                ) : (
-                    ""
-                )}
+            <div className={"input__box " + classNamesBox ? classNamesBox : ""}>
+                {name ? <p className="input__tip">{name}</p> : ""}
                 <input
                     className={
-                        this.styles[
-                            this.props.style ? this.props.style : "orange"
-                        ] + (this.props.classNames ? this.props.classNames : "")
+                        this.styles[style ? style : "orange"] +
+                        (classNames ? classNames : "")
                     }
-                    onChange={this.props.onChange ? this.handleChange : ""}
+                    onChange={onChange ? this.handleChange : ""}
                 >
-                    {this.props.children}
+                    {children}
                 </input>
             </div>
         );

@@ -53,6 +53,8 @@ export default class Bin extends React.Component {
     };
 
     render() {
+        const { finishFunc } = this.props;
+
         return (
             <div className="bin">
                 <div className="bin__header">
@@ -86,7 +88,7 @@ export default class Bin extends React.Component {
                         classNames="bin__button"
                         onClick={
                             this.showSum()
-                                ? () => this.props.finishFunc(this.showSum())
+                                ? () => finishFunc(this.showSum())
                                 : () => alert("Корзина пуста, купи че нить!")
                         }
                     >

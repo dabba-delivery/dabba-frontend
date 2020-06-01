@@ -289,6 +289,8 @@ class App extends React.Component {
     };
 
     render() {
+		const {data} = this.props
+
         return (
             <div className="page">
                 {this.state.finishOrder ? (
@@ -299,7 +301,7 @@ class App extends React.Component {
                 ) : (
                     ""
                 )}
-                <MainPart data={this.props.data} />
+                <MainPart data={data} />
                 <Bin finishFunc={this.makeOrder} />
             </div>
         );

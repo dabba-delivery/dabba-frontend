@@ -19,9 +19,11 @@ import "./style/menu.css";
 
 export default class Menu extends React.Component {
     render() {
+		const {dishes} = this.props
+
         return (
             <div className="menu">
-                <UnpackPositions arr={this.props.dishes} />
+                <UnpackPositions arr={dishes} />
             </div>
         );
     }

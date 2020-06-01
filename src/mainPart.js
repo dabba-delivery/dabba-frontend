@@ -5,8 +5,6 @@ import Menu from "./menu";
 import SortBlock from "./sort";
 import MapBlock from "./map";
 
-import { Counter } from "./components/library";
-
 // temp
 export const place = {
     name: "Dodo Pizza",
@@ -24,25 +22,29 @@ export default class MainPart extends React.Component {
     }
 
     componentDidMount() {
-        let coords = this.props.data.coords.split(",");
-        place.name = this.props.data.name;
-        place.logoURL = this.props.data.logoUrl;
+        const { data } = this.props;
+
+        let coords = data.coords.split(",");
+        place.name = data.name;
+        place.logoURL = data.logoUrl;
         place.lat = coords[0];
         place.lng = coords[1];
-        place.radius = this.props.data.serviceRadius;
+        place.radius = data.serviceRadius;
     }
 
     render() {
+        const { data } = this.props;
+
         return (
             <div
                 style={{
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                <Header data={this.props.data} />
+                <Header data={data} />
                 <MapBlock />
                 <SortBlock />
-                <Menu dishes={this.props.data.dishes} />
+                <Menu dishes={data.dishes} />
             </div>
         );
     }

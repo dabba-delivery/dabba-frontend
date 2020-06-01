@@ -25,15 +25,13 @@ const Time = (props) => (
  * @param {string} email - display email
  */
 
-const Info = (props) => (
+const Info = ({ rating, contactPhone, kitchenType, email }) => (
     <div className="wall__info">
-        <Rating rating={props.rating} />
-        <p>{props.contactPhone}</p>
-        <p>{props.kitchenType}</p>
+        <Rating rating={rating} />
+        <p>{contactPhone}</p>
+        <p>{kitchenType}</p>
         <p>
-            <a href={"mailto:" + props.email + "?subject=Доставка"}>
-                {props.email}
-            </a>
+            <a href={"mailto:" + email + "?subject=Доставка"}>{email}</a>
         </p>
     </div>
 );
@@ -44,9 +42,9 @@ const Info = (props) => (
  * @param {number} rating - display rating
  */
 
-function Rating(props) {
+function Rating({ rating }) {
     const start = [];
-    for (let counter = 0; counter < props.rating; counter++) {
+    for (let counter = 0; counter < rating; counter++) {
         start.push(
             <svg
                 key={counter}
@@ -71,28 +69,30 @@ function Rating(props) {
 
 export default class Header extends React.Component {
     render() {
+        const { data } = this.props;
+
         return (
             <div className="header">
                 <div className="wall">
                     <img
-                        src={this.props.data.logoUrl}
+                        src={data.logoUrl}
                         className="wall__logo"
                         alt="logo"
                     />
                     <h2 className="wall__name">
-                        {this.props.data.name + " " + this.props.data.address}
+                        {data.name + " " + data.address}
                     </h2>
                     <Info
                         rating={5}
-                        phone={this.props.data.contactPhone}
-                        kitchenType={this.props.data.kitchenType}
-                        email={this.props.data.email}
+                        phone={data.contactPhone}
+                        kitchenType={data.kitchenType}
+                        email={data.email}
                     />
                 </div>
                 <div className="line">
                     <Time
-                        openTime={this.props.data.openTime}
-                        closeTime={this.props.data.closeTime}
+                        openTime={data.openTime}
+                        closeTime={data.closeTime}
                     />
 
                     <Status

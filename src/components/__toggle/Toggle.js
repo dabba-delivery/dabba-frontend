@@ -36,22 +36,20 @@ export class Toggle extends React.Component {
     };
 
     render() {
+        const { onChange, classNames, style, children } = this.props;
+
         return (
             <button
                 className={
                     (this.state.active
-                        ? this.styles[
-                              this.props.style ? this.props.style : "orange"
-                          ][1]
-                        : this.styles[
-                              this.props.style ? this.props.style : "orange"
-                          ][0]) +
+                        ? this.styles[style ? style : "orange"][1]
+                        : this.styles[style ? style : "orange"][0]) +
                     " " +
-                    (this.props.classNames ? this.props.classNames : "")
+                    (classNames ? classNames : "")
                 }
                 onClick={this.handleClick}
             >
-                {this.props.children}
+                {children}
             </button>
         );
     }

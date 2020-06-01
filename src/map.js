@@ -14,8 +14,6 @@ const defaultCenterCoords = {
     lng: 37.7337732,
 };
 
-// this block will be recieving a position from parent component and
-// put that in props of the map component
 export default () => {
     const [center, setCenter] = useState(defaultCenterCoords);
     const [{ mapInst, Maps }, setMaps] = useState({

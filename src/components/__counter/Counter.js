@@ -27,8 +27,8 @@ export class Counter extends React.Component {
         super(props);
         this.state = {
             currentValue: this.props.initialValue || 0,
-			step: this.props.step || 1,
-			limit: this.props.limit || 10
+            step: this.props.step || 1,
+            limit: this.props.limit || 10,
         };
 
         this.styles = {
@@ -64,25 +64,29 @@ export class Counter extends React.Component {
     };
 
     render() {
+        const {
+            style,
+            classNames,
+            classNamesBox,
+            classNamesText,
+            size,
+        } = this.props;
+
         return (
             <div
                 className={
-                    (this.props.style
-                        ? this.styles[this.props.style]
-                        : this.styles["orange"]) +
+                    (style ? this.styles[style] : this.styles["orange"]) +
                     " " +
-                    (this.props.classNamesBox ? this.props.classNamesBox : "")
+                    (classNamesBox ? classNamesBox : "")
                 }
             >
                 <Button
                     classNames={
-                        (this.props.classNames ? this.props.classNames : "") +
+                        (classNames ? classNames : "") +
                         " " +
-                        (this.sizes[this.props.size]
-                            ? this.sizes[this.props.size]
-                            : "counter--small")
+                        (this.sizes[size] ? this.sizes[size] : "counter--small")
                     }
-                    style={this.props.style}
+                    style={style}
                     onClick={this.decrease}
                 >
                     <svg
@@ -101,22 +105,18 @@ export class Counter extends React.Component {
                 <p
                     className={
                         "counter__text " +
-                        (this.props.classNamesText
-                            ? this.props.classNamesText
-                            : " ")
+                        (classNamesText ? classNamesText : " ")
                     }
                 >
                     {this.state.currentValue}
                 </p>
                 <Button
                     classNames={
-                        (this.props.classNames ? this.props.classNames : "") +
+                        (classNames ? classNames : "") +
                         " " +
-                        (this.sizes[this.props.size]
-                            ? this.sizes[this.props.size]
-                            : "counter--small")
+                        (this.sizes[size] ? this.sizes[size] : "counter--small")
                     }
-                    style={this.props.style}
+                    style={style}
                     onClick={this.increase}
                 >
                     <svg

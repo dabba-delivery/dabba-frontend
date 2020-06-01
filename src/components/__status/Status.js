@@ -14,16 +14,13 @@ import "./status.css";
 
 export class Status extends React.Component {
     render() {
+        const { classNames, trueMessage, falseMessage, current } = this.props;
+
         return (
-            <div
-                className={
-                    "status " +
-                    (this.props.classNames ? this.props.classNames : "")
-                }
-            >
+            <div className={"status " + (classNames ? classNames : "")}>
                 <svg
                     style={{
-                        display: this.props.current ? "box" : "none",
+                        display: current ? "box" : "none",
                     }}
                     className="status__svg"
                     width="18"
@@ -38,9 +35,7 @@ export class Status extends React.Component {
                     />
                 </svg>
                 <p className="status__text">
-                    {this.props.current
-                        ? this.props.trueMessage
-                        : this.props.falseMessage}
+                    {current ? trueMessage : falseMessage}
                 </p>
             </div>
         );

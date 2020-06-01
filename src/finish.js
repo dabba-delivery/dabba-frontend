@@ -1,10 +1,12 @@
 import React from "react";
 import "./style/finish.css";
 
-import { Input, Button, Counter } from "./components/library.js";
+import { Input, Button } from "./components/library.js";
 
 export default class Finish extends React.Component {
     render() {
+        const { finalCost } = this.props;
+
         return (
             <div className="finish">
                 <form className="finish__box">
@@ -35,7 +37,7 @@ export default class Finish extends React.Component {
                         >
                             Оплатить заказ
                         </Button>
-                        <p>{this.props.finalCost}р.</p>
+                        <p>{finalCost}р.</p>
                     </div>
                 </form>
                 <div className="finish__layer"></div>

@@ -6,7 +6,7 @@ import "./--default.css";
  *
  * logic
  * @param {object} position - dish object which will supply all information and will be deleted with method "func"
- * @param {amount} amout - represents quantity of this position on the cart
+ * @param {amount} amount - represents quantity of this position on the cart
  * @param {number} key - just id for correct work of React
  *
  * style
@@ -14,24 +14,20 @@ import "./--default.css";
  */
 
 export class Cart extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    handleClick = () => {
-        this.props.onDelete(this.props.position);
+    handleClick = (position) => {
+        this.props.onDelete(position);
     };
 
     render() {
+        const { position, key, amount } = this.props;
+
         return (
             <div className="cart">
-                <div className="cart__block" key={this.props.key}>
-                    <h5 className="cart__name">{this.props.position.name}</h5>
-                    <p className="cart__amount">{this.props.amount}шт.</p>
-                    <p className="cart__weight">
-                        {this.props.position.weigh}гр.
-                    </p>
-                    <p className="cart__price">{this.props.position.price}р.</p>
+                <div className="cart__block" key={key}>
+                    <h5 className="cart__name">{position.name}</h5>
+                    <p className="cart__amount">{amount}шт.</p>
+                    <p className="cart__weight">{position.weigh}гр.</p>
+                    <p className="cart__price">{position.price}р.</p>
                 </div>
                 <div className="cart__option">
                     <svg
@@ -48,7 +44,10 @@ export class Cart extends React.Component {
                         />
                     </svg>
 
-                    <p className="cart__delete" onClick={this.handleClick}>
+                    <p
+                        className="cart__delete"
+                        onClick={() => this.handleClick(position)}
+                    >
                         Удалить
                     </p>
                 </div>
