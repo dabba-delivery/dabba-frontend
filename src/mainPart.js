@@ -5,6 +5,8 @@ import Menu from "./menu";
 import SortBlock from "./sort";
 import MapBlock from "./map";
 
+import { Counter } from "./components/library";
+
 // temp
 export const place = {
     name: "Dodo Pizza",

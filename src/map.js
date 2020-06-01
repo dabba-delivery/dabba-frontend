@@ -96,8 +96,8 @@ export default () => {
 
                 <Input
                     name="Или введите свой адрес"
-                    classBox="map__input-adress"
-                    func={setAddress}
+                    classNamesBox="map__input-adress"
+                    onChange={setAddress}
                 ></Input>
 
                 <Button

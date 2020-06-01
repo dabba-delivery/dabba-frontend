@@ -10,7 +10,7 @@ import "./--default.css";
  * @param {number} key - just id for correct work of React
  *
  * style
- * @param {function} func - handle click function. This func invokes and takes position as agrument
+ * @param {function} onDelete - handle click function. This func invokes and takes position as agrument
  */
 
 export class Cart extends React.Component {
@@ -19,7 +19,7 @@ export class Cart extends React.Component {
     }
 
     handleClick = () => {
-        this.props.func(this.props.position);
+        this.props.onDelete(this.props.position);
     };
 
     render() {

@@ -18,7 +18,7 @@ export default class Finish extends React.Component {
                         <h5>Адрес</h5>
                         <Input
                             name="Улица и номер дома"
-                            classBox="finish__street"
+                            classNamesBox="finish__street"
                         />
                         <Input name="Квартира" />
                         <Input name="Домофон" />

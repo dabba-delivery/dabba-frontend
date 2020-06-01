@@ -7,7 +7,7 @@ import Bin from "./bin.js";
 import Finish from "./finish";
 
 import "./style/index.css";
-import { Counter } from "./components/library";
+
 
 // пример реального объекта с бекэнда
 

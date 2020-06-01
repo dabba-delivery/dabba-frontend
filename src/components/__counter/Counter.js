@@ -15,9 +15,9 @@ import "./--orange.css";
  *
  * style
  * @param {string} style - sets the color palette for this element. You can choose one of availables
- * @param {string} classBox - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
- * @param {string} classText - apply new classes to a text between buttons
- * @param {string} class - adds this classes to the button elements
+ * @param {string} classNamesBox - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
+ * @param {string} classNamesText - apply new classes to a text between buttons
+ * @param {string} classNames - adds this classes to the button elements
  * @param {string} size - three options available: small, medium and big
  *
  */
@@ -26,8 +26,9 @@ export class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentValue: this.props.initialValue,
-            step: this.props.step,
+            currentValue: this.props.initialValue || 0,
+			step: this.props.step || 1,
+			limit: this.props.limit || 10
         };
 
         this.styles = {
@@ -43,7 +44,7 @@ export class Counter extends React.Component {
     }
 
     increase = () => {
-        if (this.state.currentValue < this.props.limit) {
+        if (this.state.currentValue < this.state.limit) {
             this.setState({
                 currentValue: this.state.currentValue + this.state.step,
             });
@@ -55,12 +56,12 @@ export class Counter extends React.Component {
             this.setState({
                 currentValue: this.state.currentValue - this.state.step,
             });
-		}
-		
-		if (this.props.func) {
-			this.props.func(this.state.currentValue)
-		}
-	};
+        }
+
+        if (this.props.func) {
+            this.props.func(this.state.currentValue);
+        }
+    };
 
     render() {
         return (
@@ -70,19 +71,19 @@ export class Counter extends React.Component {
                         ? this.styles[this.props.style]
                         : this.styles["orange"]) +
                     " " +
-                    (this.props.classBox ? this.props.classBox : "")
+                    (this.props.classNamesBox ? this.props.classNamesBox : "")
                 }
             >
                 <Button
-                    class={
-                        (this.props.class ? this.props.class : "") +
+                    classNames={
+                        (this.props.classNames ? this.props.classNames : "") +
                         " " +
                         (this.sizes[this.props.size]
                             ? this.sizes[this.props.size]
                             : "counter--small")
                     }
                     style={this.props.style}
-                    func={this.decrease}
+                    onClick={this.decrease}
                 >
                     <svg
                         width="8"
@@ -100,21 +101,23 @@ export class Counter extends React.Component {
                 <p
                     className={
                         "counter__text " +
-                        (this.props.classText ? this.props.classText : " ")
+                        (this.props.classNamesText
+                            ? this.props.classNamesText
+                            : " ")
                     }
                 >
                     {this.state.currentValue}
                 </p>
                 <Button
-                    class={
-                        (this.props.class ? this.props.class : "") +
+                    classNames={
+                        (this.props.classNames ? this.props.classNames : "") +
                         " " +
                         (this.sizes[this.props.size]
                             ? this.sizes[this.props.size]
                             : "counter--small")
                     }
                     style={this.props.style}
-                    func={this.increase}
+                    onClick={this.increase}
                 >
                     <svg
                         width="8"

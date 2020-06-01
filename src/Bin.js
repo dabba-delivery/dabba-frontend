@@ -76,7 +76,7 @@ export default class Bin extends React.Component {
                             position={el}
                             amount={val}
                             key={i}
-                            func={window.cart.removePos}
+                            onDelete={window.cart.removePos}
                         />
                     ))}
                 </div>
