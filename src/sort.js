@@ -15,71 +15,71 @@ export default class SortBlock extends React.Component {
                 <div className="sort__box">
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
                         style="blue"
-                        class="sort__toggle"
-                        func={() => console.log("sort works")}
+                        classNames="sort__toggle"
+                        onChange={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
