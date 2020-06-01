@@ -32,15 +32,16 @@ export default class Menu extends React.Component {
 function UnpackPositions(props) {
     const positionsArr = props.arr;
     let listPositions = positionsArr.map((position, i) => {
+        const { pictureUrl, name, description, weigh, price } = position;
         return (
             <Position
                 key={i}
                 id={position}
-                link={position.pictureUrl}
-                name={position.name}
-                ingridients={position.description}
-                weight={position.weigh}
-                cost={position.price}
+                link={pictureUrl}
+                name={name}
+                ingridients={description}
+                weight={weigh}
+                cost={price}
             />
         );
     });

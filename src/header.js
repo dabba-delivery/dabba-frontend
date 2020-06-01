@@ -69,24 +69,33 @@ function Rating({ rating }) {
 
 export default class Header extends React.Component {
     render() {
-        const { data } = this.props;
+        const {
+            data: {
+                name,
+                address,
+                logoUrl,
+                contactPhone,
+                kitchenType,
+                email,
+                openTime,
+                closeTime,
+            },
+        } = this.props;
 
         return (
             <div className="header">
                 <div className="wall">
-                    <img src={data.logoUrl} className="wall__logo" alt="logo" />
-                    <h2 className="wall__name">
-                        {data.name + " " + data.address}
-                    </h2>
+                    <img src={logoUrl} className="wall__logo" alt="logo" />
+                    <h2 className="wall__name">{name + " " + address}</h2>
                     <Info
                         rating={5}
-                        phone={data.contactPhone}
-                        kitchenType={data.kitchenType}
-                        email={data.email}
+                        phone={contactPhone}
+                        kitchenType={kitchenType}
+                        email={email}
                     />
                 </div>
                 <div className="line">
-                    <Time openTime={data.openTime} closeTime={data.closeTime} />
+                    <Time openTime={openTime} closeTime={closeTime} />
 
                     <Status
                         classNames="line__status"

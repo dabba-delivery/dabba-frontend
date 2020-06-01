@@ -75,11 +75,7 @@ export class Counter extends React.Component {
         return (
             <div className={this.styles[style] + " " + classNamesBox}>
                 <Button
-                    classNames={
-                        classNames +
-                        " " +
-                        this.sizes[size]
-                    }
+                    classNames={classNames + " " + this.sizes[size]}
                     style={style}
                     onClick={this.decrease}
                 >

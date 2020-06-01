@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/bin.css";
 
-import { Cart, Button } from "./components/library.js";
+import { CartItem, Button } from "./components/library.js";
 
 export default class Bin extends React.Component {
     constructor(props) {
@@ -74,11 +74,11 @@ export default class Bin extends React.Component {
                 </div>
                 <div className="bin__list">
                     {[...this.state.cart].map(([el, { val }], i) => (
-                        <Cart
+                        <CartItem
                             position={el}
                             amount={val}
                             key={i}
-                            onDelete={window.cart.removePos}
+                            handleDelete={window.cart.removePos}
                         />
                     ))}
                 </div>

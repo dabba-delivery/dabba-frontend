@@ -10,24 +10,25 @@ import "./--default.css";
  * @param {number} key - just id for correct work of React
  *
  * style
- * @param {function} onDelete - handle click function. This func invokes and takes position as agrument
+ * @param {function} handleDelete - handle click function. This func invokes and takes position as agrument
  */
 
-export class Cart extends React.Component {
-    handleClick = (position) => {
-        this.props.onDelete(position);
-    };
-
+export class CartItem extends React.Component {
     render() {
-        const { position, key, amount } = this.props;
+        const {
+            position,
+            position: { name, weigh, price },
+            amount,
+            handleDelete,
+        } = this.props;
 
         return (
             <div className="cart">
-                <div className="cart__block" key={key}>
-                    <h5 className="cart__name">{position.name}</h5>
+                <div className="cart__block">
+                    <h5 className="cart__name">{name}</h5>
                     <p className="cart__amount">{amount}шт.</p>
-                    <p className="cart__weight">{position.weigh}гр.</p>
-                    <p className="cart__price">{position.price}р.</p>
+                    <p className="cart__weight">{weigh}гр.</p>
+                    <p className="cart__price">{price}р.</p>
                 </div>
                 <div className="cart__option">
                     <svg
@@ -46,7 +47,7 @@ export class Cart extends React.Component {
 
                     <p
                         className="cart__delete"
-                        onClick={() => this.handleClick(position)}
+                        onClick={() => handleDelete(position)}
                     >
                         Удалить
                     </p>

@@ -14,10 +14,15 @@ import "./status.css";
 
 export class Status extends React.Component {
     render() {
-        const { classNames, trueMessage, falseMessage, current } = this.props;
+        const {
+            classNames = "",
+            trueMessage = "Okay",
+            falseMessage = "Not okay",
+            current = false,
+        } = this.props;
 
         return (
-            <div className={"status " + (classNames ? classNames : "")}>
+            <div className={"status " + classNames}>
                 <svg
                     style={{
                         display: current ? "box" : "none",

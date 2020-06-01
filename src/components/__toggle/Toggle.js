@@ -30,7 +30,7 @@ export class Toggle extends React.Component {
     }
 
     handleClick = (event) => {
-		const {onChange = (()=>console.log("ok"))} = this.props
+        const { onChange = () => console.log("ok") } = this.props;
 
         event.preventDefault();
         this.setState({ active: !this.state.active });
@@ -38,16 +38,16 @@ export class Toggle extends React.Component {
     };
 
     render() {
-        const { classNames, style, children } = this.props;
+        const { classNames = "", style = "orange", children } = this.props;
 
         return (
             <button
                 className={
                     (this.state.active
-                        ? this.styles[style ? style : "orange"][1]
-                        : this.styles[style ? style : "orange"][0]) +
+                        ? this.styles[style][1]
+                        : this.styles[style][0]) +
                     " " +
-                    (classNames ? classNames : "")
+                    classNames
                 }
                 onClick={this.handleClick}
             >

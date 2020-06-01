@@ -22,14 +22,16 @@ export default class MainPart extends React.Component {
     }
 
     componentDidMount() {
-        const { data } = this.props;
+        const {
+            data: { coords, name, logoUrl, serviceRadius },
+        } = this.props;
 
-        let coords = data.coords.split(",");
-        place.name = data.name;
-        place.logoURL = data.logoUrl;
-        place.lat = coords[0];
-        place.lng = coords[1];
-        place.radius = data.serviceRadius;
+        let coordinates = coords.split(",");
+        place.name = name;
+        place.logoURL = logoUrl;
+        place.lat = coordinates[0];
+        place.lng = coordinates[1];
+        place.radius = serviceRadius;
     }
 
     render() {
