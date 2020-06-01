@@ -30,13 +30,15 @@ export class Toggle extends React.Component {
     }
 
     handleClick = (event) => {
+		const {onChange = (()=>console.log("ok"))} = this.props
+
         event.preventDefault();
         this.setState({ active: !this.state.active });
-        this.props.onChange();
+        onChange();
     };
 
     render() {
-        const { onChange, classNames, style, children } = this.props;
+        const { classNames, style, children } = this.props;
 
         return (
             <button

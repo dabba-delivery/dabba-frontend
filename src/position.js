@@ -11,7 +11,14 @@ import "./style/position.css";
 
 export default class Position extends React.Component {
     render() {
-        const { name, link, ingridients, cost, id, weight } = this.props;
+        const {
+            name = "empty value",
+            link = "empty value",
+            ingridients = "empty value",
+            cost = "empty value",
+            id = "empty value",
+            weight = "empty value",
+        } = this.props;
 
         return (
             <div className="position">

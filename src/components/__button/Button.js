@@ -31,12 +31,12 @@ export class Button extends React.Component {
     };
 
     render() {
-		const { style, classNames, children } = this.props;
+		const { style = "orange", classNames = " ", children } = this.props;
 		
         return (
             <button
                 className={
-                    this.styles[style ? style : "orange"] + " " + classNames
+                    this.styles[style] + " " + classNames
                 }
                 onClick={this.handleClick}
             >

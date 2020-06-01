@@ -8,7 +8,6 @@ import Finish from "./finish";
 
 import "./style/index.css";
 
-
 // пример реального объекта с бекэнда
 
 const restaurant = {
@@ -289,7 +288,7 @@ class App extends React.Component {
     };
 
     render() {
-		const {data} = this.props
+        const { data } = this.props;
 
         return (
             <div className="page">

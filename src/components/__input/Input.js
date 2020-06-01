@@ -32,10 +32,10 @@ export class Input extends React.Component {
     render() {
         const {
             name,
-            style,
-            classNames,
-            classNamesBox,
-            onChange,
+            style = "orange",
+            classNames = "",
+            classNamesBox = "",
+            onChange = "",
             children,
         } = this.props;
 
@@ -43,10 +43,7 @@ export class Input extends React.Component {
             <div className={"input__box " + classNamesBox ? classNamesBox : ""}>
                 {name ? <p className="input__tip">{name}</p> : ""}
                 <input
-                    className={
-                        this.styles[style ? style : "orange"] +
-                        (classNames ? classNames : "")
-                    }
+                    className={this.styles[style] + classNames}
                     onChange={onChange ? this.handleChange : ""}
                 >
                     {children}

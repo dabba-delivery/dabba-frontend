@@ -19,7 +19,7 @@ import "./style/menu.css";
 
 export default class Menu extends React.Component {
     render() {
-		const {dishes} = this.props
+        const { dishes } = this.props;
 
         return (
             <div className="menu">

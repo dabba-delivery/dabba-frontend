@@ -74,11 +74,7 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <div className="wall">
-                    <img
-                        src={data.logoUrl}
-                        className="wall__logo"
-                        alt="logo"
-                    />
+                    <img src={data.logoUrl} className="wall__logo" alt="logo" />
                     <h2 className="wall__name">
                         {data.name + " " + data.address}
                     </h2>
@@ -90,10 +86,7 @@ export default class Header extends React.Component {
                     />
                 </div>
                 <div className="line">
-                    <Time
-                        openTime={data.openTime}
-                        closeTime={data.closeTime}
-                    />
+                    <Time openTime={data.openTime} closeTime={data.closeTime} />
 
                     <Status
                         classNames="line__status"

@@ -65,26 +65,20 @@ export class Counter extends React.Component {
 
     render() {
         const {
-            style,
-            classNames,
-            classNamesBox,
-            classNamesText,
-            size,
+            style = "orange",
+            classNames = "",
+            classNamesBox = "",
+            classNamesText = "",
+            size = "small",
         } = this.props;
 
         return (
-            <div
-                className={
-                    (style ? this.styles[style] : this.styles["orange"]) +
-                    " " +
-                    (classNamesBox ? classNamesBox : "")
-                }
-            >
+            <div className={this.styles[style] + " " + classNamesBox}>
                 <Button
                     classNames={
-                        (classNames ? classNames : "") +
+                        classNames +
                         " " +
-                        (this.sizes[size] ? this.sizes[size] : "counter--small")
+                        this.sizes[size]
                     }
                     style={style}
                     onClick={this.decrease}
@@ -102,17 +96,12 @@ export class Counter extends React.Component {
                         />
                     </svg>
                 </Button>
-                <p
-                    className={
-                        "counter__text " +
-                        (classNamesText ? classNamesText : " ")
-                    }
-                >
+                <p className={"counter__text " + classNamesText}>
                     {this.state.currentValue}
                 </p>
                 <Button
                     classNames={
-                        (classNames ? classNames : "") +
+                        classNames +
                         " " +
                         (this.sizes[size] ? this.sizes[size] : "counter--small")
                     }
