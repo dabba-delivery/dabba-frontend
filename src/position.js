@@ -33,9 +33,9 @@ export default class Position extends React.Component {
                 </div>
 
                 <Button
-                    style={"orange"}
-                    class={"position__button"}
-                    func={() => {
+                    style="orange"
+                    classNames="position__button"
+                    onClick={() => {
                         window.cart && window.cart.addPos(this.props.id);
                     }}
                 >

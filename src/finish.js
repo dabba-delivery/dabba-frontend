@@ -10,25 +10,25 @@ export default class Finish extends React.Component {
                 <form className="finish__box">
                     <div className="finish__data">
                         <h5>Личные данные</h5>
-                        <Input name={"Имя и фамилия"} />
-                        <Input name={"Электронная почта"} />
-                        <Input name={"Номер телефона"} />
+                        <Input name="Имя и фамилия" />
+                        <Input name="Электронная почта" />
+                        <Input name="Номер телефона" />
                     </div>
                     <div className="finish__adress">
                         <h5>Адрес</h5>
                         <Input
-                            name={"Улица и номер дома"}
-                            classBox={"finish__street"}
+                            name="Улица и номер дома"
+                            classBox="finish__street"
                         />
-                        <Input name={"Квартира"} />
-                        <Input name={"Домофон"} />
-                        <Input name={"Подъезд"} />
-                        <Input name={"Этаж"} />
+                        <Input name="Квартира" />
+                        <Input name="Домофон" />
+                        <Input name="Подъезд" />
+                        <Input name="Этаж" />
                     </div>
                     <div className="finish__cost">
                         <Button
-                            class={"finish__button"}
-                            func={() => {
+                            classNames="finish__button"
+                            onClick={() => {
                                 alert("Вы сделали заказ");
                                 this.props.closeFunction();
                             }}

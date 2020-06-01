@@ -50,7 +50,7 @@ function Rating(props) {
         start.push(
             <svg
                 key={counter}
-                className={"wall__rating"}
+                className="wall__rating"
                 width="17"
                 height="17"
                 viewBox="0 0 27 25"
@@ -96,15 +96,15 @@ export default class Header extends React.Component {
                     />
 
                     <Status
-                        class={"line__status"}
-                        trueMessage={"Вы в зоне доставки"}
-                        falseMessage={"Вы вне зоны доставки"}
+                        class="line__status"
+                        trueMessage="Вы в зоне доставки"
+                        falseMessage="Вы вне зоны доставки"
                         current={true}
                     />
                     <Button
-                        style={"blue"}
-                        class={"line__button"}
-                        func={() => console.log("You press share button")}
+                        style="blue"
+                        classNames="line__button"
+                        onClick={() => console.log("You press share button")}
                     >
                         Поделиться
                     </Button>

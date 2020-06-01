@@ -38,19 +38,19 @@ export default class Bin extends React.Component {
                 cart: cart,
             });
         };
-    }
+    };
 
     componentWillUnmount = () => {
         delete window.cart;
-    }
+    };
 
     showSum = () => {
         let result = 0;
         for (let dish of this.state.cart.entries()) {
-            result = result + dish[0].price * dish[1].val;
+            result += dish[0].price * dish[1].val;
         }
         return result;
-    }
+    };
 
     render() {
         return (
@@ -82,9 +82,9 @@ export default class Bin extends React.Component {
                 </div>
                 <div className="bin__footer">
                     <Button
-                        style={"blue"}
-                        class={"bin__button"}
-                        func={
+                        style="blue"
+                        classNames="bin__button"
+                        onClick={
                             this.showSum()
                                 ? () => this.props.finishFunc(this.showSum())
                                 : () => alert("Корзина пуста, купи че нить!")

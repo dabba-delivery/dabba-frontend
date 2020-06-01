@@ -1,4 +1,4 @@
-    import React from "react";
+import React from "react";
 import "./style/sort.css";
 
 import { Toggle } from "./components/library.js";
@@ -14,71 +14,71 @@ export default class SortBlock extends React.Component {
                 <h5 className="sort__text">Показать</h5>
                 <div className="sort__box">
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Наборы
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Популярное
                     </Toggle>
                     <Toggle
-                        style={"blue"}
-                        class={"sort__toggle"}
+                        style="blue"
+                        class="sort__toggle"
                         func={() => console.log("sort works")}
                     >
                         Популярное
