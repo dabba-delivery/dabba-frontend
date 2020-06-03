@@ -24,12 +24,12 @@ export default class Register extends React.Component {
     }
 
     componentDidMount = () => {
-        this.setState({ loaded: true });
+        setTimeout(() => this.setState({ loaded: true }), 1000);
     };
 
     render() {
         return this.state.loaded ? (
-            <div className="register">
+            <div className="register app-appear">
                 <div className="register__wall"></div>
                 <form
                     className="register__form"

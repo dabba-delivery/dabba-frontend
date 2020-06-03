@@ -24,11 +24,11 @@ class Restaurant extends React.Component {
             match: {
                 params: { id },
             },
-        } = this.props;
-
+		} = this.props;
+		
         setTimeout(() => {
             this.setState({ data: restaurants[id] });
-        }, 5000);
+        }, 2000);
 
         // ** Template for future request **
 
@@ -57,7 +57,7 @@ class Restaurant extends React.Component {
         return (
             <div>
                 {this.state.data ? (
-                    <div className="page">
+                    <div className="page app-appear">
                         {this.state.finishOrder ? (
                             <Finish
                                 finalCost={this.state.cost}

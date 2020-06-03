@@ -56,3 +56,17 @@ ul {
     color: #000000;
     background-color: rgb(255, 255, 255);
 }
+
+.app-appear {
+    animation-name: app-appear;
+    animation-duration: 1.5s;
+}
+
+@keyframes app-appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

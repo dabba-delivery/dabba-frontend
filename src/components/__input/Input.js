@@ -37,14 +37,15 @@ export class Input extends React.Component {
             classNames = "",
             classNamesBox = "",
             onChange = "",
-			children,
-			type = "text"
+            children,
+            type = "text",
         } = this.props;
 
         return (
             <div className={"input__box " + classNamesBox ? classNamesBox : ""}>
                 {name ? <p className="input__tip">{name}</p> : ""}
-                <input type={type}
+                <input
+                    type={type}
                     className={this.styles[style] + classNames}
                     onChange={onChange ? this.handleChange : ""}
                 >
