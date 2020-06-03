@@ -1,4 +1,24 @@
+# Dabba #
+#### Dabba - food delivery SaaS service for small and medium business which was developed as main idea on the HackTheCrisis Russia ####
+
 Here you can find our pitch with that project: https://hackthecrisisrussia.ru 
+Main stack: React, JavaScript, TS, CSS, HTML, Java, Kotlin
+Collaborators: [Sergey Rudenko](https://github.com/rudensergey), [Dmitrii Yudakov](https://github.com/dmitry-yudakov), [Alexey Petrov](https://github.com/al3ks3y)
+
+![Interface](https://github.com/rudensergey/dabba/blob/master/README%20Media/4.png?raw=true)<br/>
+
+#### Currently we are working on that, the main idea is to offer this solution to real business after adding main functionality: ####
+
+1. Registration
+2. Admin panel
+3. Connect that with backend
+
+Major page of oranisation where you can share all food that I are delivering <br/>
+![Interface](https://github.com/rudensergey/dabba/blob/master/README%20Media/1.png?raw=true) <br/>
+
+![Interface](https://github.com/rudensergey/dabba/blob/master/README%20Media/3.png?raw=true) <br/>
+
+![Interface](https://github.com/rudensergey/dabba/blob/master/README%20Media/2.png?raw=true) <br/>
 
 ## Available Scripts
 
