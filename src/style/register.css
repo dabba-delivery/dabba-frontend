@@ -1,0 +1,41 @@
+.register {
+    height: 100vh;
+    width: 100vw;
+    padding: 100px;
+    background-color: #fa7921;
+    box-sizing: border-box;
+}
+
+.register__wall {
+    position: absolute;
+    height: 50%;
+    width: 100vw;
+
+    background-image: url(./media/register.jpeg);
+    background-size: contain;
+    z-index: -1;
+}
+
+.register__form {
+    height: min-content;
+    width: 400px;
+    padding: 30px;
+    margin: 0px auto 0px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.178);
+
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto);
+    grid-gap: 10px;
+}
+
+.register__onerow {
+    grid-column: 1 / -1;
+}
+
+.register__button {
+	margin-top: 10px;
+	justify-self: center;
+}
