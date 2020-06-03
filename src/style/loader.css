@@ -1,0 +1,64 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul {
+    margin: 0px;
+    color: #3f3f3f;
+    font-family: "Roboto", sans-serif;
+}
+
+.loader {
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: appear;
+    animation-duration: 1s;
+}
+
+.loader__company {
+    font-size: 100px;
+    animation-name: company;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.loader__description {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes company {
+    0% {
+        color: rgb(39, 39, 39);
+        transform: scale(1);
+    }
+    50% {
+        color: #fa7921;
+        transform: scale(1.02);
+    }
+    100% {
+        color: rgb(39, 39, 39);
+        transform: scale(1);
+    }
+}
