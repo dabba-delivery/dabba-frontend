@@ -26,8 +26,10 @@ export class Button extends React.Component {
     }
 
     handleClick = (event) => {
+        const { onClick = () => console.log("it works") } = this.props;
+
         event.preventDefault();
-        this.props.onClick();
+        onClick();
     };
 
     render() {
