@@ -54,13 +54,10 @@ export default class Register extends React.Component {
                         classNamesBox="register__onerow"
                         name="Тип кухни"
                     />
-                    <Input style="blue" name="Время открытия" type="time"/>
+                    <Input style="blue" name="Время открытия" type="time" />
                     <Input style="blue" name="Время закрытия" type="time" />
-                    <Input
-                        style="blue"
-                        classNamesBox="register__onerow"
-                        name="Email"
-                    />
+                    <Input style="blue" name="Телефон" />
+                    <Input style="blue" name="Email" />
 
                     <Button
                         classNames="register__button register__onerow"
