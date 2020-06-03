@@ -6,7 +6,8 @@ import { Button } from "./components/library.js";
 import { Input } from "./components/library.js";
 import { place } from "./mainPart.js";
 
-const REACT_APP_GOOGLE_API_KEY = "AIzaSyDMkQLCD7btKGE3_hHIDknTSZzZAsVkc6M";
+const { REACT_APP_GOOGLE_API_KEY } = process.env;
+
 const defaultZoom = 14;
 const defaultCenterCoords = {
     lat: 55.6105187,
