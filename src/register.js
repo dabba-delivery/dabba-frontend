@@ -30,16 +30,10 @@ export default class Register extends React.Component {
     render() {
         return this.state.loaded ? (
             <div className="register app-appear">
-                <form
-                    className="register__form"
-                    method="post"
-                    action="https://85.192.35.203:8080/restaurant"
-                    encType="application/json"
-                    onSubmit={() => alert("ok")}
-                >
+                <form className="register__form">
                     {this.state.section === "sign up" ? (
                         <div className="register__sign-in component-appear">
-                            <h1 classNamesBox="register__onerow">
+                            <h1 classNamesBox="register__onerow component-appear">
                                 Регистрация
                             </h1>
                             <Input
@@ -67,8 +61,16 @@ export default class Register extends React.Component {
                                 name="Время закрытия"
                                 type="time"
                             />
-                            <Input style="blue" name="Телефон" classNamesBox="register__bottom"/>
-                            <Input style="blue" name="Email" classNamesBox="register__bottom" />
+                            <Input
+                                style="blue"
+                                name="Телефон"
+                                classNamesBox="register__bottom"
+                            />
+                            <Input
+                                style="blue"
+                                name="Email"
+                                classNamesBox="register__bottom"
+                            />
 
                             <Button>Отправить</Button>
                             <p
@@ -87,23 +89,25 @@ export default class Register extends React.Component {
                         </div>
                     ) : (
                         <div className="register__sign-in">
-                            <h1 className="register__onerow">
+                            <h1 className="register__onerow component-appear">
                                 Войти в систему
                             </h1>
                             <Input
                                 style="blue"
-                                classNamesBox="register__onerow"
+                                classNamesBox="register__onerow component-appear"
                                 name="Email"
                             />
                             <Input
                                 style="blue"
-                                classNamesBox="register__onerow register__bottom"
+                                classNamesBox="register__onerow register__bottom component-appear"
                                 name="Пароль"
                             />
 
-                            <Button>Отправить</Button>
+                            <Button classNames="component-appear">
+                                Отправить
+                            </Button>
                             <p
-                                className="register__changesection"
+                                className="register__changesection component-appear"
                                 onClick={() =>
                                     this.setState({
                                         section:
