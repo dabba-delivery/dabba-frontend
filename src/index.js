@@ -12,7 +12,6 @@ import { Loader } from "./components/library.js";
 import { restaurants } from "./dbexample";
 
 import "./style/index.css";
-
 class Restaurant extends React.Component {
     constructor(props) {
         super(props);
@@ -24,11 +23,11 @@ class Restaurant extends React.Component {
             match: {
                 params: { id },
             },
-		} = this.props;
-		
+        } = this.props;
+
         setTimeout(() => {
             this.setState({ data: restaurants[id] });
-        }, 2000);
+        }, 1000);
 
         // ** Template for future request **
 
@@ -66,6 +65,7 @@ class Restaurant extends React.Component {
                         ) : (
                             ""
                         )}
+
                         <MainPart data={data} />
                         <Bin finishFunc={this.makeOrder} />
                     </div>

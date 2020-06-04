@@ -4,6 +4,7 @@ import Header from "./header.js";
 import Menu from "./menu";
 import SortBlock from "./sort";
 import MapBlock from "./map";
+import { Statusbar } from "./components/library";
 
 // temp
 export const place = {
@@ -16,6 +17,7 @@ export const place = {
     },
     radius: 0,
 };
+
 export default class MainPart extends React.Component {
     constructor(props) {
         super(props);
@@ -43,6 +45,7 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
+                <Statusbar />
                 <Header data={data} />
                 <MapBlock />
                 <SortBlock />

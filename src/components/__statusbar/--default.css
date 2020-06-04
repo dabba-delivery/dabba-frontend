@@ -1,0 +1,28 @@
+.statusbar {
+    position: absolute;
+    height: 40px;
+    margin: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 3;
+}
+
+.statusbar a {
+    padding: 0px 10px 0px 10px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.statusbar a:hover {
+    color: #fa7921;
+}
+
+.statusbar__logo {
+    font-size: 30px;
+}

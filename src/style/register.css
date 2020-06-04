@@ -1,13 +1,13 @@
 .register {
     height: 100vh;
     width: 100vw;
-    background-color: #fa7921;
-    box-sizing: border-box;
+    background-color: #FA7921;
 
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
 .register__form {
@@ -53,7 +53,7 @@
 }
 
 .register__changesection:hover {
-    color: #fa7921;
+    color: #FA7921;
 }
 
 .register__bottom {
