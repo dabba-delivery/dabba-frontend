@@ -3,6 +3,24 @@ import "./style/header.css";
 
 import { Button, Status } from "./components";
 
+const ratingStar = (
+    <svg
+        className="wall__rating"
+        width="17"
+        height="17"
+        viewBox="0 0 27 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M13.5 3.23607L15.5799 9.63729L15.8044 10.3283H16.5309H23.2616L17.8164 14.2844L17.2286 14.7115L17.4531 15.4025L19.533 21.8037L14.0878 17.8475L13.5 17.4205L12.9122 17.8475L7.46701 21.8037L9.54689 15.4025L9.77141 14.7115L9.18362 14.2844L3.73842 10.3283H10.4691H11.1956L11.4201 9.63729L13.5 3.23607Z"
+            fill="white"
+            stroke="white"
+            strokeWidth="2"
+        />
+    </svg>
+);
+
 /**
  * Time component represents schedule for organisation
  *
@@ -45,24 +63,7 @@ const Info = ({ rating, contactPhone, kitchenType, email }) => (
 function Rating({ rating }) {
     const start = [];
     for (let counter = 0; counter < rating; counter++) {
-        start.push(
-            <svg
-                key={counter}
-                className="wall__rating"
-                width="17"
-                height="17"
-                viewBox="0 0 27 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M13.5 3.23607L15.5799 9.63729L15.8044 10.3283H16.5309H23.2616L17.8164 14.2844L17.2286 14.7115L17.4531 15.4025L19.533 21.8037L14.0878 17.8475L13.5 17.4205L12.9122 17.8475L7.46701 21.8037L9.54689 15.4025L9.77141 14.7115L9.18362 14.2844L3.73842 10.3283H10.4691H11.1956L11.4201 9.63729L13.5 3.23607Z"
-                    fill="white"
-                    stroke="white"
-                    strokeWidth="2"
-                />
-            </svg>
-        );
+        start.push(ratingStar);
     }
     return start;
 }
