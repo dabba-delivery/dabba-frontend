@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./components/library.js";
+import { Button } from "./components";
 import "./style/position.css";
 
 // В этому компоненту нужно передать через

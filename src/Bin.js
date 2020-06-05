@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/bin.css";
 
-import { CartItem, Button } from "./components/library.js";
+import { CartItem, Button } from "./components";
 
 export default class Bin extends React.Component {
     constructor(props) {

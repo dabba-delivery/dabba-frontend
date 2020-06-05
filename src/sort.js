@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/sort.css";
 
-import { Toggle } from "./components/library.js";
+import { Toggle } from "./components";
 
 // внутри каждой кнопки сортировки есть func - сюда нужно
 // вставлять функцию сортировки от компонентов выше

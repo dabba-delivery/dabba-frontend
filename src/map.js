@@ -2,8 +2,7 @@ import GoogleMapReact from "google-map-react";
 import React, { useState, useEffect } from "react";
 import "./style/map.css";
 
-import { Button } from "./components/library.js";
-import { Input } from "./components/library.js";
+import { Input, Button } from "./components";
 import { place } from "./mainPart.js";
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;

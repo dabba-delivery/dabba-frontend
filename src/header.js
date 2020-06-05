@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/header.css";
 
-import { Button, Status } from "./components/library.js";
+import { Button, Status } from "./components";
 
 /**
  * Time component represents schedule for organisation

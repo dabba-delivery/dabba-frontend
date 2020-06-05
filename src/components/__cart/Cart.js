@@ -1,7 +1,7 @@
 import React from "react";
 import "./--default.css";
 
-import { Counter } from "../library";
+import { Counter } from "../index";
 
 /**
  * Class Cart represents one position card in the cart

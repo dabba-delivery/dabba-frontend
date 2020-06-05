@@ -1,7 +1,7 @@
 import React from "react";
 import InputMask from "react-input-mask";
 import "./style/register.css";
-import { Input, Button, Loader, Navigation } from "./components/library.js";
+import { Input, Button, Loader, Navigation } from "./components";
 
 const required = false;
 

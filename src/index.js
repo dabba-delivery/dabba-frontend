@@ -8,7 +8,7 @@ import Bin from "./bin";
 import Finish from "./finish";
 import Register from "./register";
 
-import { Loader } from "./components/library.js";
+import { Loader } from "./components";
 import { restaurants } from "./dbexample";
 
 import "./style/index.css";

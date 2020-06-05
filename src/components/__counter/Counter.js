@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../library.js";
+import { Button } from "../index.js";
 import "./--small.css";
 import "./--orange.css";
 
