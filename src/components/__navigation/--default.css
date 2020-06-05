@@ -1,7 +1,7 @@
 .navigation {
     position: absolute;
     height: 60px;
-    width: 140px;
+    width: 180px;
     margin: 20px;
     border-radius: 3px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.205);
@@ -21,9 +21,7 @@
 }
 
 .navigation__logo {
-    animation-name: navigation-links;
-    animation-duration: 0.5s;
-
+    width: max-content;
     padding: 0px 20px;
 
     color: white;
@@ -31,16 +29,35 @@
 
     transition-property: color;
     transition-duration: 0.3s;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navigation__logo svg {
+    width: 50px;
+    margin-right: 5px;
+    opacity: 1;
+    transition-property: opacity width margin-right;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in;
 }
 
 .navigation:hover .navigation__logo {
-    color: #FA7921;
+    color: #fa7921;
+}
+
+.navigation:hover .navigation__logo svg {
+    width: 0px;
+    opacity: 0;
+    margin-right: 0px;
 }
 
 .navigation__link {
     padding: 0px 20px;
 
-    color: #FA7921;
+    color: #fa7921;
 
     animation-name: navigation-links;
     animation-duration: 0.5s;
@@ -50,12 +67,12 @@
 }
 
 .navigation__link:hover {
-    color: #BB5817;
+    color: #bb5817;
 }
 
 .navigation:hover {
     width: 450px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.205);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 

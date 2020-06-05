@@ -31,15 +31,16 @@ export default class Register extends React.Component {
         const { section } = this.state;
 
         return this.state.loaded ? (
-            <div>
-                <Navigation/>
-                <div className="register app-appear">
+            <div className="app-appear">
+                <Navigation />
+                <div className="register">
                     <form className="register__form">
                         {section === "sign up" ? (
                             <div className="register__sign-in component-appear">
                                 <h1 classNamesBox="register__onerow component-appear">
                                     Регистрация
                                 </h1>
+
                                 <Input
                                     style="blue"
                                     classNamesBox="register__onerow"

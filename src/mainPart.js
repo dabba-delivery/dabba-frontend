@@ -45,7 +45,7 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                <Navigation />
+                <Navigation classNamesBox="app-appear" />
                 <Header data={data} />
                 <MapBlock />
                 <SortBlock />
