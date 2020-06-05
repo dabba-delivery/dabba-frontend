@@ -32,7 +32,7 @@ export default class Register extends React.Component {
 
         return this.state.loaded ? (
             <div>
-                <Navigation />
+                <Navigation/>
                 <div className="register app-appear">
                     <form className="register__form">
                         {section === "sign up" ? (
