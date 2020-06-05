@@ -1,7 +1,7 @@
 import React from "react";
 import InputMask from "react-input-mask";
 import "./style/register.css";
-import { Input, Button, Loader, Statusbar } from "./components/library.js";
+import { Input, Button, Loader, Navigation } from "./components/library.js";
 
 const required = false;
 
@@ -32,7 +32,7 @@ export default class Register extends React.Component {
 
         return this.state.loaded ? (
             <div>
-                <Statusbar />
+                <Navigation />
                 <div className="register app-appear">
                     <form className="register__form">
                         {section === "sign up" ? (
