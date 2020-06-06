@@ -25,14 +25,19 @@ export default class MainPart extends React.Component {
 
     componentDidMount() {
         const {
-            data: { coords, name, logoUrl, serviceRadius },
-        } = this.props;
+            data: {
+                coordinates = "55.6105187,37.7337732",
+                name,
+                logoUrl = "https://fontslogo.com/wp-content/uploads/2015/07/Pizza-Hut-Logo-Font-150x150.jpg",
+				serviceRadius,
+            },
+		} = this.props;
 
-        let coordinates = coords.split(",");
+        let coords = coordinates.split(",");
         place.name = name;
         place.logoURL = logoUrl;
-        place.lat = coordinates[0];
-        place.lng = coordinates[1];
+        place.coords.lat = coords[0];
+        place.coords.lng = coords[1];
         place.radius = serviceRadius;
     }
 

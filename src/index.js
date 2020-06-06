@@ -18,29 +18,32 @@ class Restaurant extends React.Component {
         this.state = { finishOrder: false, cost: 0, data: "" };
     }
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
         const {
             match: {
                 params: { id },
             },
         } = this.props;
 
-        setTimeout(() => {
-            this.setState({ data: restaurants[id] });
-        }, 1000);
+        let rest = "";
 
-        // ** Template for future request **
+        if (rest) {
+            // for developing
+            setTimeout(() => this.setState({ data: rest[id] }), 1000);
+            // for developing
+        } else {
+            let response = await fetch(
+                `https://dabba-ru.herokuapp.com/restaurant/find/${id}`
+            );
 
-        // const dataJSON = await fetch(
-        //     `https://dabba-ru.herokuapp.com/restaurant/${id}`,
-        //     {
-        //         method: "GET",
-        //     }
-        // );
-        // const data = await dataJSON.json();
-        // this.setState({ data: data[0] });
-
-        // ** Template for future request **
+            if (response.ok) {
+                let json = await response.json();
+                console.log(json);
+                this.setState({ data: json });
+            } else {
+                alert("Ошибка HTTP: " + response.status);
+            }
+        }
     };
 
     makeOrder = (finalCost) => {
