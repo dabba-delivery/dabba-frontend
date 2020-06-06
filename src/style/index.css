@@ -27,7 +27,7 @@ ul {
     background-color: #F7F7F7;
 
     display: grid;
-    grid-template-columns: minmax(800px, 1200px) 350px;
+    grid-template-columns: minmax(800px, 1600px) 350px;
 }
 
 .wall__registration {

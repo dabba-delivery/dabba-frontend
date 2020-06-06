@@ -25,11 +25,11 @@ class Restaurant extends React.Component {
             },
         } = this.props;
 
-        let rest = "";
+        let rest = restaurants;
 
         if (rest) {
             // for developing
-            setTimeout(() => this.setState({ data: rest[id] }), 1000);
+            setTimeout(() => this.setState({ data: rest[id] }), 2000);
             // for developing
         } else {
             let response = await fetch(
