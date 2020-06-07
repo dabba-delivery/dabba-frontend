@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../index.js";
+import { Button, svg } from "../index.js";
 import "./--small.css";
 import "./--orange.css";
 
@@ -21,36 +21,6 @@ import "./--orange.css";
  * @param {string} size - three options available: small, medium and big
  *
  */
-
-const buttonLeft = (
-    <svg
-        width="8"
-        height="12"
-        viewBox="0 0 8 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M7.41 10.59L2.83 6L7.41 1.41L6 0L0 6L6 12L7.41 10.59Z"
-            fill="black"
-        />
-    </svg>
-);
-
-const buttonRight = (
-    <svg
-        width="8"
-        height="12"
-        viewBox="0 0 8 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M0.590088 10.59L5.17009 6L0.590088 1.41L2.00009 0L8.00009 6L2.00009 12L0.590088 10.59Z"
-            fill="black"
-        />
-    </svg>
-);
 
 export class Counter extends React.Component {
     constructor(props) {
@@ -101,6 +71,10 @@ export class Counter extends React.Component {
             classNamesText = "",
             size = "small",
         } = this.props;
+
+        const {
+            __counter: { buttonLeft, buttonRight },
+        } = svg;
 
         return (
             <div className={this.styles[style] + " " + classNamesBox}>

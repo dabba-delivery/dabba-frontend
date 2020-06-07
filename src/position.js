@@ -2,13 +2,6 @@ import React from "react";
 import { Button } from "./components";
 import "./style/position.css";
 
-// В этому компоненту нужно передать через
-// пропсы объект позиции и сразу назначить все
-// напрямую в теги, так как делать стейт не имеет смысла
-// позиция формируется только один раз
-
-// пока не делал привязку изображения через css custom properties!
-
 export default class Position extends React.Component {
     render() {
         const {

@@ -2,21 +2,6 @@ import React from "react";
 import Position from "./position";
 import "./style/menu.css";
 
-// компонент Menu принимает в себя массив объектов блюд следующего формата
-// и автоматически распаковывает его
-
-// let arr = [
-//     {
-//         name: "Пицца Маргарита",
-//         pictureUrl: "string",
-//         weigh: 1000,
-//         price: 1000,
-//         description:
-//             "Картофель из печи, соленые огурчики, цыпленок, соус ранч, томаты, красный лук, чеснок, моцарелла, томатный соус",
-//         comments: "string",
-//     },
-// ];
-
 export default class Menu extends React.Component {
     render() {
         const { dishes } = this.props;

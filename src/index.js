@@ -57,7 +57,7 @@ class Restaurant extends React.Component {
         const { data } = this.state;
 
         return (
-            <div>
+            <>
                 {this.state.data ? (
                     <div className="page app-appear">
                         {this.state.finishOrder ? (
@@ -77,7 +77,7 @@ class Restaurant extends React.Component {
                         <Loader />
                     </div>
                 )}
-            </div>
+            </>
         );
     }
 }

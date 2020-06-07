@@ -1,22 +1,7 @@
 import React from "react";
 import "./style/bin.css";
 
-import { CartItem, Button } from "./components";
-
-const bin = (
-    <svg
-        width="31"
-        height="31"
-        viewBox="0 0 31 31"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M24.5417 6.45833V24.5417H6.45833V6.45833H24.5417ZM25.9625 3.875H5.0375C4.39167 3.875 3.875 4.39167 3.875 5.0375V25.9625C3.875 26.4792 4.39167 27.125 5.0375 27.125H25.9625C26.4792 27.125 27.125 26.4792 27.125 25.9625V5.0375C27.125 4.39167 26.4792 3.875 25.9625 3.875ZM14.2083 9.04167H21.9583V11.625H14.2083V9.04167ZM14.2083 14.2083H21.9583V16.7917H14.2083V14.2083ZM14.2083 19.375H21.9583V21.9583H14.2083V19.375ZM9.04167 9.04167H11.625V11.625H9.04167V9.04167ZM9.04167 14.2083H11.625V16.7917H9.04167V14.2083ZM9.04167 19.375H11.625V21.9583H9.04167V19.375Z"
-            fill="#FA7921"
-        />
-    </svg>
-);
+import { CartItem, Button, svg } from "./components";
 
 export default class Bin extends React.Component {
     constructor(props) {
@@ -69,6 +54,10 @@ export default class Bin extends React.Component {
 
     render() {
         const { finishFunc } = this.props;
+
+        const {
+            bin: { bin },
+        } = svg;
 
         return (
             <div className="bin">

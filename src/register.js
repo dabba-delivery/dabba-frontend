@@ -16,7 +16,6 @@ function NumberInput(props) {
         />
     );
 }
-
 export default class Register extends React.Component {
     constructor(props) {
         super(props);
