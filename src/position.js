@@ -6,7 +6,7 @@ export default class Position extends React.Component {
     render() {
         const {
             name = "empty value",
-            link = "empty value",
+            link,
             ingridients = "empty value",
             cost = "empty value",
             id = "empty value",
@@ -20,7 +20,7 @@ export default class Position extends React.Component {
                     style={{
                         backgroundImage: link
                             ? `url(${link})`
-                            : `url(./default.png)`,
+                            : "url(https://oop2.pizzahut.ru/product_pics/small//4/c5d0fc7bf98649d9400b6cbb2589f59e.png)",
                     }}
                 ></div>
                 <h5 className="position__name">{name}</h5>

@@ -7,7 +7,7 @@ export const restaurants = {
             {
                 name: "Деревенская",
                 pictureUrl:
-                    "https://cdn.dodostatic.net/static/Img/Products/04dff3cf16144112aabdd5f79182f663_584x584.jpeg",
+                    "",
                 weigh: "200",
                 price: "600",
                 description:

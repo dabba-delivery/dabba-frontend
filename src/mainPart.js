@@ -28,7 +28,7 @@ export default class MainPart extends React.Component {
             data: {
                 coordinates = "55.6105187,37.7337732",
                 name,
-                logoUrl = "https://fontslogo.com/wp-content/uploads/2015/07/Pizza-Hut-Logo-Font-150x150.jpg",
+                logoUrl = "",
 				serviceRadius,
             },
 		} = this.props;
