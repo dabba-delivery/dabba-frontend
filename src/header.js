@@ -55,7 +55,7 @@ function Rating({ rating }) {
     return start;
 }
 
-export const Header = (props) => {
+export default (props) => {
     const {
         data: {
             name,

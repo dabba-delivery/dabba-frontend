@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./components";
 import "./style/position.css";
 
-export const Position = (props) => {
+export default (props) => {
     const {
         name = "empty value",
         link,

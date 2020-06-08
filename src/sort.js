@@ -7,7 +7,7 @@ import { Toggle } from "./components";
 // вставлять функцию сортировки от компонентов выше
 // позде можно сделать возможноть получения массива названий и функций
 
-export const SortBlock = (props) => {
+export default (props) => {
     return (
         <div className="sort">
             <h5 className="sort__text">Показать</h5>

@@ -5,7 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
 import Bin from "./Bin";
-import { Finish } from "./finish";
+import Finish from "./finish";
 import Register from "./register";
 
 import { Loader } from "./components";

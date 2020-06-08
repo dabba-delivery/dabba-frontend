@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Header } from "./header.js";
+import Header from "./header.js";
 import { Menu } from "./menu";
-import { SortBlock } from "./sort";
+import SortBlock from "./sort";
 import MapBlock from "./map";
 import { Navigation, Counter } from "./components";
 
@@ -19,10 +19,6 @@ export const place = {
 };
 
 export default class MainPart extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         const {
             data: {

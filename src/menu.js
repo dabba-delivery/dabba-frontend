@@ -1,5 +1,5 @@
 import React from "react";
-import { Position } from "./position";
+import Position from "./position";
 import "./style/menu.css";
 
 export const Menu = (props) => {

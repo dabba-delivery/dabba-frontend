@@ -3,7 +3,7 @@ import "./style/finish.css";
 
 import { Input, Button } from "./components";
 
-export const Finish = (props) => {
+export default (props) => {
     const { finalCost, closeFunction } = props;
 
     return (
