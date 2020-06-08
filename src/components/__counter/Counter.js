@@ -22,17 +22,6 @@ import "./--orange.css";
  *
  */
 
-const styles = {
-    orange: "counter--orange",
-    blue: "counter--blue",
-};
-
-const sizes = {
-    small: "counter--small",
-    medium: "counter--medium",
-    big: "counter--big",
-};
-
 export const Counter = (props) => {
     const {
         style = "orange",
@@ -44,7 +33,18 @@ export const Counter = (props) => {
         step = 1,
         limit = 10,
         func = (a) => console.log("it works: " + a),
-    } = props;
+	} = props;
+	
+	const styles = {
+		orange: "counter--orange",
+		blue: "counter--blue",
+	};
+	
+	const sizes = {
+		small: "counter--small",
+		medium: "counter--medium",
+		big: "counter--big",
+	};
 
     const { value, handleDecrease, handleIncrease } = useCounter(
         initialValue,

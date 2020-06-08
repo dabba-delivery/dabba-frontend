@@ -17,41 +17,32 @@ import "./--blue.css";
  * @param {string} classNames - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  */
 
-export class Input extends React.Component {
-    constructor(props) {
-        super(props);
-        this.styles = {
-            orange: "input--orange",
-            blue: "input--blue",
-        };
-    }
+export const Input = (props) => {
+    const {
+        name,
+        style = "orange",
+        classNames = "",
+        classNamesBox = "",
+        onChange = (val) => console.log(val),
+        children,
+        type = "text",
+    } = props;
 
-    handleChange = (e) => {
-        this.props.onChange(e.target.value);
+    const styles = {
+        orange: "input--orange",
+        blue: "input--blue",
     };
 
-    render() {
-        const {
-            name,
-            style = "orange",
-            classNames = "",
-            classNamesBox = "",
-            onChange = "",
-            children,
-            type = "text",
-        } = this.props;
-
-        return (
-            <div className={"input__box " + classNamesBox ? classNamesBox : ""}>
-                {name ? <p className="input__tip">{name}</p> : ""}
-                <input
-                    type={type}
-                    className={this.styles[style] + classNames}
-                    onChange={onChange ? this.handleChange : ""}
-                >
-                    {children}
-                </input>
-            </div>
-        );
-    }
-}
+    return (
+        <div className={"input__box " + classNamesBox}>
+            {name ? <p className="input__tip">{name}</p> : ""}
+            <input
+                type={type}
+                className={styles[style] + classNames}
+                onChange={onChange}
+            >
+                {children}
+            </input>
+        </div>
+    );
+};

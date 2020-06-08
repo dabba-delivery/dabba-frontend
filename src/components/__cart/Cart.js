@@ -14,38 +14,35 @@ import { svg } from "../index";
  * @param {function} handleDelete - handle click function. This func invokes and takes position as agrument
  */
 
-export class CartItem extends React.Component {
-    render() {
-        const {
-            position,
-            position: { name, weigh, price },
-            amount,
-            handleDelete,
-        } = this.props;
+export const CartItem = (props) => {
+    const {
+        position = "",
+        position: { name = "no value", weigh = "no value", price = "no value" },
+        amount = "no value",
+        handleDelete = () => alert("it doesent work"),
+    } = props;
 
-        const {
-            __cart: { cartOptions },
-        } = svg;
+    const {
+        __cart: { cartOptions },
+    } = svg;
 
-        return (
-            <div className="cart">
-                <div className="cart__block">
-                    <h5 className="cart__name">{name}</h5>
-                    <p className="cart__amount">{amount}шт.</p>
-                    <p className="cart__weight">{weigh}гр.</p>
-                    <p className="cart__price">{price}р.</p>
-                </div>
-                <div className="cart__option">
-                    {cartOptions}
-
-                    <p
-                        className="cart__delete"
-                        onClick={() => handleDelete(position)}
-                    >
-                        Удалить
-                    </p>
-                </div>
+    return (
+        <div className="cart">
+            <div className="cart__block">
+                <h5 className="cart__name">{name}</h5>
+                <p className="cart__amount">{amount}шт.</p>
+                <p className="cart__weight">{weigh}гр.</p>
+                <p className="cart__price">{price}р.</p>
             </div>
-        );
-    }
-}
+            <div className="cart__option">
+                {cartOptions}
+                <p
+                    className="cart__delete"
+                    onClick={() => handleDelete(position)}
+                >
+                    Удалить
+                </p>
+            </div>
+        </div>
+    );
+};
