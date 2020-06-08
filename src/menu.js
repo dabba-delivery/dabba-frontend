@@ -1,18 +1,16 @@
 import React from "react";
-import Position from "./position";
+import { Position } from "./position";
 import "./style/menu.css";
 
-export default class Menu extends React.Component {
-    render() {
-        const { dishes } = this.props;
+export const Menu = (props) => {
+    const { dishes, arr } = props;
 
-        return (
-            <div className="menu">
-                <UnpackPositions arr={dishes} />
-            </div>
-        );
-    }
-}
+    return (
+        <div className="menu">
+            <UnpackPositions arr={dishes} />
+        </div>
+    );
+};
 
 function UnpackPositions(props) {
     const positionsArr = props.arr;

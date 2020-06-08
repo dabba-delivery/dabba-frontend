@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
-import Bin from "./bin";
-import Finish from "./finish";
+import Bin from "./Bin";
+import { Finish } from "./finish";
 import Register from "./register";
 
 import { Loader } from "./components";

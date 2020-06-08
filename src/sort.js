@@ -7,45 +7,43 @@ import { Toggle } from "./components";
 // вставлять функцию сортировки от компонентов выше
 // позде можно сделать возможноть получения массива названий и функций
 
-export default class SortBlock extends React.Component {
-    render() {
-        return (
-            <div className="sort">
-                <h5 className="sort__text">Показать</h5>
-                <div className="sort__box">
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Наборы
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Популярное
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Наборы
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Популярное
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Наборы
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Популярное
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Наборы
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Популярное
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Популярное
-                    </Toggle>
-                    <Toggle style="blue" classNames="sort__toggle">
-                        Популярное
-                    </Toggle>
-                    s
-                </div>
+export const SortBlock = (props) => {
+    return (
+        <div className="sort">
+            <h5 className="sort__text">Показать</h5>
+            <div className="sort__box">
+                <Toggle style="blue" classNames="sort__toggle">
+                    Наборы
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Популярное
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Наборы
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Популярное
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Наборы
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Популярное
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Наборы
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Популярное
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Популярное
+                </Toggle>
+                <Toggle style="blue" classNames="sort__toggle">
+                    Популярное
+                </Toggle>
+                s
             </div>
-        );
-    }
-}
+        </div>
+    );
+};

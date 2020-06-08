@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "./header.js";
-import Menu from "./menu";
-import SortBlock from "./sort";
+import { Header } from "./header.js";
+import { Menu } from "./menu";
+import { SortBlock } from "./sort";
 import MapBlock from "./map";
 import { Navigation, Counter } from "./components";
 
@@ -29,9 +29,9 @@ export default class MainPart extends React.Component {
                 coordinates = "55.6105187,37.7337732",
                 name,
                 logoUrl = "",
-				serviceRadius,
+                serviceRadius,
             },
-		} = this.props;
+        } = this.props;
 
         let coords = coordinates.split(",");
         place.name = name;
@@ -50,7 +50,7 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-				<Counter />
+                <Counter />
                 <Navigation classNamesBox="app-appear" />
                 <Header data={data} />
                 <MapBlock />

@@ -43,63 +43,61 @@ const Info = ({ rating, contactPhone, kitchenType, email }) => (
  */
 
 function Rating({ rating }) {
-	const start = [];
-	
+    const start = [];
+
     const {
         header: { ratingStar },
-	} = svg;
-	
+    } = svg;
+
     for (let counter = 0; counter < rating; counter++) {
         start.push(ratingStar);
     }
     return start;
 }
 
-export default class Header extends React.Component {
-    render() {
-        const {
-            data: {
-                name,
-                address,
-                logoUrl,
-                contactPhone,
-                kitchenType,
-                email,
-                openTime,
-                closeTime,
-            },
-        } = this.props;
+export const Header = (props) => {
+    const {
+        data: {
+            name,
+            address,
+            logoUrl,
+            contactPhone,
+            kitchenType,
+            email,
+            openTime,
+            closeTime,
+        },
+    } = props;
 
-        return (
-            <div className="header">
-                <div className="wall">
-                    <img src={logoUrl} className="wall__logo" alt="logo" />
-                    <h2 className="wall__name">{name + " " + address}</h2>
-                    <Info
-                        rating={5}
-                        phone={contactPhone}
-                        kitchenType={kitchenType}
-                        email={email}
-                    />
-                </div>
-                <div className="line">
-                    <Time openTime={openTime} closeTime={closeTime} />
-
-                    <Status
-                        classNames="line__status"
-                        trueMessage="Вы в зоне доставки"
-                        falseMessage="Вы вне зоны доставки"
-                        current
-                    />
-                    <Button
-                        style="blue"
-                        classNames="line__button"
-                        onClick={() => console.log("You press share button")}
-                    >
-                        Поделиться
-                    </Button>
-                </div>
+    return (
+        <div className="header">
+            <div className="wall">
+                <img src={logoUrl} className="wall__logo" alt="logo" />
+                <h2 className="wall__name">{name + " " + address}</h2>
+                <Info
+                    rating={5}
+                    phone={contactPhone}
+                    kitchenType={kitchenType}
+                    email={email}
+                />
             </div>
-        );
-    }
-}
+            <div className="line">
+                <Time openTime={openTime} closeTime={closeTime} />
+
+                <Status
+                    classNames="line__status"
+                    trueMessage="Вы в зоне доставки"
+                    falseMessage="Вы вне зоны доставки"
+                    current
+                />
+                <Button
+                    style="blue"
+                    classNames="line__button"
+                    onClick={() => console.log("You press share button")}
+                >
+                    Поделиться
+                </Button>
+            </div>
+        </div>
+    );
+};

@@ -5,17 +5,6 @@ import { Input, Button, Loader, Navigation } from "./components";
 
 const required = false;
 
-function NumberInput(props) {
-    return (
-        <InputMask
-            name="contactPhone"
-            mask="+7(999)999-99-99"
-            placeholder="phone number"
-            required={required}
-            {...props}
-        />
-    );
-}
 export default class Register extends React.Component {
     constructor(props) {
         super(props);
