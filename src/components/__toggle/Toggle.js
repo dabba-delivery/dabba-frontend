@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./--orange.css";
 import "./--orange-active.css";
 import "./--blue.css";
@@ -17,42 +17,36 @@ import "./--blue-active.css";
  * @param {string} style - sets the color palette for this element. You can choose one of availables
  */
 
-export class Toggle extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            active: false,
-        };
-        this.styles = {
-            orange: ["toggle--orange", "toggle--orange toggle--orange-active"],
-            blue: ["toggle--blue", "toggle--blue toggle--blue-active"],
-        };
-    }
+export const Toggle = (props) => {
+    const {
+        onClick = () => console.log("sort works"),
+        classNames = "",
+        style = "orange",
+        children,
+    } = props;
 
-    handleClick = (event) => {
-        const { onChange = () => console.log("ok") } = this.props;
+    const [active, setActive] = useState(false);
 
-        event.preventDefault();
-        this.setState({ active: !this.state.active });
-        onChange();
+    const styles = {
+        orange: ["toggle--orange", "toggle--orange toggle--orange-active"],
+        blue: ["toggle--blue", "toggle--blue toggle--blue-active"],
     };
 
-    render() {
-        const { classNames = "", style = "orange", children } = this.props;
+    const handleClick = (event) => {
+        setActive(!active);
+        onClick();
+    };
 
-        return (
-            <button
-                className={
-                    (this.state.active
-                        ? this.styles[style][1]
-                        : this.styles[style][0]) +
-                    " " +
-                    classNames
-                }
-                onClick={this.handleClick}
-            >
-                {children}
-            </button>
-        );
-    }
-}
+    return (
+        <button
+            className={
+                (active ? styles[style][1] : styles[style][0]) +
+                " " +
+                classNames
+            }
+            onClick={handleClick}
+        >
+            {children}
+        </button>
+    );
+};
