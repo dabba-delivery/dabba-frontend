@@ -38,7 +38,6 @@ class Restaurant extends React.Component {
 
             if (response.ok) {
                 let json = await response.json();
-                console.log(json);
                 this.setState({ data: json });
             } else {
                 alert("Ошибка HTTP: " + response.status);

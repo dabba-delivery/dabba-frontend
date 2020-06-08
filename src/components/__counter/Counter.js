@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, svg } from "../index.js";
 import "./--small.css";
 import "./--orange.css";
@@ -22,84 +22,84 @@ import "./--orange.css";
  *
  */
 
-export class Counter extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentValue: this.props.initialValue || 0,
-            step: this.props.step || 1,
-            limit: this.props.limit || 10,
-        };
+const styles = {
+    orange: "counter--orange",
+    blue: "counter--blue",
+};
 
-        this.styles = {
-            orange: "counter--orange",
-            blue: "counter--blue",
-        };
+const sizes = {
+    small: "counter--small",
+    medium: "counter--medium",
+    big: "counter--big",
+};
 
-        this.sizes = {
-            small: "counter--small",
-            medium: "counter--medium",
-            big: "counter--big",
-        };
-    }
+export const Counter = (props) => {
+    const {
+        style = "orange",
+        classNames = "",
+        classNamesBox = "",
+        classNamesText = "",
+        size = "small",
+        initialValue = 0,
+        step = 1,
+        limit = 10,
+        func = (a) => console.log("it works: " + a),
+    } = props;
 
-    increase = () => {
-        if (this.state.currentValue < this.state.limit) {
-            this.setState({
-                currentValue: this.state.currentValue + this.state.step,
-            });
-        }
+    const { value, handleDecrease, handleIncrease } = useCounter(
+        initialValue,
+        step,
+        limit,
+        func
+    );
+
+    const {
+        __counter: { buttonLeft, buttonRight },
+    } = svg;
+
+    return (
+        <div className={styles[style] + " " + classNamesBox}>
+            <Button
+                classNames={classNames + " " + sizes[size]}
+                style={style}
+                onClick={handleDecrease}
+            >
+                {buttonLeft}
+            </Button>
+            <p className={"counter__text " + classNamesText}>{value}</p>
+            <Button
+                classNames={
+                    classNames +
+                    " " +
+                    (sizes[size] ? sizes[size] : "counter--small")
+                }
+                style={style}
+                onClick={handleIncrease}
+            >
+                {buttonRight}
+            </Button>
+        </div>
+    );
+};
+
+const useCounter = (initialValue, step, limit, handlerFunc) => {
+    const [value, setCount] = useState(initialValue);
+
+    const handleDecrease = () =>
+        value - step < 0 || value === 0
+            ? setCount(value)
+            : setCount(value - step);
+
+    const handleIncrease = () =>
+        value + step > limit || value === limit
+            ? setCount(value)
+            : setCount(value + step);
+
+    handlerFunc(value);
+
+    return {
+        value,
+        handleIncrease,
+        handleDecrease,
     };
-
-    decrease = () => {
-        if (this.state.currentValue > 1) {
-            this.setState({
-                currentValue: this.state.currentValue - this.state.step,
-            });
-        }
-
-        if (this.props.func) {
-            this.props.func(this.state.currentValue);
-        }
-    };
-
-    render() {
-        const {
-            style = "orange",
-            classNames = "",
-            classNamesBox = "",
-            classNamesText = "",
-            size = "small",
-        } = this.props;
-
-        const {
-            __counter: { buttonLeft, buttonRight },
-        } = svg;
-
-        return (
-            <div className={this.styles[style] + " " + classNamesBox}>
-                <Button
-                    classNames={classNames + " " + this.sizes[size]}
-                    style={style}
-                    onClick={this.decrease}
-                >
-                    {buttonLeft}
-                </Button>
-                <p className={"counter__text " + classNamesText}>
-                    {this.state.currentValue}
-                </p>
-                <Button
-                    classNames={
-                        classNames +
-                        " " +
-                        (this.sizes[size] ? this.sizes[size] : "counter--small")
-                    }
-                    style={style}
-                    onClick={this.increase}
-                >
-                    {buttonRight}
-                </Button>
-            </div>
-        );
-    }
-}
+};

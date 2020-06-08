@@ -4,7 +4,7 @@ import Header from "./header.js";
 import Menu from "./menu";
 import SortBlock from "./sort";
 import MapBlock from "./map";
-import { Navigation } from "./components";
+import { Navigation, Counter } from "./components";
 
 // temp
 export const place = {
@@ -50,6 +50,7 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
+				<Counter />
                 <Navigation classNamesBox="app-appear" />
                 <Header data={data} />
                 <MapBlock />
