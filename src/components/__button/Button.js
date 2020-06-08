@@ -15,33 +15,31 @@ import "./--blue.css";
  * {this.props.children} - name of this button
  */
 
-export class Button extends React.Component {
-    constructor(props) {
-        super(props);
-        this.styles = {
-            orange: "button--orange",
-            blue: "button--blue",
-            greyToggle: "button--grey",
-        };
-    }
+export const Button = (props) => {
+    const {
+        onClick = () => console.log("it works"),
+        style = "orange",
+        classNames = "",
+        children,
+    } = props;
 
-    handleClick = (event) => {
-        const { onClick = () => console.log("it works") } = this.props;
+    const styles = {
+        orange: "button--orange",
+        blue: "button--blue",
+        greyToggle: "button--grey",
+    };
 
+    const handleClick = (event) => {
         event.preventDefault();
         onClick();
     };
 
-    render() {
-        const { style = "orange", classNames = " ", children } = this.props;
-
-        return (
-            <button
-                className={this.styles[style] + " " + classNames}
-                onClick={this.handleClick}
-            >
-                {children}
-            </button>
-        );
-    }
-}
+    return (
+        <button
+            className={styles[style] + " " + classNames}
+            onClick={handleClick}
+        >
+            {children}
+        </button>
+    );
+};
