@@ -2,8 +2,14 @@ import React from "react";
 import Position from "./position";
 import "./style/menu.css";
 
+/**
+ * Menu - represents block menu without dishes
+ *
+ * @param {Object} props - provide dishes with the information inside
+ * @return {Component} - return component with unpacked dishes
+ */
 export const Menu = (props) => {
-    const { dishes, arr } = props;
+    const { dishes } = props;
 
     return (
         <div className="menu">
@@ -12,9 +18,14 @@ export const Menu = (props) => {
     );
 };
 
+/**
+ * UnpackPisitions gets data of dishes and map it to create menu
+ * @param {Object} props - provides all information about dish
+ * @return {Component}
+ */
 function UnpackPositions(props) {
     const positionsArr = props.arr;
-    let listPositions = positionsArr.map((position, i) => {
+    const listPositions = positionsArr.map((position, i) => {
         const { pictureUrl, name, description, weigh, price } = position;
         return (
             <Position

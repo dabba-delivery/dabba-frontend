@@ -3,11 +3,11 @@ import "./style/sort.css";
 
 import { Toggle } from "./components";
 
-// внутри каждой кнопки сортировки есть func - сюда нужно
-// вставлять функцию сортировки от компонентов выше
-// позде можно сделать возможноть получения массива названий и функций
-
-export const SortBlock = (props) => {
+/**
+ * SortBlock - shows button for sotring positions
+ * @return {HTMLElement} - sort block with buttons which should get a clickHandler
+ */
+export const SortBlock = () => {
     return (
         <div className="sort">
             <h5 className="sort__text">Показать</h5>

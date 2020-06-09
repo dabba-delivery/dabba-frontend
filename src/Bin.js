@@ -59,7 +59,7 @@ export default class Bin extends React.Component {
         }
         return result;
     };
-   /**
+    /**
      * Finally, return bin with product carts
      * @return {HTMLElement}
      */

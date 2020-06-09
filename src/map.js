@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable require-jsdoc */
 import GoogleMapReact from "google-map-react";
 import React, { useState, useEffect } from "react";
 import "./style/map.css";
@@ -168,12 +170,12 @@ const autolocate = (enableHighAccuracy = true) =>
     });
 
 const fetchCoordinatesByAddress = async (address, googleApiKey) => {
-    let resp = await fetch(
+    const resp = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${googleApiKey}`
     );
-    let info = await resp.json();
+    const info = await resp.json();
     console.log("resp", info);
-    let result = info.results[0];
+    const result = info.results[0];
     if (!result) return {};
     return result.geometry.location;
 };
