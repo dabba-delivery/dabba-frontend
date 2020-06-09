@@ -3,7 +3,15 @@ import "./style/finish.css";
 
 import { Input, Button } from "./components";
 
-export default (props) => {
+/**
+ * Finish represents the form where user will put his information to
+ *
+ * @param {props} props - includes two props inside
+ * - finalCost - final cost of the order
+ * - closeFunction - close handler for this component
+ * @return {HTMLElement}
+ */
+export const Finish = (props) => {
     const { finalCost, closeFunction } = props;
 
     return (

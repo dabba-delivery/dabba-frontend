@@ -3,6 +3,9 @@ import "./style/bin.css";
 
 import { CartItem, Button, svg } from "./components";
 
+/**
+ * Class Bin represents the bin for product carts
+ */
 export default class Bin extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +13,9 @@ export default class Bin extends React.Component {
         const cart = new Map();
         this.state = { cart: cart };
     }
-
+    /**
+     * This function creates cart
+     */
     componentDidMount = () => {
         const cart = this.state.cart;
         window.cart = cart;
@@ -31,27 +36,33 @@ export default class Bin extends React.Component {
                 if (--cart.get(id).val <= 0) {
                     cart.delete(id);
                 }
-            } else {
-                console.log("there is no key: ", id);
             }
             this.setState({
                 cart: cart,
             });
         };
     };
-
+    /**
+     * This function reset cart when this component unmounts
+     */
     componentWillUnmount = () => {
         delete window.cart;
     };
-
+    /**
+     * Return the final amount of money for the current order
+     * @return {sefw}
+     */
     showSum = () => {
         let result = 0;
-        for (let dish of this.state.cart.entries()) {
+        for (const dish of this.state.cart.entries()) {
             result += dish[0].price * dish[1].val;
         }
         return result;
     };
-
+   /**
+     * Finally, return bin with product carts
+     * @return {HTMLElement}
+     */
     render() {
         const { finishFunc } = this.props;
 

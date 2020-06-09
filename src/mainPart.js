@@ -1,10 +1,10 @@
 import React from "react";
 
-import Header from "./header.js";
+import { Header } from "./header.js";
 import { Menu } from "./menu";
-import SortBlock from "./sort";
+import { SortBlock } from "./sort";
 import MapBlock from "./map";
-import { Navigation, Counter } from "./components";
+import { Navigation } from "./components";
 
 // temp
 export const place = {
@@ -18,7 +18,13 @@ export const place = {
     radius: 0,
 };
 
+/**
+ * Main Part represents the left part of user interface with map, positions etc
+ */
 export default class MainPart extends React.Component {
+    /**
+     * Preparing map data for transfering to Map component
+     */
     componentDidMount() {
         const {
             data: {
@@ -29,7 +35,7 @@ export default class MainPart extends React.Component {
             },
         } = this.props;
 
-        let coords = coordinates.split(",");
+        const coords = coordinates.split(",");
         place.name = name;
         place.logoURL = logoUrl;
         place.coords.lat = coords[0];
@@ -46,7 +52,6 @@ export default class MainPart extends React.Component {
                     backgroundColor: "#f7f7f7",
                 }}
             >
-                <Counter />
                 <Navigation classNamesBox="app-appear" />
                 <Header data={data} />
                 <MapBlock />

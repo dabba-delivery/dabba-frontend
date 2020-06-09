@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export const restaurants = {
     dodo: {
         address: "Красногвардейская 16",
@@ -6,8 +7,7 @@ export const restaurants = {
         dishes: [
             {
                 name: "Деревенская",
-                pictureUrl:
-                    "",
+                pictureUrl: "",
                 weigh: "200",
                 price: "600",
                 description:

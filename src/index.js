@@ -5,19 +5,25 @@ import * as serviceWorker from "./serviceWorker";
 
 import MainPart from "./mainPart";
 import Bin from "./Bin";
-import Finish from "./finish";
+import { Finish } from "./finish";
 import Register from "./register";
 
 import { Loader } from "./components";
 import { restaurants } from "./dbexample";
 
 import "./style/index.css";
+
+/**
+ * Restaurant  - represents main page of the Reastaurant
+ */
 class Restaurant extends React.Component {
     constructor(props) {
         super(props);
         this.state = { finishOrder: false, cost: 0, data: "" };
     }
-
+    /**
+     * This method donwload all data and put it in the component
+     */
     componentDidMount = async () => {
         const {
             match: {
@@ -25,26 +31,28 @@ class Restaurant extends React.Component {
             },
         } = this.props;
 
-        let rest = restaurants;
+        const rest = restaurants;
 
         if (rest) {
-            // for developing
             setTimeout(() => this.setState({ data: rest[id] }), 2000);
-            // for developing
         } else {
-            let response = await fetch(
+            const response = await fetch(
                 `https://dabba-ru.herokuapp.com/restaurant/find/${id}`
             );
 
             if (response.ok) {
-                let json = await response.json();
+                const json = await response.json();
                 this.setState({ data: json });
             } else {
                 alert("Ошибка HTTP: " + response.status);
             }
         }
     };
-
+    /**
+     * This method open the Finish component and put all data about the order in
+     *
+     * @param {number} finalCost - shows final cost for orders
+     */
     makeOrder = (finalCost) => {
         this.setState({
             finishOrder: !this.state.finishOrder,
@@ -80,7 +88,9 @@ class Restaurant extends React.Component {
         );
     }
 }
-
+/**
+ * App - represents all application which will be inplemented in HTML
+ */
 class App extends React.Component {
     render() {
         return (

@@ -7,24 +7,25 @@ import { Button, Status, svg } from "./components";
  * Time component represents schedule for organisation
  *
  * @param {string} closeTime - close time for resstaurant or organization
- * @param {string} opneTime - close time for resstaurant or organization
+ * @param {string} openTime - close time for resstaurant or organization
+ * @return {DOMElement}
  */
-
-const Time = (props) => (
+const Time = ({ openTime, closeTime }) => (
     <p className="line__time">
-        Время доставки: Пн - Вс с {props.openTime} до {props.closeTime}
+        Время доставки: Пн - Вс с {openTime} до {closeTime}
     </p>
 );
 
 /**
  * Info represents all information about organisation
  *
- * @param {number} rating - set this value to Rating component to get rating start of organizstion
+ * @param {number} rating - set this value to Rating component to get
+ * rating start of organizstion
  * @param {string} phone - display phone number
  * @param {string} kitchenType - display kitchen type of organization
  * @param {string} email - display email
+ * @return {Component}
  */
-
 const Info = ({ rating, contactPhone, kitchenType, email }) => (
     <div className="wall__info">
         <Rating rating={rating} />
@@ -40,8 +41,8 @@ const Info = ({ rating, contactPhone, kitchenType, email }) => (
  * Reting only returns star element nothing more
  *
  * @param {number} rating - display rating
+ * @return {Array}
  */
-
 function Rating({ rating }) {
     const start = [];
 
@@ -55,7 +56,21 @@ function Rating({ rating }) {
     return start;
 }
 
-export default (props) => {
+/**
+ * Header represents the header on the main page of the restaurant
+ *
+ * @param {props} props - includes all information about entity
+ * - name
+ * - adrees
+ * - logoUrl
+ * - contactPhone,
+ * - kitchenType
+ * - email
+ * - openTime
+ * - closeTime
+ * @return {HTMLElement}
+ */
+export const Header = (props) => {
     const {
         data: {
             name,
@@ -93,7 +108,7 @@ export default (props) => {
                 <Button
                     style="blue"
                     classNames="line__button"
-                    onClick={() => console.log("You press share button")}
+                    onClick={() => alert("You press share button")}
                 >
                     Поделиться
                 </Button>
