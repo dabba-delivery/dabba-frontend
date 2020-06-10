@@ -32,8 +32,13 @@ const Restaurant = (props) => {
         const result = await fetch(
             `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
         );
-        const json = await result.json();
-        setData(json);
+
+        if (result.ok) {
+            const json = await result.json();
+            setData(json);
+        } else {
+            alert("Ошибка HTTP: " + result.status);
+        }
     };
 
     const makeOrder = () => {

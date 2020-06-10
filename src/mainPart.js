@@ -27,15 +27,12 @@ export class MainPart extends React.Component {
      */
     componentDidMount() {
         const {
-            data: {
-                coordinates = "55.6105187,37.7337732",
-                name,
-                logoUrl = "",
-                serviceRadius,
-            },
+            data: { coordinates, name, logoUrl = "", serviceRadius },
         } = this.props;
 
-        const coords = coordinates.split(",");
+        const coords = coordinates
+            ? coordinates.split(",")
+            : "55.739741,37.652044".split(",");
         place.name = name;
         place.logoURL = logoUrl;
         place.coords.lat = coords[0];
