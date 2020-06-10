@@ -54,7 +54,7 @@ export class MainPart extends React.Component {
             >
                 <Navigation classNamesBox="app-appear" />
                 <Header data={data} />
-                {/* <MapBlock /> */}
+                <MapBlock />
                 <SortBlock />
                 <Menu dishes={data.dishes} />
             </div>

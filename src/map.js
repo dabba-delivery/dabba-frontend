@@ -15,7 +15,7 @@ const defaultCenterCoords = {
     lng: 37.7337732,
 };
 
-export default () => {
+export const MapBlock = () => {
     const [center, setCenter] = useState(defaultCenterCoords);
     const [{ mapInst, Maps }, setMaps] = useState({
         mapInst: null,
