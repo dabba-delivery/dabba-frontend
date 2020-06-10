@@ -3,7 +3,7 @@ import React from "react";
 import { Header } from "./header.js";
 import { Menu } from "./menu";
 import { SortBlock } from "./sort";
-import MapBlock from "./map";
+import { MapBlock } from "./map";
 import { Navigation } from "./components";
 
 // temp
@@ -21,21 +21,18 @@ export const place = {
 /**
  * Main Part represents the left part of user interface with map, positions etc
  */
-export default class MainPart extends React.Component {
+export class MainPart extends React.Component {
     /**
      * Preparing map data for transfering to Map component
      */
     componentDidMount() {
         const {
-            data: {
-                coordinates = "55.6105187,37.7337732",
-                name,
-                logoUrl = "",
-                serviceRadius,
-            },
+            data: { coordinates, name, logoUrl = "", serviceRadius },
         } = this.props;
 
-        const coords = coordinates.split(",");
+        const coords = coordinates
+            ? coordinates.split(",")
+            : "55.739741,37.652044".split(",");
         place.name = name;
         place.logoURL = logoUrl;
         place.coords.lat = coords[0];

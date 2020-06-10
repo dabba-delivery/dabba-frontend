@@ -1,96 +1,68 @@
-import React from "react";
+/* eslint-disable valid-jsdoc */
+/* eslint-disable require-jsdoc */
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
-import MainPart from "./mainPart";
-import Bin from "./Bin";
+import { MainPart } from "./mainPart";
+import { Bin } from "./bin.js";
 import { Finish } from "./finish";
-import Register from "./register";
+import { Register } from "./register";
 
 import { Loader } from "./components";
 import { restaurants } from "./dbexample";
 
 import "./style/index.css";
 
-/**
- * Restaurant  - represents main page of the Reastaurant
- */
-class Restaurant extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { finishOrder: false, cost: 0, data: "" };
-    }
-    /**
-     * This method donwload all data and put it in the component
-     */
-    componentDidMount = async () => {
-        const {
-            match: {
-                params: { id },
-            },
-        } = this.props;
+const Restaurant = (props) => {
+    const {
+        match: {
+            params: { id },
+        },
+    } = props;
 
-        const rest = restaurants;
+    const [data, setData] = useState("");
+    const [finishForm, setFinishForm] = useState(false);
+    useEffect(() => {
+        getData(id);
+    }, [id]);
 
-        if (rest) {
-            setTimeout(() => this.setState({ data: rest[id] }), 2000);
+    const getData = async (link) => {
+        const result = await fetch(
+            `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
+        );
+
+        if (result.ok) {
+            const json = await result.json();
+            setData(json);
         } else {
-            const response = await fetch(
-                `https://dabba-ru.herokuapp.com/restaurant/find/${id}`
-            );
-
-            if (response.ok) {
-                const json = await response.json();
-                this.setState({ data: json });
-            } else {
-                alert("Ошибка HTTP: " + response.status);
-            }
+            alert("Ошибка HTTP: " + result.status);
         }
     };
-    /**
-     * This method open the Finish component and put all data about the order in
-     *
-     * @param {number} finalCost - shows final cost for orders
-     */
-    makeOrder = (finalCost) => {
-        this.setState({
-            finishOrder: !this.state.finishOrder,
-            cost: finalCost,
-        });
+
+    const makeOrder = () => {
+        setFinishForm(!finishForm);
     };
 
-    render() {
-        const { data } = this.state;
+    return (
+        <>
+            {data ? (
+                <div className="page app-appear">
+                    {finishForm ? <Finish closeFunction={makeOrder} /> : ""}
 
-        return (
-            <>
-                {this.state.data ? (
-                    <div className="page app-appear">
-                        {this.state.finishOrder ? (
-                            <Finish
-                                finalCost={this.state.cost}
-                                closeFunction={this.makeOrder}
-                            />
-                        ) : (
-                            ""
-                        )}
+                    <MainPart data={data} />
+                    <Bin finishFunc={makeOrder} />
+                </div>
+            ) : (
+                <div className="page">
+                    <Loader />
+                </div>
+            )}
+        </>
+    );
+};
 
-                        <MainPart data={data} />
-                        <Bin finishFunc={this.makeOrder} />
-                    </div>
-                ) : (
-                    <div className="page">
-                        <Loader />
-                    </div>
-                )}
-            </>
-        );
-    }
-}
-/**
- * App - represents all application which will be inplemented in HTML
- */
 class App extends React.Component {
     render() {
         return (

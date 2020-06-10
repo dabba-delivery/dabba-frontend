@@ -16,7 +16,7 @@ import "./--blue.css";
  * @param {string} style - sets the color palette for this element. You can choose one of availables / default - orange
  * @param {string} classNamesBox - adds new classes to the element's div (box), usually it's used for positioning
  * @param {string} classNames - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
- * 
+ *
  * @return {HTMLElement}
  */
 export const Input = (props) => {

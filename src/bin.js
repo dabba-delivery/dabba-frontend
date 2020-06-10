@@ -6,7 +6,7 @@ import { CartItem, Button, svg } from "./components";
 /**
  * Class Bin represents the bin for product carts
  */
-export default class Bin extends React.Component {
+export class Bin extends React.Component {
     constructor(props) {
         super(props);
 

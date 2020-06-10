@@ -5,7 +5,7 @@ import { Input, Button, Loader, Navigation } from "./components";
 /**
  * Register - represents Registration window
  */
-export default class Register extends React.Component {
+export class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = { loaded: false, section: "sign in" };
