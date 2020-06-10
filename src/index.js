@@ -11,7 +11,7 @@ import { Finish } from "./finish";
 import { Register } from "./register";
 
 import { Loader } from "./components";
-import { restaurants } from "./dbexample";
+// import { restaurants } from "./dbexample";
 
 import { BinContext } from "./context";
 
@@ -91,10 +91,12 @@ const useBin = () => {
 
     const removePosition = (id) => {
         if (items.has(id)) {
-            setBin(new Map(--items.get(id).val));
-            if (items.get(id).val <= 0) {
-                setBin(new Map(items.delete(id)));
+            const map = new Map(items);
+            --map.get(id).val;
+            if (map.get(id).val <= 0) {
+                map.delete(id);
             }
+            setBin(new Map(map));
         }
     };
 

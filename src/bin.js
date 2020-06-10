@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 /* eslint-disable require-jsdoc */
 import React from "react";
 import "./style/bin.css";
@@ -23,7 +24,9 @@ export const Bin = (props) => {
                             Корзина {countPositions()}р.
                         </h5>
                     </div>
-                    <div className="bin__list">{}</div>
+                    <div className="bin__list">
+                        {mapUnpack(items, removePosition)}
+                    </div>
                     <div className="bin__footer">
                         <Button
                             style="blue"
@@ -43,3 +46,20 @@ export const Bin = (props) => {
         </BinContext.Consumer>
     );
 };
+
+function mapUnpack(map, deleteHandler) {
+    const result = [];
+
+    map.forEach((element, key) => {
+        result.push(
+            <CartItem
+                position={key}
+                amount={element.val}
+                key={key}
+                handleDelete={deleteHandler}
+            />
+        );
+    });
+
+    return result;
+}
