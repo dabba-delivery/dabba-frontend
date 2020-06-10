@@ -6,12 +6,14 @@ import "./status.css";
  *
  * logic
  * @constuctor
+ * @param {props} props - includes
  * @param {string} classNames - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * @param {string} trueMessage - will be representing true value of Status box
  * @param {string} falseMessage - will be representing false value of Status box
  * @param {boolean} current - initial value for Status component
+ *
+ * @return {HTMLElement}
  */
-
 export const Status = (props) => {
     const {
         classNames = "",

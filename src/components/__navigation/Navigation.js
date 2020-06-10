@@ -5,8 +5,8 @@ import { svg } from "../index";
 
 /**
  * Component navigation - represents navigation for every page inside application
+ * @return {HTMLElement}
  */
-
 export const Navigation = ({ classNamesBox = "", classNames = "" }) => {
     const {
         __navigation: { burger, registration, about },

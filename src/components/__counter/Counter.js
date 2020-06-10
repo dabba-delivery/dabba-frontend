@@ -8,6 +8,7 @@ import "./--orange.css";
  *
  * logic
  * @constuctor
+ * @param {props} props - includes:
  * @param {number} initialValue - start value for this counter
  * @param {number} step - step for inrementor and decrementor
  * @param {number} limit - limit for counter // sometimes you need a maximum :)
@@ -20,8 +21,8 @@ import "./--orange.css";
  * @param {string} classNames - adds this classes to the button elements
  * @param {string} size - three options available: small, medium and big
  *
+ * @return {HTMLElement}
  */
-
 export const Counter = (props) => {
     const {
         style = "orange",
@@ -33,18 +34,18 @@ export const Counter = (props) => {
         step = 1,
         limit = 10,
         func = (a) => console.log("it works: " + a),
-	} = props;
-	
-	const styles = {
-		orange: "counter--orange",
-		blue: "counter--blue",
-	};
-	
-	const sizes = {
-		small: "counter--small",
-		medium: "counter--medium",
-		big: "counter--big",
-	};
+    } = props;
+
+    const styles = {
+        orange: "counter--orange",
+        blue: "counter--blue",
+    };
+
+    const sizes = {
+        small: "counter--small",
+        medium: "counter--medium",
+        big: "counter--big",
+    };
 
     const { value, handleDecrease, handleIncrease } = useCounter(
         initialValue,
@@ -82,14 +83,30 @@ export const Counter = (props) => {
     );
 };
 
+/**
+ * Represents outside custom hooks for work with counter logic of the component
+ *
+ * @param {number} initialValue  - start value for this counter
+ * @param {number} step - step for inrementor and decrementor
+ * @param {number} limit - limit for counter // sometimes you need a maximum :)
+ * @param {Function} handlerFunc - handle function which invoke and use actual value as argument
+ *
+ * @return {Object}
+ */
 const useCounter = (initialValue, step, limit, handlerFunc) => {
     const [value, setCount] = useState(initialValue);
-
+    /**
+     * Increase value
+     * @return {Function}
+     */
     const handleDecrease = () =>
         value - step < 0 || value === 0
             ? setCount(value)
             : setCount(value - step);
-
+    /**
+     * Decrease value
+     * @return {Function}
+     */
     const handleIncrease = () =>
         value + step > limit || value === limit
             ? setCount(value)

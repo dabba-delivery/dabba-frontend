@@ -9,14 +9,16 @@ import "./--blue-active.css";
  *
  * logic
  * @constuctor
+ * @param {props} props includes:
  * @param {Function} onChange - onClick handler for a toggle
  * {this.props.children} - name of a toggle
  *
  * style
  * @param {string} classNames - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * @param {string} style - sets the color palette for this element. You can choose one of availables
+ *
+ * @return {HTMLElement} - which is toogle
  */
-
 export const Toggle = (props) => {
     const {
         onClick = () => console.log("sort works"),
@@ -32,6 +34,10 @@ export const Toggle = (props) => {
         blue: ["toggle--blue", "toggle--blue toggle--blue-active"],
     };
 
+    /**
+     * Click handler
+     * @param {DOMEvent} event
+     */
     const handleClick = (event) => {
         setActive(!active);
         onClick();
