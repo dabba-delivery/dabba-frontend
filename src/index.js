@@ -13,6 +13,8 @@ import { Register } from "./register";
 import { Loader } from "./components";
 import { restaurants } from "./dbexample";
 
+import { BinContext } from "./context";
+
 import "./style/index.css";
 
 const Restaurant = (props) => {
@@ -24,6 +26,8 @@ const Restaurant = (props) => {
 
     const [data, setData] = useState("");
     const [finishForm, setFinishForm] = useState(false);
+    const { items, addPosition, removePosition, countPositions } = useBin();
+
     useEffect(() => {
         getData(id);
     }, [id]);
@@ -46,21 +50,68 @@ const Restaurant = (props) => {
     };
 
     return (
-        <>
-            {data ? (
-                <div className="page app-appear">
-                    {finishForm ? <Finish closeFunction={makeOrder} /> : ""}
+        <BinContext.Provider
+            value={{
+                items,
+                addPosition,
+                removePosition,
+                countPositions,
+            }}
+        >
+            <>
+                {data ? (
+                    <div className="page app-appear">
+                        {finishForm ? <Finish closeFunction={makeOrder} /> : ""}
 
-                    <MainPart data={data} />
-                    <Bin finishFunc={makeOrder} />
-                </div>
-            ) : (
-                <div className="page">
-                    <Loader />
-                </div>
-            )}
-        </>
+                        <MainPart data={data} />
+                        <Bin finishFunc={makeOrder} />
+                    </div>
+                ) : (
+                    <div className="page">
+                        <Loader />
+                    </div>
+                )}
+            </>
+        </BinContext.Provider>
     );
+};
+
+const useBin = () => {
+    const [items, setBin] = useState(new Map());
+
+    const addPosition = (id) => {
+        if (items.has(id)) {
+            const map = new Map(items);
+            ++map.get(id).val;
+            setBin(new Map(map));
+        } else {
+            setBin(new Map(items.set(id, { val: 1 })));
+        }
+    };
+
+    const removePosition = (id) => {
+        if (items.has(id)) {
+            setBin(new Map(--items.get(id).val));
+            if (items.get(id).val <= 0) {
+                setBin(new Map(items.delete(id)));
+            }
+        }
+    };
+
+    const countPositions = () => {
+        let result = 0;
+        for (const item of items.entries()) {
+            result += item[0].price * item[1].val;
+        }
+        return result;
+    };
+
+    return {
+        items,
+        addPosition,
+        removePosition,
+        countPositions,
+    };
 };
 
 class App extends React.Component {
