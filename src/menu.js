@@ -24,7 +24,7 @@ export const Menu = (props) => {
  * @return {Component}
  */
 function UnpackPositions(props) {
-    const positionsArr = props.arr;
+    const { arr: positionsArr = [] } = props;
     const listPositions = positionsArr.map((position, i) => {
         const { pictureUrl, name, description, weigh, price } = position;
         return (

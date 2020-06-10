@@ -3,7 +3,7 @@ import React from "react";
 import { Header } from "./header.js";
 import { Menu } from "./menu";
 import { SortBlock } from "./sort";
-import MapBlock from "./map";
+import { MapBlock } from "./map";
 import { Navigation } from "./components";
 
 // temp
@@ -21,7 +21,7 @@ export const place = {
 /**
  * Main Part represents the left part of user interface with map, positions etc
  */
-export default class MainPart extends React.Component {
+export class MainPart extends React.Component {
     /**
      * Preparing map data for transfering to Map component
      */
@@ -54,7 +54,7 @@ export default class MainPart extends React.Component {
             >
                 <Navigation classNamesBox="app-appear" />
                 <Header data={data} />
-                <MapBlock />
+                {/* <MapBlock /> */}
                 <SortBlock />
                 <Menu dishes={data.dishes} />
             </div>

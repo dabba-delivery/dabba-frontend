@@ -6,14 +6,16 @@ import { svg } from "../index";
  * Class Cart represents one position card in the cart
  *
  * logic
+ * @param {props} props - includes:
  * @param {object} position - dish object which will supply all information and will be deleted with method "func"
  * @param {amount} amount - represents quantity of this position on the cart
  * @param {number} key - just id for correct work of React
  *
  * style
  * @param {function} handleDelete - handle click function. This func invokes and takes position as agrument
+ *
+ * @return {HTMLElement} - cart with information about
  */
-
 export const CartItem = (props) => {
     const {
         position = "",
