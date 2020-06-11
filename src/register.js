@@ -39,24 +39,45 @@ export const Register = () => {
                             <Input
                                 ref={register({
                                     required: true,
-                                    maxLength: 20,
                                     pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
                                 })}
                                 style="blue"
                                 classNamesBox="register__onerow"
-                                name="Email"
+                                name={
+                                    "Email " +
+                                    (errors.email?.type === "required"
+                                        ? "(Введите значение)"
+                                        : "") +
+                                    " " +
+                                    (errors.email?.type === "pattern"
+                                        ? "(Некорректный адрес эл.почты)"
+                                        : "")
+                                }
+                                inputName="email"
                             />
                             <Input
                                 ref={register({ required: true })}
                                 style="blue"
                                 classNamesBox="register__onerow"
-                                name="Пароль"
+                                name={
+                                    "Пароль " +
+                                    (errors.password?.type === "required"
+                                        ? "(Введите значение)"
+                                        : "")
+                                }
+                                inputName="password"
                             />
                             <Input
                                 ref={register({ required: true })}
                                 style="blue"
                                 classNamesBox="register__onerow register__bottom"
-                                name="Подтверждение пароля"
+                                name={
+                                    "Подтверждение пароля " +
+                                    (errors.passwordconfirm?.type === "required"
+                                        ? "(Введите значение)"
+                                        : "")
+                                }
+                                inputName="passwordconfirm"
                             />
 
                             <Button onClick={handleSubmit(onSubmit)}>
@@ -82,18 +103,33 @@ export const Register = () => {
                             <Input
                                 ref={register({
                                     required: true,
-                                    maxLength: 20,
                                     pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
                                 })}
                                 style="blue"
                                 classNamesBox="register__onerow"
-                                name="Email"
+                                name={
+                                    "Email " +
+                                    (errors.email?.type === "required"
+                                        ? "(Введите значение)"
+                                        : "") +
+                                    " " +
+                                    (errors.email?.type === "pattern"
+                                        ? "(Некорректный адрес эл.почты)"
+                                        : "")
+                                }
+                                inputName="email"
                             />
                             <Input
                                 ref={register({ required: true })}
                                 style="blue"
-                                classNamesBox="register__onerow"
-                                name="Пароль"
+                                classNamesBox="register__onerow register__bottom"
+                                name={
+                                    "Пароль " +
+                                    (errors.password?.type === "required"
+                                        ? "(Введите значение)"
+                                        : "")
+                                }
+                                inputName="password"
                             />
 
                             <Button

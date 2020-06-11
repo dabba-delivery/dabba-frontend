@@ -11,7 +11,10 @@ import "./--blue.css";
  * @param {string} name - hint near the input which tell to the user what it shoud write inside thas input
  * @param {Function} onChange - onChange handler for this copmonent. It puts value of input in this handler
  * @param {string} type - input type
+ *
+ * implicit logic
  * @param {func} ref - connects ref to this input component // used with react-hook-forms
+ * @param {string} inputName - // used with react-hook-forms
  *
  * style
  * @param {string} style - sets the color palette for this element. You can choose one of availables / default - orange
@@ -22,13 +25,14 @@ import "./--blue.css";
  */
 export const Input = React.forwardRef((props, ref) => {
     const {
-        name = "default input",
+        name,
         style = "orange",
         classNames = "",
         classNamesBox = "",
         onChange = (val) => console.log(val),
         children,
         type = "text",
+        inputName = "default",
     } = props;
 
     const styles = {
@@ -44,7 +48,7 @@ export const Input = React.forwardRef((props, ref) => {
                 className={styles[style] + classNames}
                 onChange={onChange}
                 ref={ref}
-                name={name}
+                name={inputName}
             >
                 {children}
             </input>
