@@ -1,10 +1,18 @@
+// React
 import React from "react";
 
+// Main commmponents
 import { Header } from "./header.js";
 import { Menu } from "./menu";
 import { SortBlock } from "./sort";
 import { MapBlock } from "./map";
+
+// Components from library
 import { Navigation } from "./components";
+
+// Context
+
+// CSS
 
 // temp
 export const place = {

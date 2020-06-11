@@ -1,7 +1,15 @@
+// React
 import React from "react";
-import "./style/finish.css";
 
+// Main commmponents
+
+// Components from library
 import { Input, Button } from "./components";
+
+// Context
+
+// CSS
+import "./style/finish.css";
 
 /**
  * Finish represents the form where user will put his information to

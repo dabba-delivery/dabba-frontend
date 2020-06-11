@@ -1,11 +1,22 @@
+// React
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
+// Main commmponents
 import { Register } from "./register";
 import { Restaurant } from "./restaurant";
 
+// Components from library
+
+// Context
+
+// CSS
+
+/**
+ * App represent all application
+ */
 class App extends React.Component {
     render() {
         return (

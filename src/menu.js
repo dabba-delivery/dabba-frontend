@@ -1,5 +1,14 @@
+// React
 import React from "react";
+
+// Main commmponents
 import Position from "./position";
+
+// Components from library
+
+// Context
+
+// CSS
 import "./style/menu.css";
 
 /**

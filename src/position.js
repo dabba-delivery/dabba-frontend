@@ -1,7 +1,16 @@
+// React
 import React from "react";
+
+// Main commmponents
 import { Button } from "./components";
-import "./style/position.css";
 import { BinContext } from "./context";
+
+// Components from library
+
+// Context
+
+// CSS
+import "./style/position.css";
 
 export default (props) => {
     const {

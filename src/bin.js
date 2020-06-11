@@ -1,9 +1,16 @@
+// React
 import React from "react";
-import "./style/bin.css";
 
+// Main commmponents
+
+// Components from library
 import { CartItem, Button, svg } from "./components";
 
+// Context
 import { BinContext } from "./context";
+
+// CSS
+import "./style/bin.css";
 
 /**
  * Bin - represent basket for all user orders

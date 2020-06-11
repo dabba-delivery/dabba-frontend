@@ -1,11 +1,20 @@
 /* eslint-disable no-undef */
 /* eslint-disable require-jsdoc */
+
+// React
 import GoogleMapReact from "google-map-react";
 import React, { useState, useEffect } from "react";
-import "./style/map.css";
 
-import { Input, Button } from "./components";
+// Main commmponents
 import { place } from "./mainPart.js";
+
+// Components from library
+import { Input, Button } from "./components";
+
+// Context
+
+// CSS
+import "./style/map.css";
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 

@@ -1,15 +1,21 @@
+// React
 import React, { useState, useEffect, Component } from "react";
 
+// Main commmponents
 import { MainPart } from "./mainPart";
 import { Bin } from "./bin.js";
 import { Finish } from "./finish";
 
+// Components from library
 import { Loader } from "./components";
-// import { restaurants } from "./dbexample";
 
+// Context
 import { BinContext } from "./context";
 
+// CSS
 import "./style/index.css";
+// DATA FOR DEV
+// import { restaurants } from "./dbexample";
 
 /**
  * Component Restaurant represent main page at the application where users order food

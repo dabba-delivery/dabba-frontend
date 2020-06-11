@@ -1,7 +1,15 @@
+// React
 import React from "react";
-import "./style/header.css";
 
+// Main commmponents
+
+// Components from library
 import { Button, Status, svg } from "./components";
+
+// Context
+
+// CSS
+import "./style/header.css";
 
 /**
  * Time component represents schedule for organisation
