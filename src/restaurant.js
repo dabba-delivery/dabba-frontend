@@ -1,5 +1,5 @@
 // React
-import React, { useState, useEffect, Component } from "react";
+import React, { useState, useEffect } from "react";
 
 // Main commmponents
 import { MainPart } from "./mainPart";
@@ -15,7 +15,7 @@ import { BinContext } from "./context";
 // CSS
 import "./style/index.css";
 // DATA FOR DEV
-// import { restaurants } from "./dbexample";
+import { restaurants } from "./dbexample";
 
 /**
  * Component Restaurant represent main page at the application where users order food
@@ -45,16 +45,18 @@ export const Restaurant = (props) => {
      * @param {string} link - using for fetching data, provided by React Router
      */
     const getData = async (link) => {
-        const result = await fetch(
-            `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
-        );
+        setData(restaurants[id]);
 
-        if (result.ok) {
-            const json = await result.json();
-            setData(json);
-        } else {
-            alert("Ошибка HTTP: " + result.status);
-        }
+        // const result = await fetch(
+        //     `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
+        // );
+
+        // if (result.ok) {
+        //     const json = await result.json();
+        //     setData(json);
+        // } else {
+        //     alert("Ошибка HTTP: " + result.status);
+        // }
     };
 
     return (

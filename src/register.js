@@ -1,5 +1,6 @@
 // React
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 // Main commmponents
 
@@ -36,37 +37,17 @@ export const Register = () => {
                             <Input
                                 style="blue"
                                 classNamesBox="register__onerow"
-                                name="Название"
-                            />
-                            <Input
-                                style="blue"
-                                classNamesBox="register__onerow"
-                                name="Адрес"
-                            />
-                            <Input
-                                style="blue"
-                                classNamesBox="register__onerow"
-                                name="Тип кухни"
-                            />
-                            <Input
-                                style="blue"
-                                name="Время открытия"
-                                type="time"
-                            />
-                            <Input
-                                style="blue"
-                                name="Время закрытия"
-                                type="time"
-                            />
-                            <Input
-                                style="blue"
-                                name="Телефон"
-                                classNamesBox="register__bottom"
-                            />
-                            <Input
-                                style="blue"
                                 name="Email"
-                                classNamesBox="register__bottom"
+                            />
+                            <Input
+                                style="blue"
+                                classNamesBox="register__onerow"
+                                name="Пароль"
+                            />
+                            <Input
+                                style="blue"
+                                classNamesBox="register__onerow register__bottom"
+                                name="Подтверждение пароля"
                             />
 
                             <Button>Отправить</Button>
