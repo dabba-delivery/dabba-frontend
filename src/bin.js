@@ -1,5 +1,3 @@
-/* eslint-disable guard-for-in */
-/* eslint-disable require-jsdoc */
 import React from "react";
 import "./style/bin.css";
 
@@ -7,6 +5,13 @@ import { CartItem, Button, svg } from "./components";
 
 import { BinContext } from "./context";
 
+/**
+ * Bin - represent basket for all user orders
+ *
+ * @param {props} props
+ * @param {Function} finishFunc - handler which calls the last page to make an order
+ * @return {HTMLElement}
+ */
 export const Bin = (props) => {
     const { finishFunc = () => alert("No handler") } = props;
 
@@ -33,7 +38,7 @@ export const Bin = (props) => {
                             classNames="bin__button"
                             onClick={
                                 countPositions() > 0
-                                    ? () => finishFunc(this.showSum())
+                                    ? () => finishFunc()
                                     : () =>
                                           alert("Корзина пуста, купи че нить!")
                             }
@@ -47,6 +52,13 @@ export const Bin = (props) => {
     );
 };
 
+/**
+ * mapUnpack - handler function for unpacking the map array and implementing all information inside components
+ *
+ * @param {Map} map - takes the Map Array as argument
+ * @param {Function} deleteHandler - function which will be inplemented inside component
+ * @return {HTMLElement}
+ */
 function mapUnpack(map, deleteHandler) {
     const result = [];
 
