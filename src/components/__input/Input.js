@@ -22,7 +22,7 @@ import "./--blue.css";
  */
 export const Input = React.forwardRef((props, ref) => {
     const {
-        name,
+        name = "default input",
         style = "orange",
         classNames = "",
         classNamesBox = "",
@@ -44,6 +44,7 @@ export const Input = React.forwardRef((props, ref) => {
                 className={styles[style] + classNames}
                 onChange={onChange}
                 ref={ref}
+                name={name}
             >
                 {children}
             </input>

@@ -19,6 +19,8 @@ import "./style/register.css";
 export const Register = () => {
     const [loaded, setLoaded] = useState(false);
     const [section, setSection] = useState("sign in");
+    const { register, errors, handleSubmit } = useForm();
+    const onSubmit = (data) => console.log(data);
 
     // Just for development
     setTimeout(() => setLoaded(true), 1000);
@@ -35,22 +37,32 @@ export const Register = () => {
                             </h1>
 
                             <Input
+                                ref={register({
+                                    required: true,
+                                    maxLength: 20,
+                                    pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
+                                })}
                                 style="blue"
                                 classNamesBox="register__onerow"
                                 name="Email"
                             />
                             <Input
+                                ref={register({ required: true })}
                                 style="blue"
                                 classNamesBox="register__onerow"
                                 name="Пароль"
                             />
                             <Input
+                                ref={register({ required: true })}
                                 style="blue"
                                 classNamesBox="register__onerow register__bottom"
                                 name="Подтверждение пароля"
                             />
 
-                            <Button>Отправить</Button>
+                            <Button onClick={handleSubmit(onSubmit)}>
+                                Отправить
+                            </Button>
+
                             <p
                                 className="register__changesection"
                                 onClick={() =>
@@ -68,17 +80,26 @@ export const Register = () => {
                                 Войти в систему
                             </h1>
                             <Input
+                                ref={register({
+                                    required: true,
+                                    maxLength: 20,
+                                    pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
+                                })}
                                 style="blue"
-                                classNamesBox="register__onerow component-appear"
+                                classNamesBox="register__onerow"
                                 name="Email"
                             />
                             <Input
+                                ref={register({ required: true })}
                                 style="blue"
-                                classNamesBox="register__onerow register__bottom component-appear"
+                                classNamesBox="register__onerow"
                                 name="Пароль"
                             />
 
-                            <Button classNames="component-appear">
+                            <Button
+                                classNames="component-appear"
+                                onClick={handleSubmit(onSubmit)}
+                            >
                                 Отправить
                             </Button>
                             <p
