@@ -1,5 +1,5 @@
 .input__box {
-    height: min-content;
+    height: max-content;
     width: 100%;
 }
 
@@ -7,8 +7,8 @@
     height: 47px;
     width: 100%;
     padding: 10px;
-    background: #FFFFFF;
-    border: 1px solid #E9E9E9;
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
     border-radius: 3px;
 
     color: #494949;
@@ -21,11 +21,11 @@
 }
 
 .input--orange:hover {
-    border: 3px solid #CACACA;
+    border: 3px solid #cacaca;
 }
 
 .input--orange:focus {
-    border: 3px solid #FA7921;
+    border: 3px solid #fa7921;
 }
 
 .input__tip {
