@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, svg } from "../index.js";
+import { Button, svg } from "../index.tsx";
 import "./--small.css";
 import "./--orange.css";
 

@@ -1,7 +1,6 @@
-import React, { Props, PropsWithChildren } from "react";
+import React from "react";
 import "./--default.css";
 import { svg } from "../index";
-import position from "../../position";
 
 /**
  * Class Cart represents one position card in the cart
