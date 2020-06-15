@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Props, PropsWithChildren } from "react";
 import "./--default.css";
 import { svg } from "../index";
+import position from "../../position";
 
 /**
  * Class Cart represents one position card in the cart
@@ -16,9 +17,9 @@ import { svg } from "../index";
  *
  * @return {HTMLElement} - cart with information about
  */
-export const CartItem = (props) => {
+export const CartItem: React.FC<ICartItem> = (props) => {
     const {
-        position = "",
+        position = {},
         position: { name = "no value", weigh = "no value", price = "no value" },
         amount = "no value",
         handleDelete = () => alert("it doesent work"),
@@ -48,3 +49,19 @@ export const CartItem = (props) => {
         </div>
     );
 };
+
+type TypePosition = {
+    name: string;
+    weigh: number | string;
+    price: number | string;
+};
+
+interface IHandlerDelete {
+    (position: object): void;
+}
+
+interface ICartItem {
+    position: TypePosition;
+    amount: number;
+    handleDelete: IHandlerDelete;
+}
