@@ -1,7 +1,7 @@
 import React from "react";
 import "./--orange.css";
 import "./--blue.css";
-import { InputType } from "zlib";
+
 
 /**
  * This component represents a Button
@@ -24,22 +24,8 @@ import { InputType } from "zlib";
  *
  * @return {HTMLElement}
  */
-
-type MainStyle = "orange" | "blue";
-
-interface IIinput {
-    name: string;
-    style: MainStyle;
-    classNames: string;
-    classNamesBox: string;
-    onChange: (val: React.ChangeEvent) => void;
-    children: React.ReactNode;
-    type: string;
-    inputName: string;
-}
-
-export const Input = React.forwardRef(
-    (props: IIinput, ref?: React.Ref<HTMLInputElement>) => {
+export const Input = React.forwardRef<HTMLInputElement, IInput>(
+    (props, ref?) => {
         const {
             name,
             style = "orange",
@@ -72,3 +58,16 @@ export const Input = React.forwardRef(
         );
     }
 );
+
+type MainStyle = "orange" | "blue";
+
+interface IInput {
+    name: string;
+    style: MainStyle;
+    classNames: string;
+    classNamesBox: string;
+    onChange: (val: React.ChangeEvent) => void;
+    children: React.ReactNode;
+    type: string;
+    inputName: string;
+}

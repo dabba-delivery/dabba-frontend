@@ -15,7 +15,7 @@ export const Navigation = ({ classNamesBox = "", classNames = "" }) => {
     return (
         <div className={"navigation " + classNamesBox}>
             <Link to="/restaurants/dodo">
-                <div href="#" className={"navigation__logo " + classNames}>
+                <div className={"navigation__logo " + classNames}>
                     {burger}
                     DABBA
                 </div>
@@ -26,7 +26,7 @@ export const Navigation = ({ classNamesBox = "", classNames = "" }) => {
                     Регистрация / Войти
                 </a>
             </Link>
-            <Link>
+            <Link to="/">
                 <a href="#" className="navigation__link">
                     {about}О нас
                 </a>

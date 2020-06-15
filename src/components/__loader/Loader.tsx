@@ -5,7 +5,7 @@ import "./--default.css";
  * Represents loader window
  * @return {HTMLElement}
  */
-export const Loader = () => (
+export const Loader: React.FC = () => (
     <div className="loader">
         <h1 className="loader__company">Dabba</h1>
         <p className="loader__description">конструктор доставки</p>

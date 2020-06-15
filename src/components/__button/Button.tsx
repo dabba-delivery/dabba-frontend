@@ -46,11 +46,11 @@ export const Button: React.FC<IButton> = (props) => {
     );
 };
 
-type MainStyle = "orange" | "blue" | "grey";
+type TypeStyle = "orange" | "blue" | "grey";
 
 interface IButton {
     onClick?: () => void;
-    style?: MainStyle;
+    style?: TypeStyle;
     classNames?: string;
     children?: string | SVGAElement;
 }
