@@ -15,7 +15,7 @@ import "./--blue.css";
  * {this.props.children} - name of this button
  * @return {HTMLElement}
  */
-export const Button = (props) => {
+export const Button: React.FC<IButton> = (props) => {
     const {
         onClick = () => console.log("it works"),
         style = "orange",
@@ -26,12 +26,12 @@ export const Button = (props) => {
     const styles = {
         orange: "button--orange",
         blue: "button--blue",
-        greyToggle: "button--grey",
+        grey: "button--grey",
     };
     /**
      * @param {event} event - returns button click to make prevent default and invoke handler from props
      */
-    const handleClick = (event) => {
+    const handleClick = (event: React.MouseEvent) => {
         event.preventDefault();
         onClick();
     };
@@ -45,3 +45,12 @@ export const Button = (props) => {
         </button>
     );
 };
+
+type MainStyle = "orange" | "blue" | "grey";
+
+interface IButton {
+    onClick?: () => void;
+    style?: MainStyle;
+    classNames?: string;
+    children?: string | SVGAElement;
+}
