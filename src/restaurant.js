@@ -36,28 +36,28 @@ export const Restaurant = (props) => {
     const { items, addPosition, removePosition, countPositions } = useBin();
 
     useEffect(() => {
+        /**
+         * getData returns user data
+         *
+         * @param {string} link - using for fetching data, provided by React Router
+         */
+        const getData = async (link) => {
+            setData(restaurants[id]);
+
+            // const result = await fetch(
+            //     `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
+            // );
+
+            // if (result.ok) {
+            //     const json = await result.json();
+            //     setData(json);
+            // } else {
+            //     alert("Ошибка HTTP: " + result.status);
+            // }
+        };
+
         getData(id);
     }, [id]);
-
-    /**
-     * getData returns user data
-     *
-     * @param {string} link - using for fetching data, provided by React Router
-     */
-    const getData = async (link) => {
-        setData(restaurants[id]);
-
-        // const result = await fetch(
-        //     `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
-        // );
-
-        // if (result.ok) {
-        //     const json = await result.json();
-        //     setData(json);
-        // } else {
-        //     alert("Ошибка HTTP: " + result.status);
-        // }
-    };
 
     return (
         <BinContext.Provider
