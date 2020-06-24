@@ -11,6 +11,7 @@ import { BinContext } from "./context";
 
 // CSS
 import "./style/bin.css";
+import { IDish } from "./components/types";
 
 /**
  * Bin - represent basket for all user orders
@@ -69,12 +70,14 @@ export const Bin: React.FC<{ finishFunc: Function }> = (props) => {
 function mapUnpack(map: any, deleteHandler: Function) {
     const result: JSX.Element[] = [];
 
-    map.forEach((element:any, key:any) => {
+    console.log(map);
+
+    map.forEach((amount: any, dishInfo: IDish) => {
         result.push(
             <CartItem
-                position={key}
-                amount={element.val}
-                key={key}
+                position={dishInfo}
+                amount={amount.val}
+                key={dishInfo.name}
                 handleDelete={deleteHandler}
             />
         );

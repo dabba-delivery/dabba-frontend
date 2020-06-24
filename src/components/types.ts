@@ -62,7 +62,7 @@ export interface IPosition {
     link: string;
     ingridients: string;
     cost: number;
-    id?: IDish;
+    id: IDish;
     weight: number;
 }
 
@@ -71,5 +71,5 @@ export interface IDish {
     name?: string;
     description?: string;
     weigh?: number | string;
-    price?: number | string;
+    price?: number;
 }

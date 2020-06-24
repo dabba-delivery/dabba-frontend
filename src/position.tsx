@@ -19,13 +19,7 @@ export default (props: IPosition) => {
         link,
         ingridients = "empty value",
         cost = "empty value",
-        id = {
-            pictureUrl: "",
-            name: "no value",
-            description: "no value",
-            weigh: "no value",
-            price: "no value",
-        },
+        id,
         weight = "empty value",
     } = props;
 
