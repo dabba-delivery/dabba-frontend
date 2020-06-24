@@ -54,7 +54,7 @@ export interface IToggle {
 }
 
 export interface IBinContext {
-    items: Map<object, any>;
+    items: Map<IDish, { val: number }>;
     addPosition: (id: IDish) => void;
     removePosition: (id: IDish) => void;
     countPositions: () => number;
