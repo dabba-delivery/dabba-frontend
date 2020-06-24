@@ -69,9 +69,6 @@ export const Bin: React.FC<{ finishFunc: Function }> = (props) => {
  */
 function mapUnpack(map: any, deleteHandler: Function) {
     const result: JSX.Element[] = [];
-
-    console.log(map);
-
     map.forEach((amount: any, dishInfo: IDish) => {
         result.push(
             <CartItem

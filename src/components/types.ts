@@ -1,5 +1,8 @@
-type ComponentStyle = "orange" | "blue";
-type ComponentSize = "small" | "medium" | "big";
+export type ComponentStyle = "orange" | "blue";
+export type ComponentSize = "small" | "medium" | "big";
+export type TypeData = {
+    data: IHeader;
+};
 
 export interface IButton {
     onClick?: () => void;
@@ -75,26 +78,27 @@ export interface IDish {
 }
 
 export interface ITime {
-    openTime: string;
-    closeTime: string;
+    openTime: string | undefined;
+    closeTime: string | undefined;
 }
 
 export interface IInfo {
-    rating: number;
-    contactPhone: string;
-    kitchenType: string;
-    email: string;
+    rating: number | undefined;
+    contactPhone: string | undefined;
+    kitchenType: string | undefined;
+    email: string | undefined;
 }
 
 export interface IHeader {
-    data: {
-        name: string;
-        address: string;
-        logoUrl: string;
-        contactPhone: string;
-        kitchenType: string;
-        email: string;
-        openTime: string;
-        closeTime: string;
-    };
+    name?: string;
+    address?: string;
+    logoUrl?: string;
+    contactPhone?: string;
+    kitchenType?: string;
+    email?: string;
+    openTime?: string;
+    closeTime?: string;
+    coordinates?: string;
+    dishes?: [];
+    serviceRadius?: number;
 }

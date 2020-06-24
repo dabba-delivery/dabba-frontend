@@ -20,7 +20,7 @@ export const Register = () => {
     const [loaded, setLoaded] = useState(false);
     const [section, setSection] = useState("sign in");
     const { register, errors, handleSubmit } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data: object) => console.log(data);
 
     // Just for development
     setTimeout(() => setLoaded(true), 1000);
@@ -32,7 +32,7 @@ export const Register = () => {
                 <form className="register__form">
                     {section === "sign up" ? (
                         <div className="register__sign-in component-appear">
-                            <h1 classNamesBox="register__onerow component-appear">
+                            <h1 className="register__onerow component-appear">
                                 Регистрация
                             </h1>
 
@@ -86,11 +86,7 @@ export const Register = () => {
 
                             <p
                                 className="register__changesection"
-                                onClick={() =>
-                                    section === "sign in"
-                                        ? setSection("sign up")
-                                        : setSection("sign in")
-                                }
+                                onClick={() => setSection("sign in")}
                             >
                                 Уже есть аккаунт? Войдите в него
                             </p>
@@ -140,11 +136,7 @@ export const Register = () => {
                             </Button>
                             <p
                                 className="register__changesection component-appear"
-                                onClick={() =>
-                                    section === "sign in"
-                                        ? setSection("sign up")
-                                        : setSection("sign in")
-                                }
+                                onClick={() => setSection("sign up")}
                             >
                                 Нет аккаунта? Создайте
                             </p>

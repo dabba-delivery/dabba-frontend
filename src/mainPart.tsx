@@ -7,6 +7,8 @@ import { Menu } from "./menu";
 import { SortBlock } from "./sort";
 import { MapBlock } from "./map";
 
+import { TypeData } from "./components/types";
+
 // Components from library
 import { Navigation } from "./components";
 
@@ -15,7 +17,17 @@ import { Navigation } from "./components";
 // CSS
 
 // temp
-export const place = {
+interface IPlace {
+    name: string | undefined;
+    logoURL: string;
+    coords: {
+        lat: number;
+        lng: number;
+    };
+    radius: number | undefined;
+}
+
+export const place: IPlace = {
     name: "Dodo Pizza",
     logoURL:
         "https://fontslogo.com/wp-content/uploads/2015/07/Pizza-Hut-Logo-Font-150x150.jpg",
@@ -29,7 +41,7 @@ export const place = {
 /**
  * Main Part represents the left part of user interface with map, positions etc
  */
-export class MainPart extends React.Component {
+export class MainPart extends React.Component<TypeData> {
     /**
      * Preparing map data for transfering to Map component
      */
@@ -43,8 +55,8 @@ export class MainPart extends React.Component {
             : "55.739741,37.652044".split(",");
         place.name = name;
         place.logoURL = logoUrl;
-        place.coords.lat = coords[0];
-        place.coords.lng = coords[1];
+        place.coords.lat = +coords[0];
+        place.coords.lng = +coords[1];
         place.radius = serviceRadius;
     }
 

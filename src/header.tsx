@@ -5,7 +5,7 @@ import React from "react";
 
 // Components from library
 import { Button, Status, svg } from "./components";
-import { ITime, IInfo, IHeader } from "./components/types";
+import { ITime, IInfo, TypeData } from "./components/types";
 // Context
 
 // CSS
@@ -19,7 +19,7 @@ import "./style/header.css";
  * @return {DOMElement}
  */
 
-const Time: React.FC<ITime> = ({ openTime, closeTime }) => (
+const Time: React.FC<ITime> = ({ openTime = "10:00", closeTime = "20:00" }) => (
     <p className="line__time">
         Время доставки: Пн - Вс с {openTime} до {closeTime}
     </p>
@@ -58,14 +58,14 @@ const Info: React.FC<IInfo> = ({
  * @param {number} rating - display rating
  * @return {Array}
  */
-function Rating({ rating }: { rating: number }): any {
+function Rating({ rating }: { rating: number | undefined }): any {
     const start = [];
 
     const {
         header: { ratingStar },
     } = svg;
 
-    for (let counter = 0; counter < rating; counter++) {
+    for (let counter = 0; counter < rating!; counter++) {
         start.push(ratingStar);
     }
     return start;
@@ -86,7 +86,7 @@ function Rating({ rating }: { rating: number }): any {
  * @return {HTMLElement}
  */
 
-export const Header: React.FC<IHeader> = (props) => {
+export const Header: React.FC<TypeData> = (props) => {
     const {
         data: {
             name,

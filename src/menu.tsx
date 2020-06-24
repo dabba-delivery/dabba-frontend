@@ -16,7 +16,7 @@ import "./style/menu.css";
  * @param {Object} props - provide dishes with the information inside
  * @return {Component} - return component with unpacked dishes
  */
-export const Menu: React.FC<{ dishes: [] }> = (props) => {
+export const Menu: React.FC<{ dishes: [] | undefined }> = (props) => {
     const { dishes } = props;
 
     return <div className="menu">{UnpackPositions(dishes)}</div>;

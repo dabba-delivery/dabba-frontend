@@ -40,7 +40,7 @@ export const Restaurant: React.FC<RouteComponentProps<
         },
     } = props;
 
-    const [data, setData] = useState("");
+    const [data, setData] = useState({});
     const [finishForm, setFinishForm] = useState(false);
     const { items, addPosition, removePosition, countPositions } = useBin();
 
