@@ -52,5 +52,5 @@ interface IButton {
     onClick?: () => void;
     style?: TypeStyle;
     classNames?: string;
-    children?: string | SVGAElement;
+    children?: string | JSX.Element;
 }
