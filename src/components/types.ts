@@ -50,7 +50,23 @@ export interface IStatus {
 }
 
 export interface IToggle {
-    onClick: Function;
+    onClick?: Function;
     classNames: string;
     style: ComponentStyle;
+}
+
+export interface IBinContext {
+    items: Map<Object, number>;
+    addPosition: (id: IPosition) => void;
+    removePosition: (id: IPosition) => void;
+    countPositions: () => number;
+}
+
+export interface IPosition {
+    name: string;
+    link: string;
+    ingridients: string;
+    cost: number;
+    id?: IPosition | Object;
+    weight: number;
 }

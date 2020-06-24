@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { MainPart } from "./mainPart";
 import { Bin } from "./bin.js";
 import { Finish } from "./finish";
+import { IPosition, IBinContext } from "./components/types";
 
 // Components from library
 import { Loader } from "./components";
@@ -16,6 +17,7 @@ import { BinContext } from "./context";
 import "./style/index.css";
 // DATA FOR DEV
 import { restaurants } from "./dbexample";
+import { RouteComponentProps } from "react-router-dom";
 
 /**
  * Component Restaurant represent main page at the application where users order food
@@ -24,7 +26,14 @@ import { restaurants } from "./dbexample";
  * @param {number} id - this parameter goes from React.Router and it's using for fetching data
  * @return {Component}
  */
-export const Restaurant = (props) => {
+
+interface IRouterRestaurantParam {
+    id: string;
+}
+
+export const Restaurant: React.FC<RouteComponentProps<
+    IRouterRestaurantParam
+>> = (props) => {
     const {
         match: {
             params: { id },
@@ -41,7 +50,7 @@ export const Restaurant = (props) => {
          *
          * @param {string} link - using for fetching data, provided by React Router
          */
-        const getData = async (link) => {
+        const getData = async (link: string) => {
             setData(restaurants[id]);
 
             // const result = await fetch(
@@ -97,14 +106,14 @@ export const Restaurant = (props) => {
  * useBin is custom hook which provide logic for the Bin
  * @return {Object}
  */
-const useBin = () => {
+const useBin = (): IBinContext => {
     const [items, setBin] = useState(new Map());
 
     /**
      * Adding new position in the cart
      * @param {Object} id - contain all information about dishes
      */
-    const addPosition = (id) => {
+    const addPosition = (id: IPosition) => {
         const map = new Map(items);
         map.has(id) ? ++map.get(id).val : map.set(id, { val: 1 });
         setBin(new Map(map));
@@ -113,7 +122,7 @@ const useBin = () => {
      * Removing position from the cart
      * @param {Object} id - contain all information about dishes
      */
-    const removePosition = (id) => {
+    const removePosition = (id: IPosition) => {
         const map = new Map(items);
         items.has(id) && --map.get(id).val;
         map.get(id).val <= 0 && map.delete(id);

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-export const restaurants = {
+export const restaurants:{ [key: string]: any } = {
     dodo: {
         address: "Красногвардейская 16",
         closeTime: "20:00",

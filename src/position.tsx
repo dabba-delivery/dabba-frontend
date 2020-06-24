@@ -4,6 +4,7 @@ import React from "react";
 // Main commmponents
 import { Button } from "./components";
 import { BinContext } from "./context";
+import { IPosition } from "./components/types";
 
 // Components from library
 
@@ -12,13 +13,13 @@ import { BinContext } from "./context";
 // CSS
 import "./style/position.css";
 
-export default (props) => {
+export default (props: IPosition) => {
     const {
         name = "empty value",
         link,
         ingridients = "empty value",
         cost = "empty value",
-        id = "empty value",
+        id = {},
         weight = "empty value",
     } = props;
 
@@ -45,7 +46,8 @@ export default (props) => {
                         style="orange"
                         classNames="position__button"
                         onClick={() => {
-                            addPosition(id);
+                            // FIX
+                            addPosition!(id);
                         }}
                     >
                         Выбрать
