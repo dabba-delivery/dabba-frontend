@@ -57,8 +57,8 @@ export interface IToggle {
 
 export interface IBinContext {
     items: Map<Object, number>;
-    addPosition: (id: IPosition) => void;
-    removePosition: (id: IPosition) => void;
+    addPosition: (id: IDish) => void;
+    removePosition: (id: IDish) => void;
     countPositions: () => number;
 }
 
@@ -67,6 +67,14 @@ export interface IPosition {
     link: string;
     ingridients: string;
     cost: number;
-    id?: IPosition | Object;
+    id?: IDish;
     weight: number;
+}
+
+export interface IDish {
+    pictureUrl: string;
+    name: string;
+    description: string;
+    weigh: number | string;
+    price: number | string;
 }

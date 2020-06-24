@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { MainPart } from "./mainPart";
 import { Bin } from "./bin.js";
 import { Finish } from "./finish";
-import { IPosition, IBinContext } from "./components/types";
+import { IPosition, IBinContext, IDish } from "./components/types";
 
 // Components from library
 import { Loader } from "./components";
@@ -107,13 +107,13 @@ export const Restaurant: React.FC<RouteComponentProps<
  * @return {Object}
  */
 const useBin = (): IBinContext => {
-    const [items, setBin] = useState(new Map());
+    const [items, setBin] = useState(new Map<object, any>());
 
     /**
      * Adding new position in the cart
      * @param {Object} id - contain all information about dishes
      */
-    const addPosition = (id: IPosition) => {
+    const addPosition = (id: IDish) => {
         const map = new Map(items);
         map.has(id) ? ++map.get(id).val : map.set(id, { val: 1 });
         setBin(new Map(map));
@@ -122,7 +122,7 @@ const useBin = (): IBinContext => {
      * Removing position from the cart
      * @param {Object} id - contain all information about dishes
      */
-    const removePosition = (id: IPosition) => {
+    const removePosition = (id: IDish) => {
         const map = new Map(items);
         items.has(id) && --map.get(id).val;
         map.get(id).val <= 0 && map.delete(id);
@@ -133,10 +133,12 @@ const useBin = (): IBinContext => {
      * @return {number} - final sum
      */
     const countPositions = () => {
-        let result = 0;
-        for (const item of items.entries()) {
-            result += item[0].price * item[1].val;
-        }
+		let result = 0;
+		
+		items.forEach(item => {
+			result += item[0].price * item[1].val;
+		});
+        
         return result;
     };
 

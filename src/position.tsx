@@ -19,7 +19,13 @@ export default (props: IPosition) => {
         link,
         ingridients = "empty value",
         cost = "empty value",
-        id = {},
+        id = {
+            pictureUrl: "",
+            name: "no value",
+            description: "no value",
+            weigh: "no value",
+            price: "no value",
+        },
         weight = "empty value",
     } = props;
 
@@ -46,7 +52,6 @@ export default (props: IPosition) => {
                         style="orange"
                         classNames="position__button"
                         onClick={() => {
-                            // FIX
                             addPosition!(id);
                         }}
                     >
