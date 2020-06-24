@@ -1,5 +1,15 @@
+// React
 import React, { useState } from "react";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
 import { IToggle } from "../types";
+// Context
+
+// CSS
 import "./--orange.css";
 import "./--orange-active.css";
 import "./--blue.css";

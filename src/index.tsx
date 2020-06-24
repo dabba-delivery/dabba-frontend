@@ -10,6 +10,8 @@ import { Restaurant } from "./restaurant";
 
 // Components from library
 
+// Types and Interfaces
+
 // Context
 
 // CSS

@@ -8,6 +8,8 @@ import { IPosition } from "./components/types";
 
 // Components from library
 
+// Types and Interfaces
+
 // Context
 
 // CSS

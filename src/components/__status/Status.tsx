@@ -1,5 +1,16 @@
+// React
 import React from "react";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
 import { IStatus } from "../types";
+
+// Context
+
+// CSS
 import "./status.css";
 
 /**

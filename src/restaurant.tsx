@@ -1,5 +1,6 @@
 // React
 import React, { useState, useEffect } from "react";
+import { RouteComponentProps } from "react-router-dom";
 
 // Main commmponents
 import { MainPart } from "./mainPart";
@@ -10,6 +11,8 @@ import { IBinContext, IDish } from "./components/types";
 // Components from library
 import { Loader } from "./components";
 
+// Types and Interfaces
+
 // Context
 import { BinContext } from "./context";
 
@@ -17,7 +20,6 @@ import { BinContext } from "./context";
 import "./style/index.css";
 // DATA FOR DEV
 import { restaurants } from "./dbexample";
-import { RouteComponentProps } from "react-router-dom";
 
 /**
  * Component Restaurant represent main page at the application where users order food

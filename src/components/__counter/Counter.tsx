@@ -1,6 +1,17 @@
+// React
 import React, { useState } from "react";
+
+// Main commmponents
+
+// Components from library
 import { Button, svg } from "../index";
+
+// Types and Interfaces
 import { ICounter } from "../types";
+
+// Context
+
+// CSS
 import "./--small.css";
 import "./--orange.css";
 

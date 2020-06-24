@@ -5,7 +5,10 @@ import React from "react";
 
 // Components from library
 import { Button, Status, svg } from "./components";
+
+// Types and Interfaces
 import { ITime, IInfo, TypeData } from "./components/types";
+
 // Context
 
 // CSS

@@ -1,7 +1,18 @@
+// React
 import React from "react";
-import "./--default.css";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
 import { ICartItem } from "../types";
+
+// Context
 import { svg } from "../index";
+
+// CSS
+import "./--default.css";
 
 /**
  * Class Cart represents one position card in the cart

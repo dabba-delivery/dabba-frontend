@@ -1,5 +1,15 @@
+// React
 import React from "react";
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
 import { IInput } from "../types";
+
+// Context
+
+// CSS
 import "./--orange.css";
 import "./--blue.css";
 

@@ -6,12 +6,14 @@ import React from "react";
 // Components from library
 import { CartItem, Button, svg } from "./components";
 
+// Types and Interfaces
+import { IDish } from "./components/types";
+
 // Context
 import { BinContext } from "./context";
 
 // CSS
 import "./style/bin.css";
-import { IDish } from "./components/types";
 
 /**
  * Bin - represent basket for all user orders

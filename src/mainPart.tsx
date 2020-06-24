@@ -12,6 +12,8 @@ import { TypeData } from "./components/types";
 // Components from library
 import { Navigation } from "./components";
 
+// Types and Interfaces
+
 // Context
 
 // CSS

@@ -1,4 +1,15 @@
+// React
 import React from "react";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
+
+// Context
+
+// CSS
 import "./--default.css";
 
 /**

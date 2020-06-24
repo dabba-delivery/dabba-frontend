@@ -1,5 +1,16 @@
+// React
 import React from "react";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
 import { IButton } from "../types";
+
+// Context
+
+// CSS
 import "./--orange.css";
 import "./--blue.css";
 
