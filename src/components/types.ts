@@ -11,7 +11,7 @@ export interface IButton {
 export interface ICartItem {
     position: IDish;
     amount: number;
-    handleDelete: Function
+    handleDelete: Function;
 }
 
 export interface ICounter {
@@ -72,4 +72,29 @@ export interface IDish {
     description?: string;
     weigh?: number | string;
     price?: number;
+}
+
+export interface ITime {
+    openTime: string;
+    closeTime: string;
+}
+
+export interface IInfo {
+    rating: number;
+    contactPhone: string;
+    kitchenType: string;
+    email: string;
+}
+
+export interface IHeader {
+    data: {
+        name: string;
+        address: string;
+        logoUrl: string;
+        contactPhone: string;
+        kitchenType: string;
+        email: string;
+        openTime: string;
+        closeTime: string;
+    };
 }
