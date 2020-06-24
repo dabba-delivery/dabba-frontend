@@ -3,7 +3,6 @@ import React from "react";
 
 // Main commmponents
 import Position from "./position";
-
 // Components from library
 
 // Context
@@ -17,14 +16,10 @@ import "./style/menu.css";
  * @param {Object} props - provide dishes with the information inside
  * @return {Component} - return component with unpacked dishes
  */
-export const Menu = (props) => {
+export const Menu: React.FC<{ dishes: [] }> = (props) => {
     const { dishes } = props;
 
-    return (
-        <div className="menu">
-            <UnpackPositions arr={dishes} />
-        </div>
-    );
+    return <div className="menu">{UnpackPositions(dishes)}</div>;
 };
 
 /**
@@ -32,8 +27,7 @@ export const Menu = (props) => {
  * @param {Object} props - provides all information about dish
  * @return {Component}
  */
-function UnpackPositions(props) {
-    const { arr: positionsArr = [] } = props;
+function UnpackPositions(positionsArr = []) {
     const listPositions = positionsArr.map((position, i) => {
         const { pictureUrl, name, description, weigh, price } = position;
         return (

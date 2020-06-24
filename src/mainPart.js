@@ -2,7 +2,7 @@
 import React from "react";
 
 // Main commmponents
-import { Header } from "./header.js";
+import { Header } from "./header";
 import { Menu } from "./menu";
 import { SortBlock } from "./sort";
 import { MapBlock } from "./map";
