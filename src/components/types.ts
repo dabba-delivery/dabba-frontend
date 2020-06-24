@@ -9,16 +9,11 @@ export interface IButton {
 }
 
 export interface ICartItem {
-    position: TypePosition;
+    position: IDish;
     amount: number;
-    handleDelete: (position: object) => void;
+    handleDelete: Function
 }
 
-type TypePosition = {
-    name: string;
-    weigh: number | string;
-    price: number | string;
-};
 export interface ICounter {
     initialValue: number;
     step: number;
@@ -33,13 +28,13 @@ export interface ICounter {
 
 export interface IInput {
     name: string;
-    style: ComponentStyle;
-    classNames: string;
-    classNamesBox: string;
-    onChange: (val: React.ChangeEvent) => void;
-    children: React.ReactNode;
-    type: string;
-    inputName: string;
+    style?: ComponentStyle;
+    classNames?: string;
+    classNamesBox?: string;
+    onChange?: (val: React.ChangeEvent) => void;
+    children?: React.ReactNode;
+    type?: string;
+    inputName?: string;
 }
 
 export interface IStatus {
@@ -56,7 +51,7 @@ export interface IToggle {
 }
 
 export interface IBinContext {
-    items: Map<Object, number>;
+    items: Map<object, any>;
     addPosition: (id: IDish) => void;
     removePosition: (id: IDish) => void;
     countPositions: () => number;
@@ -72,9 +67,9 @@ export interface IPosition {
 }
 
 export interface IDish {
-    pictureUrl: string;
-    name: string;
-    description: string;
-    weigh: number | string;
-    price: number | string;
+    pictureUrl?: string;
+    name?: string;
+    description?: string;
+    weigh?: number | string;
+    price?: number | string;
 }

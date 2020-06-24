@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { MainPart } from "./mainPart";
 import { Bin } from "./bin.js";
 import { Finish } from "./finish";
-import { IPosition, IBinContext, IDish } from "./components/types";
+import { IBinContext, IDish } from "./components/types";
 
 // Components from library
 import { Loader } from "./components";
@@ -133,12 +133,10 @@ const useBin = (): IBinContext => {
      * @return {number} - final sum
      */
     const countPositions = () => {
-		let result = 0;
-		
-		items.forEach(item => {
-			result += item[0].price * item[1].val;
-		});
-        
+        let result = 0;
+        for (const item of items.entries()) {
+            result += item[0].price * item[1].val;
+        }
         return result;
     };
 
