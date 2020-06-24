@@ -48,3 +48,9 @@ export interface IStatus {
     falseMessage: string | number;
     current: boolean;
 }
+
+export interface IToggle {
+    onClick: Function;
+    classNames: string;
+    style: ComponentStyle;
+}

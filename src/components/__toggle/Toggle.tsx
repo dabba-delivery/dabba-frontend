@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IToggle } from "../types";
 import "./--orange.css";
 import "./--orange-active.css";
 import "./--blue.css";
@@ -19,7 +20,7 @@ import "./--blue-active.css";
  *
  * @return {HTMLElement} - which is toogle
  */
-export const Toggle = (props) => {
+export const Toggle: React.FC<IToggle> = (props) => {
     const {
         onClick = () => console.log("sort works"),
         classNames = "",
@@ -38,7 +39,7 @@ export const Toggle = (props) => {
      * Click handler
      * @param {DOMEvent} event
      */
-    const handleClick = (event) => {
+    const handleClick = () => {
         setActive(!active);
         onClick();
     };
