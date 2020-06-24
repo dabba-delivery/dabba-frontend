@@ -1,4 +1,5 @@
 import React from "react";
+import { IButton } from "../types";
 import "./--orange.css";
 import "./--blue.css";
 
@@ -45,12 +46,3 @@ export const Button: React.FC<IButton> = (props) => {
         </button>
     );
 };
-
-type TypeStyle = "orange" | "blue" | "grey";
-
-interface IButton {
-    onClick?: () => void;
-    style?: TypeStyle;
-    classNames?: string;
-    children?: string | JSX.Element;
-}

@@ -1,4 +1,5 @@
 import React from "react";
+import { IStatus } from "../types";
 import "./status.css";
 
 /**
@@ -14,7 +15,7 @@ import "./status.css";
  *
  * @return {HTMLElement}
  */
-export const Status = (props) => {
+export const Status: React.FC<IStatus> = (props) => {
     const {
         classNames = "",
         trueMessage = "Okay",

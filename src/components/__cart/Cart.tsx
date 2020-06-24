@@ -1,5 +1,6 @@
 import React from "react";
 import "./--default.css";
+import { ICartItem } from "../types";
 import { svg } from "../index";
 
 /**
@@ -48,19 +49,3 @@ export const CartItem: React.FC<ICartItem> = (props) => {
         </div>
     );
 };
-
-type TypePosition = {
-    name: string;
-    weigh: number | string;
-    price: number | string;
-};
-
-interface IHandlerDelete {
-    (position: object): void;
-}
-
-interface ICartItem {
-    position: TypePosition;
-    amount: number;
-    handleDelete: IHandlerDelete;
-}
