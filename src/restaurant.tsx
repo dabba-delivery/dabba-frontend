@@ -113,21 +113,21 @@ const useBin = (): IBinContext => {
 
     /**
      * Adding new position in the cart
-     * @param {Object} id - contain all information about dishes
+     * @param {Object} dish - contain all information about dishes
      */
-    const addPosition = (id: IDish) => {
+    const addPosition = (dish: IDish) => {
         const map = new Map(items);
-        map.has(id) ? ++map.get(id).val : map.set(id, { val: 1 });
+        map.has(dish) ? ++map.get(dish).val : map.set(dish, { val: 1 });
         setBin(new Map(map));
     };
     /**
      * Removing position from the cart
-     * @param {Object} id - contain all information about dishes
+     * @param {Object} dish - contain all information about dishes
      */
-    const removePosition = (id: IDish) => {
+    const removePosition = (dish: IDish) => {
         const map = new Map(items);
-        items.has(id) && --map.get(id).val;
-        map.get(id).val <= 0 && map.delete(id);
+        items.has(dish) && --map.get(dish).val;
+        map.get(dish).val <= 0 && map.delete(dish);
         setBin(new Map(map));
     };
     /**
