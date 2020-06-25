@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Input, Button } from "./components";
 
 // Types and Interfaces
+import { IFinish } from "./components/types";
 
 // Context
 
@@ -19,17 +20,11 @@ import "./style/finish.css";
  *
  * @param {props} props - includes two props inside
  * - finalCost - final cost of the order
- * - closeFunction - close handler for this component
+ * - onClose - close handler for this component
  * @return {HTMLElement}
  */
-
-interface IFinish {
-    finalCost: number;
-    closeFunction: Function;
-}
-
 export const Finish: React.FC<IFinish> = (props) => {
-    const { finalCost, closeFunction } = props;
+    const { finalCost, onClose } = props;
     const { register, errors, handleSubmit } = useForm();
 
     /**
@@ -37,7 +32,7 @@ export const Finish: React.FC<IFinish> = (props) => {
      * @param {data} data - all information represented in the one object
      */
     const onSubmit = (data: object) => {
-        closeFunction();
+        onClose();
         console.log(data);
     };
 
@@ -55,8 +50,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                             (errors.name?.type === "required"
                                 ? "(Введите значение)"
                                 : "")
-						}
-						onChange={()=>console.log("Temporary solution")}
+                        }
+                        onChange={() => console.log("Temporary solution")}
                         inputName="name"
                     />
                     <Input
@@ -74,8 +69,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 ? "(Некорректный адрес эл.почты)"
                                 : "")
                         }
-						inputName="email"
-						onChange={()=>console.log("Temporary solution")}
+                        inputName="email"
+                        onChange={() => console.log("Temporary solution")}
                     />
                     <Input
                         ref={register({
@@ -92,8 +87,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 ? "(Некорректный номер)"
                                 : "")
                         }
-						inputName="phonenumber"
-						onChange={()=>console.log("Temporary solution")}
+                        inputName="phonenumber"
+                        onChange={() => console.log("Temporary solution")}
                     />
                 </div>
                 <div className="finish__adress">
@@ -107,8 +102,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 : "")
                         }
                         inputName="street"
-						classNamesBox="finish__street"
-						onChange={()=>console.log("Temporary solution")}
+                        classNamesBox="finish__street"
+                        onChange={() => console.log("Temporary solution")}
                     />
                     <Input
                         ref={register({ pattern: /\d+/gi, required: true })}
@@ -122,8 +117,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 ? "(Только цифры)"
                                 : "")
                         }
-						inputName="apartment"
-						onChange={()=>console.log("Temporary solution")}
+                        inputName="apartment"
+                        onChange={() => console.log("Temporary solution")}
                     />
                     <Input
                         ref={register({ required: true })}
@@ -133,8 +128,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 ? "(Введите значение)"
                                 : "")
                         }
-						inputName="houselock"
-						onChange={()=>console.log("Temporary solution")}
+                        inputName="houselock"
+                        onChange={() => console.log("Temporary solution")}
                     />
                     <Input
                         ref={register({ pattern: /\d+/gi, required: true })}
@@ -148,8 +143,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 ? "(Только цифры)"
                                 : "")
                         }
-						inputName="entrance"
-						onChange={()=>console.log("Temporary solution")}
+                        inputName="entrance"
+                        onChange={() => console.log("Temporary solution")}
                     />
                     <Input
                         ref={register({ pattern: /\d+/gi, required: true })}
@@ -163,8 +158,8 @@ export const Finish: React.FC<IFinish> = (props) => {
                                 ? "(Только цифры)"
                                 : "")
                         }
-						inputName="floor"
-						onChange={()=>console.log("Temporary solution")}
+                        inputName="floor"
+                        onChange={() => console.log("Temporary solution")}
                     />
                 </div>
                 <div className="finish__cost">

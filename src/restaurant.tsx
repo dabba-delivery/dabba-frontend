@@ -84,7 +84,7 @@ export const Restaurant: React.FC<RouteComponentProps<
                     <div className="page app-appear">
                         {finishForm ? (
                             <Finish
-                                closeFunction={() => setFinishForm(!finishForm)}
+                                onClose={() => setFinishForm(!finishForm)}
                                 finalCost={countPositions()}
                             />
                         ) : (

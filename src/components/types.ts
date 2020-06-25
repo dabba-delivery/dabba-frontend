@@ -78,15 +78,15 @@ export interface IDish {
 }
 
 export interface ITime {
-    openTime: string | undefined;
-    closeTime: string | undefined;
+    openTime?: string;
+    closeTime?: string;
 }
 
 export interface IInfo {
-    rating: number | undefined;
-    contactPhone: string | undefined;
-    kitchenType: string | undefined;
-    email: string | undefined;
+    rating?: number;
+    contactPhone?: string;
+    kitchenType?: string;
+    email?: string;
 }
 
 export interface IHeader {
@@ -101,4 +101,9 @@ export interface IHeader {
     coordinates?: string;
     dishes?: [];
     serviceRadius?: number;
+}
+
+export interface IFinish {
+    finalCost: number;
+    onClose: Function;
 }
