@@ -109,7 +109,7 @@ export const Restaurant: React.FC<RouteComponentProps<
  * @return {Object}
  */
 const useBin = (): IBinContext => {
-    const [items, setBin] = useState(new Map<object, any>());
+    const [items, setBin] = useState(new Map<IDish, any>());
 
     /**
      * Adding new position in the cart
@@ -138,7 +138,7 @@ const useBin = (): IBinContext => {
         let result = 0;
 
         items.forEach((item, key: IDish) => {
-            result += item.val * key.price!;
+            result += item.val * key.price;
         });
 
         return result;

@@ -41,10 +41,10 @@ export const Input = React.forwardRef<HTMLInputElement, IInput>(
             style = "orange",
             classNames = "",
             classNamesBox = "",
-            onChange = (val) => console.log(val),
+            onChange,
             children,
             type = "text",
-            inputName = "default",
+            inputName,
         } = props;
 
         const styles = {

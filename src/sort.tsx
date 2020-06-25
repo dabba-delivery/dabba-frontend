@@ -22,37 +22,76 @@ export const SortBlock = () => {
         <div className="sort">
             <h5 className="sort__text">Показать</h5>
             <div className="sort__box">
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Наборы
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Популярное
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Наборы
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Популярное
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Наборы
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Популярное
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Наборы
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Популярное
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Популярное
                 </Toggle>
-                <Toggle style="blue" classNames="sort__toggle">
+                <Toggle
+                    style="blue"
+                    onClick={() => console.log("Temporary solution")}
+                    classNames="sort__toggle"
+                >
                     Популярное
                 </Toggle>
-                s
             </div>
         </div>
     );

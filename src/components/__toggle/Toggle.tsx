@@ -32,7 +32,7 @@ import "./--blue-active.css";
  */
 export const Toggle: React.FC<IToggle> = (props) => {
     const {
-        onClick = () => console.log("sort works"),
+        onClick,
         classNames = "",
         style = "orange",
         children,

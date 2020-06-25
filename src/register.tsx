@@ -18,7 +18,7 @@ import "./style/register.css";
  * Register - represents Registration window
  * @return {HTMLElement}
  */
-export const Register = () => {
+export const Register: React.FC = () => {
     const [loaded, setLoaded] = useState(false);
     const [section, setSection] = useState("sign in");
     const { register, errors, handleSubmit } = useForm();
@@ -56,6 +56,9 @@ export const Register = () => {
                                         : "")
                                 }
                                 inputName="email"
+                                onChange={() =>
+                                    console.log("Temporary solution")
+                                }
                             />
                             <Input
                                 ref={register({ required: true })}
@@ -68,6 +71,9 @@ export const Register = () => {
                                         : "")
                                 }
                                 inputName="password"
+                                onChange={() =>
+                                    console.log("Temporary solution")
+                                }
                             />
                             <Input
                                 ref={register({ required: true })}
@@ -80,6 +86,9 @@ export const Register = () => {
                                         : "")
                                 }
                                 inputName="passwordconfirm"
+                                onChange={() =>
+                                    console.log("Temporary solution")
+                                }
                             />
 
                             <Button onClick={handleSubmit(onSubmit)}>
@@ -116,6 +125,9 @@ export const Register = () => {
                                         : "")
                                 }
                                 inputName="email"
+                                onChange={() =>
+                                    console.log("Temporary solution")
+                                }
                             />
                             <Input
                                 ref={register({ required: true })}
@@ -128,6 +140,9 @@ export const Register = () => {
                                         : "")
                                 }
                                 inputName="password"
+                                onChange={() =>
+                                    console.log("Temporary solution")
+                                }
                             />
 
                             <Button

@@ -5,10 +5,10 @@ export type TypeData = {
 };
 
 export interface IButton {
-    onClick?: () => void;
+    onClick: () => void;
     style?: ComponentStyle;
     classNames?: string;
-    children?: string | JSX.Element;
+    children: string | JSX.Element;
 }
 
 export interface ICartItem {
@@ -22,11 +22,11 @@ export interface ICounter {
     step: number;
     limit: number;
     func: Function;
-    style: ComponentStyle;
-    classNamesBox: string;
-    classNamesText: string;
-    classNames: string;
-    size: ComponentSize;
+    style?: ComponentStyle;
+    classNamesBox?: string;
+    classNamesText?: string;
+    classNames?: string;
+    size?: ComponentSize;
 }
 
 export interface IInput {
@@ -34,10 +34,10 @@ export interface IInput {
     style?: ComponentStyle;
     classNames?: string;
     classNamesBox?: string;
-    onChange?: (val: React.ChangeEvent) => void;
+    onChange: (val: React.ChangeEvent) => void;
     children?: React.ReactNode;
     type?: string;
-    inputName?: string;
+    inputName: string;
 }
 
 export interface IStatus {
@@ -48,7 +48,7 @@ export interface IStatus {
 }
 
 export interface IToggle {
-    onClick?: Function;
+    onClick: Function;
     classNames: string;
     style: ComponentStyle;
 }
@@ -70,11 +70,11 @@ export interface IPosition {
 }
 
 export interface IDish {
-    pictureUrl?: string;
-    name?: string;
-    description?: string;
-    weigh?: number | string;
-    price?: number;
+    pictureUrl: string;
+    name: string;
+    description: string;
+    weigh: number | string;
+    price: number;
 }
 
 export interface ITime {

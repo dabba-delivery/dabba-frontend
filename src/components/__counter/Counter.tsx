@@ -45,7 +45,7 @@ export const Counter: React.FC<ICounter> = (props) => {
         initialValue = 0,
         step = 1,
         limit = 10,
-        func = () => console.log("it works"),
+        func,
     } = props;
 
     const styles = {
@@ -101,7 +101,7 @@ export const Counter: React.FC<ICounter> = (props) => {
  * @param {number} initialValue  - start value for this counter
  * @param {number} step - step for inrementor and decrementor
  * @param {number} limit - limit for counter // sometimes you need a maximum :)
- * @param {Function} handlerFunc - handle function which invoke and use actual value as argument
+ * @param {Function} onChange - handle function which invoke and use actual value as argument
  *
  * @return {Object}
  */
@@ -109,7 +109,7 @@ const useCounter = (
     initialValue: number = 1,
     step: number = 1,
     limit: number = 10,
-    handlerFunc: Function = () => console.log("click")
+    onChange: Function
 ) => {
     const [value, setCount] = useState(initialValue);
     /**
@@ -129,7 +129,7 @@ const useCounter = (
             ? setCount(value)
             : setCount(value + step);
 
-    handlerFunc(value);
+    onChange(value);
 
     return {
         value,

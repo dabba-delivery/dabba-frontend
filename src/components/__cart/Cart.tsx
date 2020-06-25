@@ -30,10 +30,10 @@ import "./--default.css";
  */
 export const CartItem: React.FC<ICartItem> = (props) => {
     const {
-        position = {},
-        position: { name = "no value", weigh = "no value", price = "no value" },
-        amount = "no value",
-        handleDelete = () => alert("it doesent work"),
+        position,
+        position: { name, weigh, price },
+        amount,
+        handleDelete,
     } = props;
 
     const {

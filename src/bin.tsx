@@ -31,7 +31,11 @@ export const Bin: React.FC<{ finishFunc: Function }> = (props) => {
 
     return (
         <BinContext.Consumer>
-            {({ items, removePosition, countPositions }) => (
+            {({
+                items,
+                removePosition = () => alert("Something went wrong"),
+                countPositions = () => 0,
+            }) => (
                 <div className="bin">
                     <div className="bin__header">
                         {bin}
@@ -40,14 +44,14 @@ export const Bin: React.FC<{ finishFunc: Function }> = (props) => {
                         </h5>
                     </div>
                     <div className="bin__list">
-                        {mapUnpack(items, removePosition!)}
+                        {mapUnpack(items, removePosition)}
                     </div>
                     <div className="bin__footer">
                         <Button
                             style="blue"
                             classNames="bin__button"
                             onClick={
-                                countPositions!() > 0
+                                countPositions() > 0
                                     ? () => finishFunc()
                                     : () =>
                                           alert("Корзина пуста, купи че нить!")

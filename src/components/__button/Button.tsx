@@ -28,31 +28,16 @@ import "./--blue.css";
  * @return {HTMLElement}
  */
 export const Button: React.FC<IButton> = (props) => {
-    const {
-        onClick = () => console.log("it works"),
-        style = "orange",
-        classNames = "",
-        children,
-    } = props;
+    const { onClick, style = "orange", classNames = "", children } = props;
 
     const styles = {
         orange: "button--orange",
         blue: "button--blue",
         grey: "button--grey",
     };
-    /**
-     * @param {event} event - returns button click to make prevent default and invoke handler from props
-     */
-    const handleClick = (event: React.MouseEvent) => {
-        event.preventDefault();
-        onClick();
-    };
 
     return (
-        <button
-            className={styles[style] + " " + classNames}
-            onClick={handleClick}
-        >
+        <button className={styles[style] + " " + classNames} onClick={onClick}>
             {children}
         </button>
     );
