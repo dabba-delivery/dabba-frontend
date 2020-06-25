@@ -1,5 +1,17 @@
+// React
 import React, { useState } from "react";
-import { Button, svg } from "../index.tsx";
+
+// Main commmponents
+
+// Components from library
+import { Button, svg } from "../index";
+
+// Types and Interfaces
+import { ICounter } from "../types";
+
+// Context
+
+// CSS
 import "./--small.css";
 import "./--orange.css";
 
@@ -23,7 +35,7 @@ import "./--orange.css";
  *
  * @return {HTMLElement}
  */
-export const Counter = (props) => {
+export const Counter: React.FC<ICounter> = (props) => {
     const {
         style = "orange",
         classNames = "",
@@ -33,7 +45,7 @@ export const Counter = (props) => {
         initialValue = 0,
         step = 1,
         limit = 10,
-        func = (a) => console.log("it works: " + a),
+        func = () => console.log("it works"),
     } = props;
 
     const styles = {
@@ -93,7 +105,12 @@ export const Counter = (props) => {
  *
  * @return {Object}
  */
-const useCounter = (initialValue, step, limit, handlerFunc) => {
+const useCounter = (
+    initialValue: number = 1,
+    step: number = 1,
+    limit: number = 10,
+    handlerFunc: Function = () => console.log("click")
+) => {
     const [value, setCount] = useState(initialValue);
     /**
      * Increase value

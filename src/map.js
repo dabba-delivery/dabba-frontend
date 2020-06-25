@@ -6,7 +6,7 @@ import GoogleMapReact from "google-map-react";
 import React, { useState, useEffect } from "react";
 
 // Main commmponents
-import { place } from "./mainPart.js";
+import { place } from "./mainPart";
 
 // Components from library
 import { Input, Button } from "./components";

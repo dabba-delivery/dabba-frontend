@@ -1,7 +1,17 @@
+// React
 import React from "react";
-import "./style/sort.css";
 
+// Main commmponents
+
+// Components from library
 import { Toggle } from "./components";
+
+// Types and Interfaces
+
+// Context
+
+// CSS
+import "./style/sort.css";
 
 /**
  * SortBlock - shows button for sotring positions

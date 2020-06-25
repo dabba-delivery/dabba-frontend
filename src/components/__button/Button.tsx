@@ -1,4 +1,16 @@
+// React
 import React from "react";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
+import { IButton } from "../types";
+
+// Context
+
+// CSS
 import "./--orange.css";
 import "./--blue.css";
 
@@ -45,12 +57,3 @@ export const Button: React.FC<IButton> = (props) => {
         </button>
     );
 };
-
-type TypeStyle = "orange" | "blue" | "grey";
-
-interface IButton {
-    onClick?: () => void;
-    style?: TypeStyle;
-    classNames?: string;
-    children?: string | SVGAElement;
-}

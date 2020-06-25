@@ -6,6 +6,9 @@ import React from "react";
 // Components from library
 import { CartItem, Button, svg } from "./components";
 
+// Types and Interfaces
+import { IDish } from "./components/types";
+
 // Context
 import { BinContext } from "./context";
 
@@ -19,7 +22,7 @@ import "./style/bin.css";
  * @param {Function} finishFunc - handler which calls the last page to make an order
  * @return {HTMLElement}
  */
-export const Bin = (props) => {
+export const Bin: React.FC<{ finishFunc: Function }> = (props) => {
     const { finishFunc = () => alert("No handler") } = props;
 
     const {
@@ -33,18 +36,18 @@ export const Bin = (props) => {
                     <div className="bin__header">
                         {bin}
                         <h5 className="bin__text">
-                            Корзина {countPositions()}р.
+                            Корзина {countPositions!()}р.
                         </h5>
                     </div>
                     <div className="bin__list">
-                        {mapUnpack(items, removePosition)}
+                        {mapUnpack(items, removePosition!)}
                     </div>
                     <div className="bin__footer">
                         <Button
                             style="blue"
                             classNames="bin__button"
                             onClick={
-                                countPositions() > 0
+                                countPositions!() > 0
                                     ? () => finishFunc()
                                     : () =>
                                           alert("Корзина пуста, купи че нить!")
@@ -66,15 +69,14 @@ export const Bin = (props) => {
  * @param {Function} deleteHandler - function which will be inplemented inside component
  * @return {HTMLElement}
  */
-function mapUnpack(map, deleteHandler) {
-    const result = [];
-
-    map.forEach((element, key) => {
+function mapUnpack(map: any, deleteHandler: Function) {
+    const result: JSX.Element[] = [];
+    map.forEach((amount: any, dishInfo: IDish) => {
         result.push(
             <CartItem
-                position={key}
-                amount={element.val}
-                key={key}
+                position={dishInfo}
+                amount={amount.val}
+                key={dishInfo.name}
                 handleDelete={deleteHandler}
             />
         );

@@ -6,6 +6,9 @@ import React from "react";
 // Components from library
 import { Button, Status, svg } from "./components";
 
+// Types and Interfaces
+import { ITime, IInfo, TypeData } from "./components/types";
+
 // Context
 
 // CSS
@@ -18,7 +21,8 @@ import "./style/header.css";
  * @param {string} openTime - close time for resstaurant or organization
  * @return {DOMElement}
  */
-const Time = ({ openTime, closeTime }) => (
+
+const Time: React.FC<ITime> = ({ openTime = "10:00", closeTime = "20:00" }) => (
     <p className="line__time">
         Время доставки: Пн - Вс с {openTime} до {closeTime}
     </p>
@@ -34,7 +38,13 @@ const Time = ({ openTime, closeTime }) => (
  * @param {string} email - display email
  * @return {Component}
  */
-const Info = ({ rating, contactPhone, kitchenType, email }) => (
+
+const Info: React.FC<IInfo> = ({
+    rating,
+    contactPhone,
+    kitchenType,
+    email,
+}) => (
     <div className="wall__info">
         <Rating rating={rating} />
         <p>{contactPhone}</p>
@@ -51,14 +61,14 @@ const Info = ({ rating, contactPhone, kitchenType, email }) => (
  * @param {number} rating - display rating
  * @return {Array}
  */
-function Rating({ rating }) {
+function Rating({ rating }: { rating: number | undefined }): any {
     const start = [];
 
     const {
         header: { ratingStar },
     } = svg;
 
-    for (let counter = 0; counter < rating; counter++) {
+    for (let counter = 0; counter < rating!; counter++) {
         start.push(ratingStar);
     }
     return start;
@@ -78,7 +88,8 @@ function Rating({ rating }) {
  * - closeTime
  * @return {HTMLElement}
  */
-export const Header = (props) => {
+
+export const Header: React.FC<TypeData> = (props) => {
     const {
         data: {
             name,
@@ -99,7 +110,7 @@ export const Header = (props) => {
                 <h2 className="wall__name">{name + " " + address}</h2>
                 <Info
                     rating={5}
-                    phone={contactPhone}
+                    contactPhone={contactPhone}
                     kitchenType={kitchenType}
                     email={email}
                 />

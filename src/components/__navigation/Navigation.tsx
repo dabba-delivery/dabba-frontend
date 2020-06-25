@@ -1,7 +1,18 @@
+// React
 import React from "react";
-import "./--default.css";
 import { Link } from "react-router-dom";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
+
+// Context
 import { svg } from "../index";
+
+// CSS
+import "./--default.css";
 
 /**
  * Component navigation - represents navigation for every page inside application

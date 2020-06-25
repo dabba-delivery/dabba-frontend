@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 // Components from library
 import { Input, Button } from "./components";
 
+// Types and Interfaces
+
 // Context
 
 // CSS
@@ -20,7 +22,13 @@ import "./style/finish.css";
  * - closeFunction - close handler for this component
  * @return {HTMLElement}
  */
-export const Finish = (props) => {
+
+interface IFinish {
+    finalCost: number;
+    closeFunction: Function;
+}
+
+export const Finish: React.FC<IFinish> = (props) => {
     const { finalCost, closeFunction } = props;
     const { register, errors, handleSubmit } = useForm();
 
@@ -28,7 +36,7 @@ export const Finish = (props) => {
      * Template for fetching data and sending PUT reguest to the server
      * @param {data} data - all information represented in the one object
      */
-    const onSubmit = (data) => {
+    const onSubmit = (data: object) => {
         closeFunction();
         console.log(data);
     };

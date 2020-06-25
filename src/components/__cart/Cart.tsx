@@ -1,6 +1,18 @@
+// React
 import React from "react";
-import "./--default.css";
+
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
+import { ICartItem } from "../types";
+
+// Context
 import { svg } from "../index";
+
+// CSS
+import "./--default.css";
 
 /**
  * Class Cart represents one position card in the cart
@@ -48,19 +60,3 @@ export const CartItem: React.FC<ICartItem> = (props) => {
         </div>
     );
 };
-
-type TypePosition = {
-    name: string;
-    weigh: number | string;
-    price: number | string;
-};
-
-interface IHandlerDelete {
-    (position: object): void;
-}
-
-interface ICartItem {
-    position: TypePosition;
-    amount: number;
-    handleDelete: IHandlerDelete;
-}

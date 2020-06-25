@@ -1,7 +1,17 @@
+// React
 import React from "react";
+// Main commmponents
+
+// Components from library
+
+// Types and Interfaces
+import { IInput } from "../types";
+
+// Context
+
+// CSS
 import "./--orange.css";
 import "./--blue.css";
-
 
 /**
  * This component represents a Button
@@ -58,16 +68,3 @@ export const Input = React.forwardRef<HTMLInputElement, IInput>(
         );
     }
 );
-
-type MainStyle = "orange" | "blue";
-
-interface IInput {
-    name: string;
-    style: MainStyle;
-    classNames: string;
-    classNamesBox: string;
-    onChange: (val: React.ChangeEvent) => void;
-    children: React.ReactNode;
-    type: string;
-    inputName: string;
-}
