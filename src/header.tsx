@@ -61,7 +61,7 @@ const Info: React.FC<IInfo> = ({
  * @param {number} rating - display rating
  * @return {Array}
  */
-function Rating({ rating }: { rating: number | undefined }): any {
+function Rating({ rating }: { rating: number }): any {
     const start = [];
 
     const {

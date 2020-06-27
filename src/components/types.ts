@@ -83,7 +83,7 @@ export interface ITime {
 }
 
 export interface IInfo {
-    rating?: number;
+    rating: number;
     contactPhone?: string;
     kitchenType?: string;
     email?: string;
