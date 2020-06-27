@@ -1,7 +1,7 @@
 export type ComponentStyle = "orange" | "blue";
 export type ComponentSize = "small" | "medium" | "big";
 export type TypeData = {
-    data: IHeader;
+    data: any;
 };
 
 export interface IButton {
@@ -78,29 +78,29 @@ export interface IDish {
 }
 
 export interface ITime {
-    openTime?: string;
-    closeTime?: string;
+    openTime: string;
+    closeTime: string;
 }
 
 export interface IInfo {
     rating: number;
-    contactPhone?: string;
-    kitchenType?: string;
-    email?: string;
+    contactPhone: string;
+    kitchenType: string;
+    email: string;
 }
 
 export interface IHeader {
-    name?: string;
-    address?: string;
-    logoUrl?: string;
-    contactPhone?: string;
-    kitchenType?: string;
-    email?: string;
-    openTime?: string;
-    closeTime?: string;
-    coordinates?: string;
-    dishes?: [];
-    serviceRadius?: number;
+    name: string;
+    address: string;
+    logoUrl: string;
+    contactPhone: string;
+    kitchenType: string;
+    email: string;
+    openTime: string;
+    closeTime: string;
+    coordinates: string;
+    dishes: [];
+    serviceRadius: number;
 }
 
 export interface IFinish {
