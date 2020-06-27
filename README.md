@@ -1,6 +1,7 @@
 # Dabba #
 #### Dabba - food delivery SaaS service for small and medium business which was developed as main idea on the HackTheCrisis Russia ####
 
+Deplayed project on Firebase: https://dabba-ru.web.app/
 Here you can find our pitch with that project: https://hackthecrisisrussia.ru <br/>
 Main stack: React, JavaScript, TS, CSS, HTML, Java, Kotlin <br/>
 Collaborators: [Sergey Rudenko](https://github.com/rudensergey), [Dmitrii Yudakov](https://github.com/dmitry-yudakov), [Alexey Petrov](https://github.com/al3ks3y) <br/>
