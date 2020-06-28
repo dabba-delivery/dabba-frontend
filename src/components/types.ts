@@ -75,7 +75,7 @@ export interface IDish {
     pictureUrl: string;
     name: string;
     description: string;
-    weigh: number | string;
+    weigh: number;
     price: number;
 }
 
