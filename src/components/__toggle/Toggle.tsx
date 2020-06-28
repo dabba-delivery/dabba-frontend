@@ -34,7 +34,7 @@ export const Toggle: React.FC<IToggle> = (props) => {
     const {
         onClick,
         classNames = "",
-        style = "orange",
+        styl = "orange",
         children,
     } = props;
 
@@ -57,7 +57,7 @@ export const Toggle: React.FC<IToggle> = (props) => {
     return (
         <button
             className={
-                (active ? styles[style][1] : styles[style][0]) +
+                (active ? styles[styl][1] : styles[styl][0]) +
                 " " +
                 classNames
             }

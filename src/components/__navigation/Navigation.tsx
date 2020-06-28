@@ -32,13 +32,13 @@ export const Navigation = ({ classNamesBox = "", classNames = "" }) => {
                 </div>
             </Link>
             <Link to="/register">
-                <a href="#" className="navigation__link">
+                <a href="https://dabba.com" className="navigation__link">
                     {registration}
                     Регистрация / Войти
                 </a>
             </Link>
             <Link to="/">
-                <a href="#" className="navigation__link">
+                <a href="https://dabba.com" className="navigation__link">
                     {about}О нас
                 </a>
             </Link>

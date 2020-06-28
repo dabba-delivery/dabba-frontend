@@ -48,7 +48,7 @@ export const Bin: React.FC<{ finishFunc: Function }> = (props) => {
                     </div>
                     <div className="bin__footer">
                         <Button
-                            style="blue"
+                            styl="blue"
                             classNames="bin__button"
                             onClick={
                                 countPositions() > 0

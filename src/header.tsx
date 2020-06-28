@@ -125,7 +125,7 @@ export const Header: React.FC<TypeData> = (props) => {
                     current
                 />
                 <Button
-                    style="blue"
+                    styl="blue"
                     classNames="line__button"
                     onClick={() => alert("You press share button")}
                 >

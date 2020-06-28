@@ -27,7 +27,7 @@ import "./--orange.css";
  * @param {Function} func - handle function which invoke and use actual value as argument
  *
  * style
- * @param {string} style - sets the color palette for this element. You can choose one of availables
+ * @param {string} styl - sets the color palette for this element. You can choose one of availables
  * @param {string} classNamesBox - adds new classes to the element, usually it's used for positioning, but sometimes custom is needed
  * @param {string} classNamesText - apply new classes to a text between buttons
  * @param {string} classNames - adds this classes to the button elements
@@ -37,7 +37,7 @@ import "./--orange.css";
  */
 export const Counter: React.FC<ICounter> = (props) => {
     const {
-        style = "orange",
+        styl = "orange",
         classNames = "",
         classNamesBox = "",
         classNamesText = "",
@@ -71,10 +71,10 @@ export const Counter: React.FC<ICounter> = (props) => {
     } = svg;
 
     return (
-        <div className={styles[style] + " " + classNamesBox}>
+        <div className={styles[styl] + " " + classNamesBox}>
             <Button
                 classNames={classNames + " " + sizes[size]}
-                style={style}
+                styl={styl}
                 onClick={handleDecrease}
             >
                 {buttonLeft}
@@ -86,7 +86,7 @@ export const Counter: React.FC<ICounter> = (props) => {
                     " " +
                     (sizes[size] ? sizes[size] : "counter--small")
                 }
-                style={style}
+                styl={styl}
                 onClick={handleIncrease}
             >
                 {buttonRight}

@@ -43,7 +43,7 @@ export const Register: React.FC = () => {
                                     required: true,
                                     pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
                                 })}
-                                style="blue"
+                                styl="blue"
                                 classNamesBox="register__onerow"
                                 name={
                                     "Email " +
@@ -62,7 +62,7 @@ export const Register: React.FC = () => {
                             />
                             <Input
                                 ref={register({ required: true })}
-                                style="blue"
+                                styl="blue"
                                 classNamesBox="register__onerow"
                                 name={
                                     "Пароль " +
@@ -77,7 +77,7 @@ export const Register: React.FC = () => {
                             />
                             <Input
                                 ref={register({ required: true })}
-                                style="blue"
+                                styl="blue"
                                 classNamesBox="register__onerow register__bottom"
                                 name={
                                     "Подтверждение пароля " +
@@ -112,7 +112,7 @@ export const Register: React.FC = () => {
                                     required: true,
                                     pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i,
                                 })}
-                                style="blue"
+                                styl="blue"
                                 classNamesBox="register__onerow"
                                 name={
                                     "Email " +
@@ -131,7 +131,7 @@ export const Register: React.FC = () => {
                             />
                             <Input
                                 ref={register({ required: true })}
-                                style="blue"
+                                styl="blue"
                                 classNamesBox="register__onerow register__bottom"
                                 name={
                                     "Пароль " +

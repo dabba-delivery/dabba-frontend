@@ -38,7 +38,7 @@ export const Input = React.forwardRef<HTMLInputElement, IInput>(
     (props, ref?) => {
         const {
             name,
-            style = "orange",
+            styl = "orange",
             classNames = "",
             classNamesBox = "",
             onChange,
@@ -57,7 +57,7 @@ export const Input = React.forwardRef<HTMLInputElement, IInput>(
                 {name ? <p className="input__tip">{name}</p> : ""}
                 <input
                     type={type}
-                    className={styles[style] + classNames}
+                    className={styles[styl] + classNames}
                     onChange={onChange}
                     ref={ref}
                     name={inputName}

@@ -95,7 +95,7 @@ export const MapBlock = () => {
                 </p>
 
                 <Button
-                    style="blue"
+                    styl="blue"
                     classNames="map__button-allow"
                     onClick={onAutolocate}
                 >
@@ -110,7 +110,7 @@ export const MapBlock = () => {
                 ></Input>
 
                 <Button
-                    style="orange"
+                    styl="orange"
                     classNames="map__button-ready"
                     onClick={onDone}
                 >

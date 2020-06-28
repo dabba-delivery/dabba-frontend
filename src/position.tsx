@@ -45,7 +45,7 @@ export default (props: IPosition) => {
                     </div>
 
                     <Button
-                        style="orange"
+                        styl="orange"
                         classNames="position__button"
                         onClick={() => {
                             addPosition!(id);

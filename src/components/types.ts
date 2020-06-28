@@ -6,7 +6,7 @@ export type TypeData = {
 
 export interface IButton {
     onClick: (e: React.SyntheticEvent) => void;
-    style?: ComponentStyle;
+    styl?: ComponentStyle;
     classNames?: string;
     children: string | JSX.Element;
 }
@@ -22,7 +22,7 @@ export interface ICounter {
     step: number;
     limit: number;
     func: Function;
-    style?: ComponentStyle;
+    styl?: ComponentStyle;
     classNamesBox?: string;
     classNamesText?: string;
     classNames?: string;
@@ -31,7 +31,7 @@ export interface ICounter {
 
 export interface IInput {
     name: string;
-    style?: ComponentStyle;
+    styl?: ComponentStyle;
     classNames?: string;
     classNamesBox?: string;
     onChange:
@@ -52,7 +52,7 @@ export interface IStatus {
 export interface IToggle {
     onClick: Function;
     classNames: string;
-    style: ComponentStyle;
+    styl: ComponentStyle;
 }
 
 export interface IBinContext {
