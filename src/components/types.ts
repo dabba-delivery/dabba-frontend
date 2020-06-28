@@ -5,7 +5,7 @@ export type TypeData = {
 };
 
 export interface IButton {
-    onClick: () => void;
+    onClick: (e: React.SyntheticEvent) => void;
     style?: ComponentStyle;
     classNames?: string;
     children: string | JSX.Element;
@@ -34,7 +34,9 @@ export interface IInput {
     style?: ComponentStyle;
     classNames?: string;
     classNamesBox?: string;
-    onChange: (val: React.ChangeEvent) => void;
+    onChange:
+        | ((val: React.ChangeEvent) => void)
+        | React.Dispatch<React.SetStateAction<string>>;
     children?: React.ReactNode;
     type?: string;
     inputName: string;

@@ -16,7 +16,7 @@ import { Input, Button } from "./components";
 // CSS
 import "./style/map.css";
 
-const { REACT_APP_GOOGLE_API_KEY } = process.env;
+const { REACT_APP_GOOGLE_API_KEY }: any = process.env;
 
 const defaultZoom = 14;
 const defaultCenterCoords = {
@@ -35,14 +35,14 @@ export const MapBlock = () => {
 
     const onAutolocate = async () => {
         try {
-            const pos = await autolocate();
+            const pos: any = await autolocate();
             setCenter(pos);
         } catch (err) {
             console.log("Error in autolocation", err);
             alert("Ошибка при определении местоположения");
         }
     };
-    const onDone = async (e) => {
+    const onDone = async (e: React.SyntheticEvent) => {
         e && e.preventDefault();
         try {
             const pos = await fetchCoordinatesByAddress(
@@ -103,6 +103,7 @@ export const MapBlock = () => {
                 </Button>
 
                 <Input
+                    inputName="adress"
                     name="Или введите свой адрес"
                     classNamesBox="map__input-adress"
                     onChange={setAddress}
@@ -120,7 +121,12 @@ export const MapBlock = () => {
     );
 };
 
-const LogoOnMap = ({ name, logoURL }) => (
+interface ILogoOnMap {
+    name?: string;
+    logoURL: string;
+}
+
+const LogoOnMap = ({ name, logoURL }: ILogoOnMap) => (
     <div
         style={{
             display: "inline-flex",
@@ -138,7 +144,15 @@ const LogoOnMap = ({ name, logoURL }) => (
     </div>
 );
 
-const Area = ({ mapInst, Maps, coords, color, radius }) => {
+interface IArea {
+    mapInst: number | null;
+    Maps: any;
+    coords: { lat: number; lng: number };
+    color: string;
+    radius?: number;
+}
+
+const Area = ({ mapInst, Maps, coords, color, radius }: IArea) => {
     useEffect(() => {
         if (!Maps || !mapInst) return;
 
@@ -178,7 +192,10 @@ const autolocate = (enableHighAccuracy = true) =>
         );
     });
 
-const fetchCoordinatesByAddress = async (address, googleApiKey) => {
+const fetchCoordinatesByAddress = async (
+    address: string,
+    googleApiKey: string
+) => {
     const resp = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${googleApiKey}`
     );
