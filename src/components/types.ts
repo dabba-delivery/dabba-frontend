@@ -34,9 +34,7 @@ export interface IInput {
     styl?: ComponentStyle;
     classNames?: string;
     classNamesBox?: string;
-    onChange:
-        | ((val: React.ChangeEvent) => void)
-        | React.Dispatch<React.SetStateAction<string>>;
+    onChange: any;
     children?: React.ReactNode;
     type?: string;
     inputName: string;
