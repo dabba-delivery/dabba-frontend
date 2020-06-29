@@ -1,6 +1,7 @@
 // React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { getData } from "./components/redux/action-creators";
 
 // Main commmponents
 import { MainPart } from "./mainPart";
@@ -32,10 +33,15 @@ export const Restaurant: React.FC<IStoreProps> = (props) => {
             params: { id },
         },
         data,
+        getData,
     } = props;
 
     const [finishForm, setFinishForm] = useState(false);
     const { items, addPosition, removePosition, countPositions } = useBin();
+
+    useEffect(() => {
+        getData(id);
+    });
 
     return (
         <BinContext.Provider
@@ -71,7 +77,9 @@ export const Restaurant: React.FC<IStoreProps> = (props) => {
     );
 };
 
-export default connect(({ data }: IState) => ({ data }), null)(Restaurant);
+export default connect(({ data }: IState) => ({ data }), { getData })(
+    Restaurant
+);
 
 /**
  * useBin is custom hook which provide logic for the Bin

@@ -127,4 +127,5 @@ export interface IRouterRestaurantParam {
 export interface IStoreProps
     extends RouteComponentProps<IRouterRestaurantParam> {
     data: IHeader;
+    getData: (id: string) => void;
 }
