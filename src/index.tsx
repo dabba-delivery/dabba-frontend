@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 
 // Main commmponents
 import { Register } from "./register";
-import { Restaurant } from "./restaurant";
+import Restaurant from "./restaurant";
 
 // Components from library
 
