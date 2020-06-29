@@ -1,12 +1,13 @@
 // React
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { connect } from "react-redux";
 
 // Main commmponents
 import { MainPart } from "./mainPart";
 import { Bin } from "./bin";
 import { Finish } from "./finish";
-import { IBinContext, IDish } from "./components/types";
+import { IBinContext, IDish, IState, IHeader } from "./components/types";
 
 // Components from library
 import { Loader } from "./components";
@@ -18,8 +19,6 @@ import { BinContext } from "./context";
 
 // CSS
 import "./style/index.css";
-// DATA FOR DEV
-import { restaurants } from "./components/redux/dbexample";
 
 /**
  * Component Restaurant represent main page at the application where users order food
@@ -33,42 +32,19 @@ interface IRouterRestaurantParam {
     id: string;
 }
 
-export const Restaurant: React.FC<RouteComponentProps<
-    IRouterRestaurantParam
->> = (props) => {
-    const {
-        match: {
-            params: { id },
-        },
-    } = props;
+interface IStoreProps extends RouteComponentProps<IRouterRestaurantParam> {
+    data: IHeader;
+}
 
-    const [data, setData] = useState({});
+export const Restaurant: React.FC<IStoreProps> = ({ data }) => {
+    const [restaurantData, setRestaurantData] = useState({});
     const [finishForm, setFinishForm] = useState(false);
     const { items, addPosition, removePosition, countPositions } = useBin();
 
     useEffect(() => {
-        /**
-         * getData returns user data
-         *
-         * @param {string} link - using for fetching data, provided by React Router
-         */
-        const getData = async (link: string) => {
-            setData(restaurants[id]);
-
-            // const result = await fetch(
-            //     `https://dabba-ru.herokuapp.com/restaurant/find/${link}`
-            // );
-
-            // if (result.ok) {
-            //     const json = await result.json();
-            //     setData(json);
-            // } else {
-            //     alert("Ошибка HTTP: " + result.status);
-            // }
-        };
-
-        getData(id);
-    }, [id]);
+        console.log(data);
+        setRestaurantData(data);
+    }, [data]);
 
     return (
         <BinContext.Provider
@@ -80,7 +56,7 @@ export const Restaurant: React.FC<RouteComponentProps<
             }}
         >
             <>
-                {data ? (
+                {restaurantData ? (
                     <div className="page app-appear">
                         {finishForm ? (
                             <Finish
@@ -91,7 +67,7 @@ export const Restaurant: React.FC<RouteComponentProps<
                             ""
                         )}
 
-                        <MainPart data={data} />
+                        <MainPart data={restaurantData} />
                         <Bin finishFunc={() => setFinishForm(!finishForm)} />
                     </div>
                 ) : (
@@ -103,6 +79,8 @@ export const Restaurant: React.FC<RouteComponentProps<
         </BinContext.Provider>
     );
 };
+
+export default connect(({ data }: IState) => ({ data }), null)(Restaurant);
 
 /**
  * useBin is custom hook which provide logic for the Bin

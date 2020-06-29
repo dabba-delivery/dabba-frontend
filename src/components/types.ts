@@ -109,3 +109,13 @@ export interface IFinish {
     finalCost: number;
     onClose: Function;
 }
+
+export interface IAction {
+    type: string;
+    id: string;
+    dish: IDish;
+}
+
+export interface IState {
+    data: IHeader;
+}
