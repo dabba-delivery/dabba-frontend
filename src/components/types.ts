@@ -1,3 +1,5 @@
+import { RouteComponentProps } from "react-router-dom";
+
 export type ComponentStyle = "orange" | "blue";
 export type ComponentSize = "small" | "medium" | "big";
 export type TypeData = {
@@ -115,5 +117,14 @@ export interface IAction {
 }
 
 export interface IState {
+    data: IHeader;
+}
+
+export interface IRouterRestaurantParam {
+    id: string;
+}
+
+export interface IStoreProps
+    extends RouteComponentProps<IRouterRestaurantParam> {
     data: IHeader;
 }

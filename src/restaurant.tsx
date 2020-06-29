@@ -1,13 +1,12 @@
 // React
-import React, { useState, useEffect } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 
 // Main commmponents
 import { MainPart } from "./mainPart";
 import { Bin } from "./bin";
 import { Finish } from "./finish";
-import { IBinContext, IDish, IState, IHeader } from "./components/types";
+import { IBinContext, IDish, IState, IStoreProps } from "./components/types";
 
 // Components from library
 import { Loader } from "./components";
@@ -27,24 +26,16 @@ import "./style/index.css";
  * @param {number} id - this parameter goes from React.Router and it's using for fetching data
  * @return {Component}
  */
+export const Restaurant: React.FC<IStoreProps> = (props) => {
+    const {
+        match: {
+            params: { id },
+        },
+        data,
+    } = props;
 
-interface IRouterRestaurantParam {
-    id: string;
-}
-
-interface IStoreProps extends RouteComponentProps<IRouterRestaurantParam> {
-    data: IHeader;
-}
-
-export const Restaurant: React.FC<IStoreProps> = ({ data }) => {
-    const [restaurantData, setRestaurantData] = useState({});
     const [finishForm, setFinishForm] = useState(false);
     const { items, addPosition, removePosition, countPositions } = useBin();
-
-    useEffect(() => {
-        console.log(data);
-        setRestaurantData(data);
-    }, [data]);
 
     return (
         <BinContext.Provider
@@ -56,7 +47,7 @@ export const Restaurant: React.FC<IStoreProps> = ({ data }) => {
             }}
         >
             <>
-                {restaurantData ? (
+                {data ? (
                     <div className="page app-appear">
                         {finishForm ? (
                             <Finish
@@ -67,7 +58,7 @@ export const Restaurant: React.FC<IStoreProps> = ({ data }) => {
                             ""
                         )}
 
-                        <MainPart data={restaurantData} />
+                        <MainPart data={data} />
                         <Bin finishFunc={() => setFinishForm(!finishForm)} />
                     </div>
                 ) : (
