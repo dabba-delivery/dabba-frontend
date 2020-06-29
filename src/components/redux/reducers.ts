@@ -11,28 +11,29 @@ interface IAction {
     dish: IDish;
 }
 
-function dabbaApp(state = initialState, action: IAction) {
+export function dabbaApp(state = initialState, action: IAction) {
     switch (action.type) {
         case ADD_POSITION:
-            return { ...state, dishes: addDish(state.dishes, action.dish) };
+            return {
+                ...state,
+                dishes: addDish(state.dishes, JSON.stringify(action.dish)),
+            };
         case REMOVE_POSITION:
-            return { ...state, dishes: removeDish(state.dishes, action.dish) };
+            return {
+                ...state,
+                dishes: removeDish(state.dishes, JSON.stringify(action.dish)),
+            };
         default:
             return state;
     }
 }
 
-function addDish(dishes: any, dish: IDish) {
-    dishes[JSON.stringify(dish)]
-        ? dishes[JSON.stringify(dish)]++
-        : (dishes[JSON.stringify(dish)] = 1);
+function addDish(dishes: any, dish: string) {
+    dishes[dish] ? dishes[dish]++ : (dishes[dish] = 1);
     return dishes;
 }
 
-function removeDish(dishes: any, dish: IDish) {
-    dishes[JSON.stringify(dish)] > 1
-        ? dishes[JSON.stringify(dish)]--
-        : delete dishes[JSON.stringify(dish)];
-
+function removeDish(dishes: any, dish: string) {
+    dishes[dish] > 1 ? dishes[dish]-- : delete dishes[dish];
     return dishes;
 }
