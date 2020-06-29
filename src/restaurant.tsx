@@ -19,7 +19,7 @@ import { BinContext } from "./context";
 // CSS
 import "./style/index.css";
 // DATA FOR DEV
-import { restaurants } from "./dbexample";
+import { restaurants } from "./components/redux/dbexample";
 
 /**
  * Component Restaurant represent main page at the application where users order food
